@@ -7,6 +7,13 @@ import Image from "next/image"
 import { ParticleBackground } from "@/components/particle-background"
 
 export default function HeroSection() {
+  const handleApoiaClick = () => {
+    window.open("https://apoia.se/highboy", "_blank")
+  }
+
+  const handleGitClick = () => {
+    window.open("https://github.com/HighCodeh", "_blank")
+  }
   return (
     <section className="relative min-h-screen flex items-center pt-32 overflow-hidden">
       {/* Background elements */}
@@ -69,19 +76,25 @@ export default function HeroSection() {
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-              <Button
-                size="lg"
-                className="bg-gradient-to-r from-white to-[#8C2AFF] text-black hover:opacity-90 h-12 px-6 text-base"
-              >
-                Apoia
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
+          <Button
+            size="lg"
+            className="bg-gradient-to-r from-white to-[#8C2AFF] text-black hover:opacity-90 h-12 px-6 text-base"
+            onClick={handleApoiaClick}
+          >
+            Apoia
+            <ArrowRight className="ml-2 h-4 w-4" />
+          </Button>
 
-              <Button size="lg" variant="outline" className="border-white/10 hover:bg-white/5 h-12 px-6 text-base">
-                <Github className="mr-2 h-4 w-4" />
-                Git
-              </Button>
-            </div>
+          <Button
+            size="lg"
+            variant="outline"
+            className="border-white/10 hover:bg-white/5 h-12 px-6 text-base"
+            onClick={handleGitClick}
+          >
+            <Github className="mr-2 h-4 w-4" />
+            Git
+          </Button>
+        </div>
           </motion.div>
 
           <motion.div

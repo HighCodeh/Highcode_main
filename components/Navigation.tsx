@@ -103,21 +103,21 @@ export default function Navigation({ isOpen, onOpenChange }: NavigationProps) {
                     Roadmap
                   </Link>
                   <Link
-                    href="#about"
+                    href="#high"
                     className="text-base font-normal hover:text-[#8C2AFF] transition-colors"
                     onClick={() => onOpenChange(false)}
                   >
-                    Sobre
+                    High boy
                   </Link>
                   <Link
-                    href="#blog"
+                    href="https://highcode-blog.vercel.app/"
                     className="text-base font-normal hover:text-[#8C2AFF] transition-colors"
                     onClick={() => onOpenChange(false)}
                   >
                     Blog
                   </Link>
                   <Link
-                    href="#newsletter"
+                    href="https://newslette-omega.vercel.app/"
                     className="text-base font-normal hover:text-[#8C2AFF] transition-colors"
                     onClick={() => onOpenChange(false)}
                   >

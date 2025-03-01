@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion"
 import { Card } from "@/components/ui/card"
-import { Shield, Cpu, Radio, Wifi, Lock, Code, CaseUpperIcon, CaseSensitive } from "lucide-react"
+import { Shield, Cpu, Radio, Wifi, Lock, Code, CaseUpperIcon, Briefcase, CaseSensitive } from "lucide-react"
 
 const features = [
   {
@@ -32,7 +32,7 @@ const features = [
     description: "Ferramentas para análise e teste de redes sem fio.",
   },
   {
-    icon: CaseSensitive,
+    icon: Briefcase,
     title: "Portátil",
     description: "Compacto, leve e fácil de levar para qualquer lugar.",
   }

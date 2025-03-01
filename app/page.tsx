@@ -16,7 +16,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-black text-white">
-      <Navigation isOpen={isMenuOpen} onOpenChange={setIsMenuOpen} />A
+      <Navigation isOpen={isMenuOpen} onOpenChange={setIsMenuOpen} />
 
       <main>
         <HeroSection />

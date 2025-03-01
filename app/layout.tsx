@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "pt_BR",
-    url: "https://highcode.com",
+    url: "https://highboy.com.br",
     siteName: "High Code",
     title: "High Code",
     description:
@@ -64,7 +64,7 @@ export const metadata: Metadata = {
     images: ["https://highcode.com/twitter-image.jpg"],
     creator: "@highcode",
   },
-    generator: 'v0.dev'
+  generator: 'v0.dev'
 }
 
 export default function RootLayout({
@@ -75,6 +75,27 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className={inter.variable}>
       <head>
+        {/* Adicionando o favicon */}
+        <link
+          rel="icon"
+          href="/favicon.ico"
+          type="image/x-icon"
+          sizes="any"
+        />
+        <link
+          rel="icon"
+          href="/icon.svg"
+          type="image/svg+xml"
+        />
+        <link
+          rel="apple-touch-icon"
+          href="/apple-touch-icon.png"
+        />
+        <link
+          rel="manifest"
+          href="/site.webmanifest"
+        />
+
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -107,7 +128,3 @@ export default function RootLayout({
     </html>
   )
 }
-
-
-
-import './globals.css'

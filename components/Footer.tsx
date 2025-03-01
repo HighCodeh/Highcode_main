@@ -1,104 +1,89 @@
 "use client"
 
-import { Github, MessageSquare, Terminal } from "lucide-react"
+import type React from "react"
+
+import { useState } from "react"
+import { ArrowRight, Facebook, Github, Instagram,Linkedin, Mail, MapPin, Phone, Terminal, Twitter } from "lucide-react"
+import Link from "next/link"
+import { Separator } from "@/components/ui/separator"
+
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
 
 export default function Footer() {
   return (
-    <footer className="py-12 md:py-16 relative">
+    <footer className="bg-background py-16 relative">
+      
+     <Separator className="my-8 bg-[#8c2aff] h-0.5 opacity-70" />
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 mb-12">
-          <div>
-            <h3 className="font-semibold text-xl mb-4">NexusFlip</h3>
-            <p className="text-gray-400 mb-4">Plataforma open-source para hardware hacking e pentest</p>
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+          <div className="lg:col-span-1">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="bg-[#8c2aff] rounded-md p-2">
+              
+     <Separator className="my-8 bg-[#8c2aff] h-0.5 opacity-70" />
+            
+              </div>
+              
+              <h2 className="text-2xl font-bold">High Code</h2>
+            </div>
+            <p className="text-muted-foreground mb-6 max-w-md">
+            Plataforma profissional open-source voltada para hardware hacking e penetration testing, desenvolvida para empresas e especialistas em segurança cibernética.
+            </p>
             <div className="flex items-center gap-4">
-              <a href="https://github.com/nexusflip" className="text-gray-400 hover:text-[#8c2aff] transition-colors">
-                <Github className="w-5 h-5" />
+              <a
+                href="https://github.com/nexusflip"
+                className="bg-muted hover:bg-[#8c2aff]/10 p-2 rounded-full transition-colors"
+                aria-label="GitHub"
+              >
+                <Github className="w-5 h-5 text-[#8c2aff]" />
               </a>
-              <a href="https://discord.gg/nexusflip" className="text-gray-400 hover:text-[#8c2aff] transition-colors">
-                <MessageSquare className="w-5 h-5" />
+              <a
+                href="https://twitter.com/highcode"
+                className="bg-muted hover:bg-[#8c2aff]/10 p-2 rounded-full transition-colors"
+                aria-label="Twitter"
+              >
+                <Twitter className="w-5 h-5 text-[#8c2aff]" />
               </a>
-              <a href="https://t.me/nexusflip" className="text-gray-400 hover:text-[#8c2aff] transition-colors">
-                <Terminal className="w-5 h-5" />
+              <a
+                href="https://facebook.com/highcode"
+                className="bg-muted hover:bg-[#8c2aff]/10 p-2 rounded-full transition-colors"
+                aria-label="Facebook"
+              >
+                <Facebook className="w-5 h-5 text-[#8c2aff]" />
+              </a>
+              <a
+                href="https://instagram.com/highcode"
+                className="bg-muted hover:bg-[#8c2aff]/10 p-2 rounded-full transition-colors"
+                aria-label="Instagram"
+              >
+                <Instagram className="w-5 h-5 text-[#8c2aff]" />
               </a>
             </div>
           </div>
-
-          <div>
-            <h4 className="font-semibold mb-4">Documentação</h4>
-            <ul className="space-y-2">
-              <li>
-                <a href="#" className="text-gray-400 hover:text-[#8c2aff] transition-colors">
-                  Guia de Início
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-400 hover:text-[#8c2aff] transition-colors">
-                  API
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-400 hover:text-[#8c2aff] transition-colors">
-                  Exemplos
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-semibold mb-4">Comunidade</h4>
-            <ul className="space-y-2">
-              <li>
-                <a href="#" className="text-gray-400 hover:text-[#8c2aff] transition-colors">
-                  Discord
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-400 hover:text-[#8c2aff] transition-colors">
-                  Telegram
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-400 hover:text-[#8c2aff] transition-colors">
-                  GitHub
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="font-semibold mb-4">Recursos</h4>
-            <ul className="space-y-2">
-              <li>
-                <a href="#" className="text-gray-400 hover:text-[#8c2aff] transition-colors">
-                  Blog
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-400 hover:text-[#8c2aff] transition-colors">
-                  Tutoriais
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-400 hover:text-[#8c2aff] transition-colors">
-                  Ferramentas
-                </a>
-              </li>
-            </ul>
-          </div>
         </div>
 
-        <div className="border-t border-[#8c2aff]/20 pt-8">
+    
+
+        {/* Bottom section with copyright and legal */}
+        <div className="pt-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-gray-400 text-xs md:text-sm text-center md:text-left">
-              © 2024 NexusFlip. Open Source Hardware Hacking Platform.
+            <p className="text-muted-foreground text-sm text-center md:text-left">
+              © {new Date().getFullYear()} High Code. Todos os direitos reservados.
             </p>
-            <div className="flex items-center gap-4 md:gap-6">
-              <a href="#" className="text-gray-400 hover:text-[#8c2aff] transition-colors text-xs md:text-sm">
-                Licença
-              </a>
-              <a href="#" className="text-gray-400 hover:text-[#8c2aff] transition-colors text-xs md:text-sm">
-                Contribuir
-              </a>
+            <div className="flex items-center gap-6">
+              <Link
+                href="/privacidade"
+                className="text-muted-foreground hover:text-[#8c2aff] transition-colors text-sm"
+              >
+                Política de Privacidade
+              </Link>
+              <Link href="/termos" className="text-muted-foreground hover:text-[#8c2aff] transition-colors text-sm">
+                Termos de Uso
+              </Link>
+              <Link href="/cookies" className="text-muted-foreground hover:text-[#8c2aff] transition-colors text-sm">
+                Cookies
+              </Link>
             </div>
           </div>
         </div>

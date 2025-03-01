@@ -2,70 +2,70 @@
 
 import { motion } from "framer-motion"
 import { Card } from "@/components/ui/card"
-import { Github, Linkedin, Mail } from "lucide-react"
+import { Github, InstagramIcon, Mail } from "lucide-react"
 import Image from "next/image"
 
 const team = [
   {
     name: "Vinícius Pinheiro",
-    role: "Arquiteto de Hardware",
-    image: "/vini.jpg",
-    bio: "Especialista em arquitetura de hardware e RF",
+    role: "Manage - Hardware - Firmware",
+    image: "/vini.webp",
+    bio: "",
     social: {
       linkedin: "#",
-      github: "#",
-      email: "joao@highcode.com",
+      github: "https://www.instagram.com/vinipinheirobit/",
+      email: "vpedicao@gmail.com",
     },
   },
   {
     name: "Murilo Carlos",
-    role: "Pesquisadora de Segurança",
-    image: "/murilo.jpg",
-    bio: "Pesquisadora líder em segurança de IoT e RF",
+    role: "Back - Infra - Manage",
+    image: "/murilo.webp",
+    bio: "",
     social: {
       linkedin: "#",
-      github: "#",
-      email: "ana@highcode.com",
+      github: "https://www.instagram.com/murilo.c_013/",
+      email: "efgs96@gmail.com",
     },
   },
   {
-    name: "Pietro",
-    role: "Desenvolvedor de Firmware",
-    image: "/Pietro.png",
-    bio: "Desenvolvedor especializado em sistemas embarcados",
+    name: "Pietro Oliveira",
+    role: "Comunidade - Marketing",
+    image: "/Pietro.webp",
+    bio: "",
     social: {
       linkedin: "#",
-      github: "#",
-      email: "pedro@highcode.com",
+      github: "https://www.instagram.com/pietro_o1iveira/",
+      email: "williampietro@gmail.com",
     },
   },
   {
     name: "Vitor Hideki",
-    role: "Engenheira de RF",
-    image: "/vitor.jpg",
-    bio: "Engenheira especializada em comunicações sem fio",
+    role: "Front - Dados",
+    image: "/vitor.webp",
+    bio: "",
     social: {
       linkedin: "#",
-      github: "#",
-      email: "marina@highcode.com",
+      github: "https://www.instagram.com/vitorhidek/",
+      email: "hideki.mazakina@gmail.com",
     },
   },
   {
-    name: "Tassio",
-    role: "Desenvolvedor de Segurança",
-    image: "/tassio.jpg",
-    bio: "Desenvolvedor full-stack focado em segurança",
+    name: "Tassio Oliveira",
+    role: "Mecanica - Manufaturamento",
+    image: "/tassio.webp",
+    bio: "",
     social: {
       linkedin: "#",
-      github: "#",
-      email: "lucas@highcode.com",
+      github: "https://www.instagram.com/tassiofto/",
+      email: "tassiofto@gmail.com",
     },
   },
 ]
 
 export default function TeamSection() {
   return (
-    <section className="py-24 relative bg-black overflow-hidden">
+    <section className="py-24 relative bg-black overflow-hidden" id="team">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-[#8C2AFF]/10 via-transparent to-transparent" />
 
       <div className="container mx-auto px-4">
@@ -79,7 +79,7 @@ export default function TeamSection() {
             Nossa <span className="text-[#8C2AFF]">Equipe</span>
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Conheça os inovadores que estão revolucionando a segurança de hardware
+            Conheça os desenvolvedores pro trá do High Boy!
           </p>
         </motion.div>
 
@@ -107,13 +107,7 @@ export default function TeamSection() {
                         href={member.social.github}
                         className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
                       >
-                        <Github className="w-4 h-4" />
-                      </a>
-                      <a
-                        href={member.social.linkedin}
-                        className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
-                      >
-                        <Linkedin className="w-4 h-4" />
+                        <InstagramIcon className="w-4 h-4" />
                       </a>
                       <a
                         href={`mailto:${member.social.email}`}

@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion"
 import { Card } from "@/components/ui/card"
-import { Cpu, Battery, Wifi, Radio, MemoryStickIcon as Memory, Usb } from "lucide-react"
+import { Cpu, Battery, Wifi, Radio, MemoryStickIcon as Memory, Usb, Nfc } from "lucide-react"
 
 const specs = [
   {
@@ -24,7 +24,7 @@ const specs = [
     details: "300-928 MHz, Multi-modulação",
   },
   {
-    icon: Wifi,
+    icon: Nfc,
     title: "NFC",
     value: "PN7150",
     details: "NFC-A/B/F/V, P2P",
@@ -32,7 +32,7 @@ const specs = [
   {
     icon: Battery,
     title: "Bateria",
-    value: "3000mAh Li-Po",
+    value: "2500mAh Li-Po",
     details: "USB-C PD",
   },
   {
@@ -56,7 +56,7 @@ export default function TechnicalSpecs() {
         >
           <h2 className="text-4xl font-bold mb-4 gradient-text">Especificações Técnicas</h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            Hardware de última geração para testes de penetração avançados
+            Hardware Open source
           </p>
         </motion.div>
 

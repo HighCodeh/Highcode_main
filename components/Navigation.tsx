@@ -13,44 +13,42 @@ interface NavigationProps {
 export default function Navigation({ isOpen, onOpenChange }: NavigationProps) {
   return (
     <>
-      {/* Desktop Navigation */}
+      {/* Desktop Navigation Corrigido */}
       <nav className="fixed w-full z-50 flex justify-center top-6">
-        <div className="nav-glass rounded-full px-8 py-4 mx-4 flex items-center justify-between max-w-3xl w-full">
-          <Link href="/" className="text-xl font-medium tracking-tight">
+        <div className="nav-glass rounded-full px-6 py-3 mx-4 flex items-center justify-between max-w-5xl w-full">
+          <Link 
+            href="/" 
+            className="text-lg font-medium tracking-tight whitespace-nowrap"
+          >
             High Code
           </Link>
 
-          <div className="hidden md:flex items-center gap-12">
-            <Link href="#features" className="nav-link">
+          <div className="hidden md:flex items-center gap-8 flex-1 justify-center">
+            <Link href="#features" className="text-sm font-normal hover:text-[#8C2AFF] transition-colors px-3 py-1">
               Recursos
             </Link>
-            <Link href="#team" className="nav-link">
+            <Link href="#team" className="text-sm font-normal hover:text-[#8C2AFF] transition-colors px-3 py-1">
               Equipe
             </Link>
-            <Link href="#roadmap" className="nav-link">
+            <Link href="#roadmap" className="text-sm font-normal hover:text-[#8C2AFF] transition-colors px-3 py-1">
               Roadmap
             </Link>
-            <Link href="#about" className="nav-link">
-              Sobre
+            <Link href="#high" className="text-sm font-normal hover:text-[#8C2AFF] transition-colors px-3 py-1">
+              High Boy
+            </Link>
+            <Link href="/blog" className="text-sm font-normal hover:text-[#8C2AFF] transition-colors px-3 py-1">
+              Blog
+            </Link>
+            <Link href="#newsletter" className="text-sm font-normal hover:text-[#8C2AFF] transition-colors px-3 py-1">
+              Newsletter
             </Link>
           </div>
 
-          <div className="flex items-center gap-6">
-            <Link
-              href="https://github.com/highcode"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden md:flex"
-            >
-              <Button variant="ghost" size="icon" className="hover-glow">
-                <Github className="w-5 h-5" />
-              </Button>
-            </Link>
+          <div className="flex items-center gap-4 flex-shrink-0">
 
-            <Button className="hidden md:flex bg-white text-black hover:bg-white/90">Começar Agora</Button>
 
             <button className="md:hidden text-white" onClick={() => onOpenChange(!isOpen)}>
-              <Menu className="w-6 h-6" />
+              <Menu className="w-5 h-5" />
             </button>
           </div>
         </div>
@@ -64,7 +62,7 @@ export default function Navigation({ isOpen, onOpenChange }: NavigationProps) {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-black/60 backdrop-blur-xl z-40"
+              className="fixed inset-0 bg-black/50 backdrop-blur-xl z-40"
               onClick={() => onOpenChange(false)}
             />
 
@@ -73,48 +71,62 @@ export default function Navigation({ isOpen, onOpenChange }: NavigationProps) {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "spring", damping: 20 }}
-              className="fixed right-0 top-0 bottom-0 w-[300px] bg-black/95 backdrop-blur-2xl z-50 border-l border-white/10"
+              className="fixed right-0 top-0 bottom-0 w-[280px] bg-black/90 backdrop-blur-xl z-50 border-l border-white/5"
             >
-              <div className="p-6">
-                <div className="flex justify-end mb-8">
+              <div className="p-5">
+                <div className="flex justify-end mb-6">
                   <Button variant="ghost" size="icon" onClick={() => onOpenChange(false)}>
-                    <X className="w-6 h-6" />
+                    <X className="w-5 h-5" />
                   </Button>
                 </div>
 
-                <div className="flex flex-col gap-6">
+                <div className="flex flex-col gap-4">
                   <Link
                     href="#features"
-                    className="text-lg font-medium hover:text-[#8C2AFF] transition-colors"
+                    className="text-base font-normal hover:text-[#8C2AFF] transition-colors"
                     onClick={() => onOpenChange(false)}
                   >
                     Recursos
                   </Link>
                   <Link
                     href="#team"
-                    className="text-lg font-medium hover:text-[#8C2AFF] transition-colors"
+                    className="text-base font-normal hover:text-[#8C2AFF] transition-colors"
                     onClick={() => onOpenChange(false)}
                   >
                     Equipe
                   </Link>
                   <Link
                     href="#roadmap"
-                    className="text-lg font-medium hover:text-[#8C2AFF] transition-colors"
+                    className="text-base font-normal hover:text-[#8C2AFF] transition-colors"
                     onClick={() => onOpenChange(false)}
                   >
                     Roadmap
                   </Link>
                   <Link
                     href="#about"
-                    className="text-lg font-medium hover:text-[#8C2AFF] transition-colors"
+                    className="text-base font-normal hover:text-[#8C2AFF] transition-colors"
                     onClick={() => onOpenChange(false)}
                   >
                     Sobre
                   </Link>
+                  <Link
+                    href="#blog"
+                    className="text-base font-normal hover:text-[#8C2AFF] transition-colors"
+                    onClick={() => onOpenChange(false)}
+                  >
+                    Blog
+                  </Link>
+                  <Link
+                    href="#newsletter"
+                    className="text-base font-normal hover:text-[#8C2AFF] transition-colors"
+                    onClick={() => onOpenChange(false)}
+                  >
+                    Newsletter
+                  </Link>
                 </div>
 
-                <div className="mt-8">
-                  <Button className="w-full bg-white text-black hover:bg-white/90">Começar Agora</Button>
+                <div className="mt-6">
+                  <Button className="w-full bg-white text-black hover:bg-white/90 h-9">Começar Agora</Button>
                 </div>
               </div>
             </motion.div>
@@ -124,4 +136,3 @@ export default function Navigation({ isOpen, onOpenChange }: NavigationProps) {
     </>
   )
 }
-

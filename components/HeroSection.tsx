@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Github } from "lucide-react"
+import { ArrowRight, Github, Wifi, Bluetooth, Radio, Zap, Nfc, Rss } from 'lucide-react'
 import Image from "next/image"
 import { ParticleBackground } from "@/components/particle-background"
 
@@ -26,7 +26,6 @@ export default function HeroSection() {
               <span className="text-lg font-medium">Mais que uma ferramenta de hardware hacking</span>
             </div>
 
-
             <h1 className="flex flex-col md:flex-row font-bold tracking-tight text-center md:text-left leading-tight">
               <span className="text-[40vw] md:text-[180px] bg-gradient-to-b from-white to-[#8C2AFF] text-transparent bg-clip-text w-full mb-[-0.05em] md:mb-0">
                 High
@@ -36,8 +35,34 @@ export default function HeroSection() {
               </span>
             </h1>
 
-
-
+            {/* Technology tags */}
+            <motion.div 
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="flex flex-wrap justify-center gap-3 max-w-2xl mx-auto"
+            >
+              <div className="flex items-center gap-1.5 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-3 py-1.5">
+                <Wifi className="h-4 w-4 text-[#8C2AFF]" />
+                <span className="text-sm font-medium">WiFi</span>
+              </div>
+              <div className="flex items-center gap-1.5 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-3 py-1.5">
+                <Bluetooth className="h-4 w-4 text-[#8C2AFF]" />
+                <span className="text-sm font-medium">BLE</span>
+              </div>
+              <div className="flex items-center gap-1.5 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-3 py-1.5">
+                <Radio className="h-4 w-4 text-[#8C2AFF]" />
+                <span className="text-sm font-medium">IR</span>
+              </div>
+              <div className="flex items-center gap-1.5 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-3 py-1.5">
+                <Nfc className="h-4 w-4 text-[#8C2AFF]" />
+                <span className="text-sm font-medium">NFC</span>
+              </div>
+              <div className="flex items-center gap-1.5 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-3 py-1.5">
+                <Rss className="h-4 w-4 text-[#8C2AFF]" />
+                <span className="text-sm font-medium">Sub-GHz</span>
+              </div>
+            </motion.div>
 
             <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto">
               Um dispositivo multiferramenta feito para penteste e geeks.
@@ -48,13 +73,13 @@ export default function HeroSection() {
                 size="lg"
                 className="bg-gradient-to-r from-white to-[#8C2AFF] text-black hover:opacity-90 h-12 px-6 text-base"
               >
-                Apoiar
+                Apoia
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
 
               <Button size="lg" variant="outline" className="border-white/10 hover:bg-white/5 h-12 px-6 text-base">
                 <Github className="mr-2 h-4 w-4" />
-                Apoia.se
+                Git
               </Button>
             </div>
           </motion.div>
@@ -82,4 +107,3 @@ export default function HeroSection() {
     </section>
   )
 }
-

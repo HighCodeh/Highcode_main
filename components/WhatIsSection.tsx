@@ -7,7 +7,7 @@ import Image from "next/image"
 // Adicionando 'export default' explicitamente
 export default function WhatIsSection() {
   return (
-    <section className="py-24 relative bg-black/50">
+    <section className="py-24 relative bg-black/50" id="high">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Texto */}
@@ -73,7 +73,7 @@ export default function WhatIsSection() {
             <div className="space-y-4 pt-8">
               <div className="aspect-square relative rounded-2xl overflow-hidden">
                 <Image
-                  src="/foto3.jpeg"
+                  src="/fundo.webp"
                   alt="High Boy - Detalhes"
                   fill
                   className="object-cover hover:scale-110 transition-transform duration-500"

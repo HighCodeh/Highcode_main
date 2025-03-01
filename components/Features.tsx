@@ -2,13 +2,13 @@
 
 import { motion } from "framer-motion"
 import { Card } from "@/components/ui/card"
-import { Shield, Cpu, Radio, Wifi, Lock, Code } from "lucide-react"
+import { Shield, Cpu, Radio, Wifi, Lock, Code, CaseUpperIcon, CaseSensitive } from "lucide-react"
 
 const features = [
   {
     icon: Code,
     title: "Open source",
-    description: "Firmware personalizável e extensível para suas necessidades.",
+    description: "Código totalmente aberto, personalize e analise como quiser.",
   },
   {
     icon: Cpu,
@@ -23,25 +23,25 @@ const features = [
   {
     icon: Shield,
     title: "Teste de segurança",
-    description: "Suite completa de ferramentas para testes em RF, NFC e dispositivos IoT.",
+    description: "Suite completo de ferramentas para testes em RF, NFC e dispositivos IoT.",
   },
 
   {
     icon: Wifi,
     title: "Wireless Hacking",
-    description: "Ferramentas avançadas para análise e teste de redes sem fio.",
+    description: "Ferramentas para análise e teste de redes sem fio.",
   },
   {
-    icon: Lock,
-    title: "Encryption",
-    description: "Suporte a múltiplos protocolos de criptografia e análise de segurança.",
+    icon: CaseSensitive,
+    title: "Portátil",
+    description: "Compacto, leve e fácil de levar para qualquer lugar.",
   }
 
 ]
 
 export default function Features() {
   return (
-    <section className="py-32 relative">
+    <section className="py-32 relative" id="features">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

@@ -8,6 +8,7 @@ import Features from "@/components/Features"
 import Roadmap from "@/components/Roadmap"
 import TeamSection from "@/components/TeamSection"
 import Footer from "@/components/Footer"
+import TechnicalSpecs from "@/components/TechnicalSpecs"
 
 // Verificando se todos os componentes estão sendo exportados corretamente
 export default function Home() {
@@ -15,13 +16,14 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-black text-white">
-      <Navigation isOpen={isMenuOpen} onOpenChange={setIsMenuOpen} />
+      <Navigation isOpen={isMenuOpen} onOpenChange={setIsMenuOpen} />A
 
       <main>
         <HeroSection />
         <WhatIsSection />
         <Features />
         <TeamSection />
+        <TechnicalSpecs/>
         <Roadmap />
       </main>
 

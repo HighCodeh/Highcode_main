@@ -2,13 +2,14 @@ import type React from "react"
 import { Inter } from "next/font/google"
 import "./globals.css"
 import type { Metadata } from "next"
-import { ThemeProvider } from "@/components/theme-provider"
+import { Analytics } from "@vercel/analytics/react"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 
 export const metadata: Metadata = {
   title: "High Boy",
-  description: "High Boy - A ferramenta definitiva para hardware hacking, pentest e pesquisa em segurança.",
+  description:
+    "High Boy - A ferramenta definitiva para hardware hacking, pentest e pesquisa em segurança. Equipamento profissional para análise RF, NFC e segurança IoT.",
   keywords: [
     "High Boy",
     "High Code",
@@ -31,9 +32,6 @@ export const metadata: Metadata = {
     "Segurança Profissional",
     "Plataforma de Segurança",
     "ESP32",
-    "SDR",
-    "Rádio Definido por Software",
-    "Hacking RFID",
     "Segurança Bluetooth",
   ],
   authors: [{ name: "Equipe High Code" }],
@@ -64,8 +62,7 @@ export const metadata: Metadata = {
     images: ["https://highcode.com/twitter-image.jpg"],
     creator: "@highcode",
   },
-  generator: "v0.dev",
-  metadataBase: new URL("https://highboy.com.br"), // Add this line
+  generator: 'High code'
 }
 
 export default function RootLayout({
@@ -74,13 +71,28 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="pt-BR" className={`${inter.variable}`}>
+    <html lang="pt-BR" className={inter.variable}>
       <head>
         {/* Adicionando o favicon */}
-        <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="any" />
-        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <link rel="manifest" href="/site.webmanifest" />
+        <link
+          rel="icon"
+          href="/favicon.ico"
+          type="image/x-icon"
+          sizes="any"
+        />
+        <link
+          rel="icon"
+          href="/icon.svg"
+          type="image/svg+xml"
+        />
+        <link
+          rel="apple-touch-icon"
+          href="/apple-touch-icon.png"
+        />
+        <link
+          rel="manifest"
+          href="/site.webmanifest"
+        />
 
         <script
           type="application/ld+json"
@@ -98,7 +110,7 @@ export default function RootLayout({
               keywords: "hardware hacking, pentest, pesquisa em segurança, análise RF, hacking NFC",
               manufacturer: "High Code",
               releaseDate: "2024",
-              url: "https://highcode.com",
+              url: "https://highcode.com.br",
               image: "https://highcode.com/product-image.jpg",
               offers: {
                 "@type": "Offer",
@@ -110,12 +122,8 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="min-h-screen bg-background font-sans antialiased">
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
-          {children}
-        </ThemeProvider>
-      </body>
+      <body>{children}</body>
+      <Analytics />
     </html>
   )
 }
-

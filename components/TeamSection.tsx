@@ -52,7 +52,7 @@ const team = [
   },
   {
     name: "Tassio Oliveira",
-    role: "Mecanica - Manufaturamento",
+    role: "Mecânica - Manufaturamento",
     image: "/tassio.webp",
     bio: "",
     social: {

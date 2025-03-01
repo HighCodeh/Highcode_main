@@ -28,32 +28,32 @@ export default function Footer() {
               <h2 className="text-2xl font-bold">High Code</h2>
             </div>
             <p className="text-muted-foreground mb-6 max-w-md">
-            Plataforma profissional open-source voltada para hardware hacking e penetration testing, desenvolvida para empresas e especialistas em segurança cibernética.
+            Mais que uma ferramenta.
             </p>
             <div className="flex items-center gap-4">
               <a
-                href="https://github.com/nexusflip"
+                href="https://github.com/HighCodeh"
                 className="bg-muted hover:bg-[#8c2aff]/10 p-2 rounded-full transition-colors"
                 aria-label="GitHub"
               >
                 <Github className="w-5 h-5 text-[#8c2aff]" />
               </a>
               <a
-                href="https://twitter.com/highcode"
+                href="https://x.com/highcode_br"
                 className="bg-muted hover:bg-[#8c2aff]/10 p-2 rounded-full transition-colors"
                 aria-label="Twitter"
               >
                 <Twitter className="w-5 h-5 text-[#8c2aff]" />
               </a>
               <a
-                href="https://facebook.com/highcode"
+                href="https://www.facebook.com/highcode.brs"
                 className="bg-muted hover:bg-[#8c2aff]/10 p-2 rounded-full transition-colors"
                 aria-label="Facebook"
               >
                 <Facebook className="w-5 h-5 text-[#8c2aff]" />
               </a>
               <a
-                href="https://instagram.com/highcode"
+                href="https://www.instagram.com/highcode.br"
                 className="bg-muted hover:bg-[#8c2aff]/10 p-2 rounded-full transition-colors"
                 aria-label="Instagram"
               >
@@ -71,20 +71,6 @@ export default function Footer() {
             <p className="text-muted-foreground text-sm text-center md:text-left">
               © {new Date().getFullYear()} High Code. Todos os direitos reservados.
             </p>
-            <div className="flex items-center gap-6">
-              <Link
-                href="/privacidade"
-                className="text-muted-foreground hover:text-[#8c2aff] transition-colors text-sm"
-              >
-                Política de Privacidade
-              </Link>
-              <Link href="/termos" className="text-muted-foreground hover:text-[#8c2aff] transition-colors text-sm">
-                Termos de Uso
-              </Link>
-              <Link href="/cookies" className="text-muted-foreground hover:text-[#8c2aff] transition-colors text-sm">
-                Cookies
-              </Link>
-            </div>
           </div>
         </div>
       </div>

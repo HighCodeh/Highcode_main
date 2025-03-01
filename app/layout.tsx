@@ -2,13 +2,13 @@ import type React from "react"
 import { Inter } from "next/font/google"
 import "./globals.css"
 import type { Metadata } from "next"
+import { ThemeProvider } from "@/components/theme-provider"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 
 export const metadata: Metadata = {
   title: "High Boy",
-  description:
-    "High Boy - A ferramenta definitiva para hardware hacking, pentest e pesquisa em segurança. Equipamento profissional para análise RF, NFC e segurança IoT.",
+  description: "High Boy - A ferramenta definitiva para hardware hacking, pentest e pesquisa em segurança.",
   keywords: [
     "High Boy",
     "High Code",
@@ -64,7 +64,8 @@ export const metadata: Metadata = {
     images: ["https://highcode.com/twitter-image.jpg"],
     creator: "@highcode",
   },
-  generator: 'v0.dev'
+  generator: "v0.dev",
+  metadataBase: new URL("https://highboy.com.br"), // Add this line
 }
 
 export default function RootLayout({
@@ -73,28 +74,13 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="pt-BR" className={inter.variable}>
+    <html lang="pt-BR" className={`${inter.variable}`}>
       <head>
         {/* Adicionando o favicon */}
-        <link
-          rel="icon"
-          href="/favicon.ico"
-          type="image/x-icon"
-          sizes="any"
-        />
-        <link
-          rel="icon"
-          href="/icon.svg"
-          type="image/svg+xml"
-        />
-        <link
-          rel="apple-touch-icon"
-          href="/apple-touch-icon.png"
-        />
-        <link
-          rel="manifest"
-          href="/site.webmanifest"
-        />
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="any" />
+        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="manifest" href="/site.webmanifest" />
 
         <script
           type="application/ld+json"
@@ -124,7 +110,12 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body>{children}</body>
+      <body className="min-h-screen bg-background font-sans antialiased">
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   )
 }
+

@@ -36,6 +36,9 @@ export default function Navigation({ isOpen, onOpenChange }: NavigationProps) {
             <Link href="#high" className="text-sm font-normal hover:text-[#8C2AFF] transition-colors px-3 py-1">
               High Boy
             </Link>
+            <Link href="#apoio" className="text-sm font-normal hover:text-[#8C2AFF] transition-colors px-3 py-1">
+              Apoiadores
+            </Link>
             <Link href="https://highcode-blog.vercel.app/" className="text-sm font-normal hover:text-[#8C2AFF] transition-colors px-3 py-1">
               Blog
             </Link>
@@ -110,6 +113,13 @@ export default function Navigation({ isOpen, onOpenChange }: NavigationProps) {
                     High boy
                   </Link>
                   <Link
+                    href="#apoio"
+                    className="text-base font-normal hover:text-[#8C2AFF] transition-colors"
+                    onClick={() => onOpenChange(false)}
+                  >
+                    Apoiadores
+                  </Link>
+                  <Link
                     href="https://highcode-blog.vercel.app/"
                     className="text-base font-normal hover:text-[#8C2AFF] transition-colors"
                     onClick={() => onOpenChange(false)}
@@ -125,9 +135,7 @@ export default function Navigation({ isOpen, onOpenChange }: NavigationProps) {
                   </Link>
                 </div>
 
-                <div className="mt-6">
-                  <Button className="w-full bg-white text-black hover:bg-white/90 h-9">Começar Agora</Button>
-                </div>
+                
               </div>
             </motion.div>
           </>

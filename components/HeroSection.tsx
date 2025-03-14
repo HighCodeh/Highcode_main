@@ -72,7 +72,7 @@ export default function HeroSection() {
             </motion.div>
 
             <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto">
-              Um dispositivo multiferramenta feito para penteste e geeks.
+              Um dispositivo multiferramenta feito para pentest e geeks.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
@@ -81,7 +81,7 @@ export default function HeroSection() {
             className="bg-gradient-to-r from-white to-[#8C2AFF] text-black hover:opacity-90 h-12 px-6 text-base"
             onClick={handleApoiaClick}
           >
-            Apoia
+            Apoiar o projeto
             <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
 

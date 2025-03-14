@@ -79,7 +79,7 @@ const supporters = [
   "Bruno",
   "Orlando Trindade",
   "Mateus Filipe Gomes de Oliveira",
-  "VINICIUS PINHEIRO",
+  "Cristianos",
   "João Lucas Jorge",
   "André Luiz Sette Gadelha Campos",
   "Jonathan Dias",

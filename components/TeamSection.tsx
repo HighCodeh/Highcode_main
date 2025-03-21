@@ -19,7 +19,7 @@ const team = [
   },
   {
     name: "Emanuel Magalhães",
-    role: "Firmwae - arquitetura",
+    role: "Firmware - arquitetura",
     image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/emanuel.jpg-yqPGCdHxZbbPRrXsGZkZKoaS7Wg5fK.jpeg",
     bio: "",
     social: {

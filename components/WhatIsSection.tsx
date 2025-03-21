@@ -22,7 +22,7 @@ export default function WhatIsSection() {
             </h2>
             <p className="text-gray-300 text-lg leading-relaxed">
               O High Boy é uma ferramentaa de hardware hacking que combina potência, versatilidade e
-              portabilidade em um único dispositivo. Projetado para profissionais de segurança e entusiasdas, ele
+              portabilidade em um único dispositivo. Projetado para profissionais de segurança e entusiastas, ele
               oferece um conjunto completo de ferramentas para análise RF, NFC , Wifi, Ble e testes de segurança IoT.
             </p>
             <ul className="space-y-4 text-gray-300">

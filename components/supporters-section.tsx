@@ -55,7 +55,6 @@ const supporters = [
   "Felipe Barreira",
   "Miguel Marsari",
   "Rafael de Matos",
-  "Rafael de Matos",
   "Tassio Fernando Teixeira de Oliveira",
   "Vitor Hideki Mazakina",
   "Arthur Gabriel",

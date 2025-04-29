@@ -4,7 +4,13 @@ import { useEffect, useRef, useState } from "react"
 
 // Lista de apoiadores fornecida pelo usuário
 const supporters = [
-  "Lucas Pereira",
+  "ATAHUALPA BASTOS LELIS",
+  "Joao Victor Gomes da Silva",
+  "Thalles Frasson Duarte",
+  "Kauan Crema Dias",
+  "Eduardo Ivalo da Silva Prado",
+  "Állan Richard de Souza Gomes",
+  "ANGELO VITOR LIMA LEMAIRE DE MEDEIROS",
   "Talison Zambon Breitenbach",
   "Gabriel Silva Ribeiro",
   "Victor Neves",
@@ -23,6 +29,7 @@ const supporters = [
   "Ramires Dias Santos",
   "EdgeSearch Labs LTDA",
   "Israel Calros de Lima Pimentel",
+  "Lucas Pereira",
   "Carlos Eduardo Campelo",
   "LUCAS GONCALVES DE BRITO",
   "João Lucas Jorge",
@@ -81,6 +88,9 @@ const supporters = [
   "Jayro Gouveia",
   "Ayres Joaquim neto",
   "Evilyn Rodrigues",
+  "Nycollas Icrad Luz Machado",
+  "Alisson de Almeida",
+  "Willem Ferreira",
   "Moacir Henrique Lima dos Santos",
   "Miguel Luidy Gleria",
   "Francisco Vitor",
@@ -109,7 +119,6 @@ const supporters = [
   "Erik Cardoso",
   "Junior Tenorio"
 ];
-
 // Dividir a lista em três grupos para as três linhas
 const totalNames = supporters.length
 const namesPerRow = Math.ceil(totalNames / 3)
@@ -296,19 +305,18 @@ const SmoothMarquee = ({
 }
 
 export default function SupportersSection() {
-  const { isMobile, isTablet } = useScreenSize()
+  const { isMobile, isTablet } = useScreenSize();
 
-  // Ajustar tamanhos com base no dispositivo
-  const titleSize = isMobile ? "text-3xl sm:text-4xl" : isTablet ? "text-5xl" : "text-6xl lg:text-7xl"
-  const subtitleSize = isMobile ? "text-sm" : isTablet ? "text-base" : "text-lg"
-  const sectionPadding = isMobile ? "py-12" : isTablet ? "py-20" : "py-32"
-  const containerPadding = isMobile ? "py-4 px-2" : isTablet ? "py-6 px-4" : "py-12 px-6"
+  const titleSize = isMobile ? "text-3xl sm:text-4xl" : isTablet ? "text-5xl" : "text-6xl lg:text-7xl";
+  const subtitleSize = isMobile ? "text-sm" : isTablet ? "text-base" : "text-lg";
+  const sectionPadding = isMobile ? "py-12" : isTablet ? "py-20" : "py-32";
+  const containerPadding = isMobile ? "py-4 px-2" : isTablet ? "py-6 px-4" : "py-12 px-6";
 
   return (
-    <section className={`${sectionPadding} px-3 sm:px-4 md:px-6`}id="apoio">
-      <div className="text-center mb-6 sm:mb-10 md:mb-16">
+    <section className={`${sectionPadding} px-3 sm:px-4 md:px-6`} id="apoio">
+      <div className="text-center mb-10 md:mb-16">
         <h2
-          className={`${titleSize} font-bold mb-4 sm:mb-8`}
+          className={`${titleSize} font-bold mb-6`}
           style={{
             background: "linear-gradient(to right, #9c4dff, #7c3aed)",
             WebkitBackgroundClip: "text",
@@ -317,21 +325,28 @@ export default function SupportersSection() {
         >
           Nossos Apoiadores
         </h2>
-        <div className="flex justify-center mb-4 sm:mb-6">
-          <div
-            className="inline-flex items-center px-3 sm:px-5 md:px-6 py-1.5 sm:py-2.5 rounded-full"
-            style={{
-              background: "rgba(20, 20, 20, 0.6)",
-              backdropFilter: "blur(10px)",
-              border: "1px solid rgba(138, 43, 226, 0.3)",
-            }}
-          >
-            <div className={`h-2 w-2 md:h-3 md:w-3 rounded-full bg-purple-600 mr-2 md:mr-3`} />
-            <p className={`text-gray-300 ${subtitleSize}`}>Agradecemos a todos que acreditam no projeto HighBoy</p>
+
+        {/* Bloco de mensagens com pontinhos */}
+        <div className="flex flex-col items-center space-y-3">
+          {/* Primeira mensagem */}
+          <div className="flex items-center space-x-2">
+            <div className="h-2 w-2 md:h-3 md:w-3 rounded-full bg-purple-600" />
+            <p className={`text-gray-300 ${subtitleSize}`}>
+              Agradecemos a todos que acreditam no projeto HighBoy
+            </p>
+          </div>
+
+          {/* Segunda mensagem */}
+          <div className="flex items-center space-x-2">
+            <div className="h-2 w-2 md:h-3 md:w-3 rounded-full bg-purple-600" />
+            <p className={`text-gray-300 ${subtitleSize}`}>
+              Mais de 100 apoiadores!
+            </p>
           </div>
         </div>
       </div>
 
+      {/* Container dos nomes */}
       <div className="max-w-[1400px] mx-auto">
         <div
           className={`relative overflow-hidden ${containerPadding} rounded-lg sm:rounded-xl`}
@@ -342,7 +357,7 @@ export default function SupportersSection() {
             boxShadow: "0 10px 30px rgba(0, 0, 0, 0.3)",
           }}
         >
-          {/* Efeitos de fundo estilo Apple */}
+          {/* Efeitos de fundo */}
           <div
             className="absolute inset-0 opacity-30"
             style={{
@@ -351,21 +366,16 @@ export default function SupportersSection() {
             }}
           />
 
-          {/* Primeira linha - da esquerda para a direita - primeiro grupo de nomes */}
+          {/* Linhas de apoiadores com marquee animado */}
           <SmoothMarquee names={row1} direction="left" speed={1.3} rowIndex={0} />
-
-          {/* Segunda linha - da direita para a esquerda - segundo grupo de nomes */}
           <div className="mt-4">
             <SmoothMarquee names={row2} direction="right" speed={1.1} rowIndex={1} />
           </div>
-
-          {/* Terceira linha - da esquerda para a direita - terceiro grupo de nomes */}
           <div className="mt-4">
             <SmoothMarquee names={row3} direction="left" speed={1.5} rowIndex={2} />
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }
-

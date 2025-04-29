@@ -55,7 +55,7 @@ export default function WhatIsSection() {
             <div className="space-y-4">
               <div className="aspect-square relative rounded-2xl overflow-hidden">
                 <Image
-                  src="/foto1.jpeg"
+                  src="/hb3.png"
                   alt="High Boy - Vista Frontal"
                   fill
                   className="object-cover hover:scale-110 transition-transform duration-500"
@@ -63,7 +63,7 @@ export default function WhatIsSection() {
               </div>
               <div className="aspect-square relative rounded-2xl overflow-hidden">
                 <Image
-                  src="/foto2.jpeg"
+                  src="/hb2.jpeg"
                   alt="High Boy - Interface"
                   fill
                   className="object-cover hover:scale-110 transition-transform duration-500"
@@ -81,7 +81,7 @@ export default function WhatIsSection() {
               </div>
               <div className="aspect-square relative rounded-2xl overflow-hidden">
                 <Image
-                  src="/foto4.jpeg"
+                  src="/2.png"
                   alt="High Boy - Em Uso"
                   fill
                   className="object-cover hover:scale-110 transition-transform duration-500"

@@ -106,7 +106,7 @@ export default function HeroSection() {
             <div className="relative max-w-[400px] mx-auto">
               <div className="absolute -inset-10 bg-gradient-radial from-[#8C2AFF]/20 to-transparent opacity-70 blur-xl rounded-full" />
               <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/3d11%20(1).png-897GWP2Vs7vWzMEqpaaZ7AXoTPGwhd.jpeg"
+                src="/hb.png"
                 alt="Dispositivo High Code"
                 width={400}
                 height={400}

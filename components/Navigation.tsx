@@ -42,9 +42,7 @@ export default function Navigation({ isOpen, onOpenChange }: NavigationProps) {
             <Link href="https://highcode-blog.vercel.app/" className="text-sm font-normal hover:text-[#8C2AFF] transition-colors px-3 py-1">
               Blog
             </Link>
-            <Link href="https://newslette-omega.vercel.app/" className="text-sm font-normal hover:text-[#8C2AFF] transition-colors px-3 py-1">
-              Newsletter
-            </Link>
+            
           </div>
 
           <div className="flex items-center gap-4 flex-shrink-0">

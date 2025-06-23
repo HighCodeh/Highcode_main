@@ -2,7 +2,15 @@
 
 import { motion } from "framer-motion"
 import { Card } from "@/components/ui/card"
-import { Cpu, Battery, Wifi, Radio, MemoryStickIcon as Memory, Usb, Nfc } from "lucide-react"
+import {
+  Cpu,
+  Battery,
+  Wifi,
+  Radio,
+  MemoryStickIcon as Memory,
+  Usb,
+  Nfc,
+} from "lucide-react"
 
 const specs = [
   {
@@ -33,19 +41,21 @@ const specs = [
     icon: Battery,
     title: "Bateria",
     value: "2500mAh Li-Po",
-    details: "USB-C PD",
+    details: "Recarregável com USB-C PD",
   },
   {
     icon: Usb,
     title: "Interfaces",
     value: "USB-C OTG",
-    details: "UART, SPI, I2C",
+    details: "UART, SPI, I2C, GPIO",
   },
 ]
 
 export default function TechnicalSpecs() {
   return (
-    <section className="py-24 relative bg-black">
+    <section className="py-24 relative bg-black overflow-hidden" id="specs">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_var(--tw-gradient-stops))] from-[#8C2AFF]/20 via-transparent to-transparent pointer-events-none" />
+
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -54,9 +64,11 @@ export default function TechnicalSpecs() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold mb-4 gradient-text">Especificações Técnicas</h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            Hardware Open source
+          <h2 className="text-5xl font-extrabold mb-4 text-white tracking-tight">
+            <span className="text-[#8C2AFF]">Especificações</span> Técnicas
+          </h2>
+          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+            Um hardware open source feito para <span className="text-white font-semibold">desenvolvedores exigentes</span>.
           </p>
         </motion.div>
 
@@ -69,17 +81,15 @@ export default function TechnicalSpecs() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
-              <Card className="feature-card purple-gradient h-full">
-                <div className="p-6">
-                  <div className="flex items-start gap-4">
-                    <div className="p-2 bg-[#8c2aff]/10 rounded-lg">
-                      <spec.icon className="w-6 h-6 text-[#8c2aff]" />
-                    </div>
-                    <div>
-                      <h3 className="text-base font-medium text-gray-400 mb-1">{spec.title}</h3>
-                      <p className="text-xl font-semibold text-white mb-2">{spec.value}</p>
-                      <p className="text-sm text-gray-400">{spec.details}</p>
-                    </div>
+              <Card className="bg-gradient-to-br from-[#1a1a1a] to-[#0e0e0e] rounded-xl border border-[#8c2aff]/30 p-6 shadow-lg hover:shadow-[#8c2aff]/40 transition-all duration-300 hover:scale-[1.03] group">
+                <div className="flex flex-col items-start gap-4">
+                  <div className="w-12 h-12 flex items-center justify-center rounded-full bg-[#8c2aff]/10 border border-[#8c2aff]/30 group-hover:bg-[#8c2aff]/20 transition">
+                    <spec.icon className="w-6 h-6 text-[#8c2aff]" />
+                  </div>
+                  <div>
+                    <h3 className="text-sm font-medium text-gray-400">{spec.title}</h3>
+                    <p className="text-xl font-bold text-white mt-1">{spec.value}</p>
+                    <p className="text-sm text-gray-500 mt-1">{spec.details}</p>
                   </div>
                 </div>
               </Card>
@@ -90,4 +100,3 @@ export default function TechnicalSpecs() {
     </section>
   )
 }
-

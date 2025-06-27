@@ -5,6 +5,7 @@ import Navigation from "@/components/Navigation"
 import HeroSection from "@/components/HeroSection"
 import WhatIsSection from "@/components/WhatIsSection"
 import Features from "@/components/Features"
+import Social from "@/components/Social"
 import Roadmap from "@/components/Roadmap"
 import TeamSection from "@/components/TeamSection"
 import Footer from "@/components/Footer"
@@ -27,6 +28,7 @@ export default function Home() {
         <TechnicalSpecs/>
         <Roadmap />
         <SupportersSection />
+        <Social />
       </main>
 
       <Footer />

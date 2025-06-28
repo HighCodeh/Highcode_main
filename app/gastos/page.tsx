@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip, Legend } from "recharts"
 import { ExternalLink, Github, ArrowUpRight, BarChart2, DollarSign, PieChart as PieChartIcon } from "lucide-react"
 import { motion } from "framer-motion"
+import { useEffect, useState } from "react";
 
 const data = [
   { name: "Desenvolvimento", value: 8500, color: "#007AFF" },
@@ -43,6 +44,25 @@ const CustomTooltip = ({ active, payload }: any) => {
 }
 
 export default function FinancialReport() {
+  // Estado para controlar responsividade
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Função para atualizar estado de mobile
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    // Definir valor inicial
+    handleResize();
+    
+    // Adicionar listener de redimensionamento
+    window.addEventListener("resize", handleResize);
+    
+    // Limpar listener ao desmontar
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <div className="min-h-screen bg-black text-white">
       {/* Hero Header */}
@@ -186,10 +206,10 @@ export default function FinancialReport() {
                         </Pie>
                         <Tooltip content={<CustomTooltip />} />
                         <Legend 
-                          layout={window.innerWidth < 768 ? "horizontal" : "vertical"}
-                          verticalAlign={window.innerWidth < 768 ? "bottom" : "middle"}
-                          align={window.innerWidth < 768 ? "center" : "right"}
-                          wrapperStyle={window.innerWidth < 768 ? { paddingTop: '20px' } : {}}
+                          layout={isMobile ? "horizontal" : "vertical"}
+                          verticalAlign={isMobile ? "bottom" : "middle"}
+                          align={isMobile ? "center" : "right"}
+                          wrapperStyle={isMobile ? { paddingTop: '20px' } : {}}
                           formatter={(value, entry: any, index) => (
                             <span className="text-white text-xs sm:text-sm">
                               {value} ({(entry.payload.value / total * 100).toFixed(1)}%)

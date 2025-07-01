@@ -196,7 +196,7 @@ export default function TeamSection() {
           </p>
           <div className="flex justify-center gap-4">
             <a 
-              href="mailto:contato@highboy.com" 
+              href="mailto:highcodeh@gmail.com" 
               className="bg-gradient-to-r from-[#8C2AFF] to-[#6a11ff] text-white hover:opacity-90 px-8 py-3.5 rounded-xl transition-all hover:shadow-[0_0_30px_rgba(140,42,255,0.5)] font-medium"
             >
               Quero ser do time

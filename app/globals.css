@@ -34,45 +34,16 @@
   body {
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
+    letter-spacing: -0.02em;
+    cursor: url('/p.png'), auto;
   }
 }
 
-/* Navigation styles */
-.nav-glass {
-  @apply bg-black/40 backdrop-blur-3xl border-b border-white/10;
-}
-
-.nav-link {
-  @apply text-gray-400 hover:text-white transition-colors duration-500;
-}
-
-/* Grid Background */
-.bg-grid-small-white {
-  background-size: 40px 40px;
-  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-}
-
-/* Scrollbar */
-::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
-}
-
-::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.1);
-}
-
-::-webkit-scrollbar-thumb {
-  background: rgba(140, 42, 255, 0.5);
-  border-radius: 2px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(140, 42, 255, 0.7);
-}
-
 @layer components {
+  .nav-glass {
+    @apply bg-black/40 backdrop-blur-3xl border-b border-white/10;
+  }
+
   .nav-link {
     @apply text-gray-400 hover:text-white transition-colors duration-500 text-sm font-medium tracking-wide relative;
   }
@@ -133,6 +104,32 @@
   mask-composite: xor;
   -webkit-mask-composite: xor;
   padding: 1px;
+}
+
+/* Grid Background */
+.bg-grid-small-white {
+  background-size: 40px 40px;
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(140, 42, 255, 0.5);
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(140, 42, 255, 0.7);
 }
 
 /* Responsividade */

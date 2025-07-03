@@ -216,6 +216,95 @@ export default function SupportersSection() {
   return (
     <section className={`${sectionPadding} px-4 sm:px-6 md:px-8 bg-black`} id="apoio">
       <div className="max-w-6xl mx-auto">
+        {/* Banner de Patrocínio PCBWay */}
+<motion.div
+  className="mb-24 md:mb-36"
+  initial={{ opacity: 0, y: -30 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6, delay: 0.1 }}
+>
+  <div className="flex flex-col items-center text-center mb-16">
+    <span className="text-base uppercase tracking-[0.4em] text-gray-300 font-light mb-4">
+      PATROCINADOR OFICIAL
+    </span>
+    <div className="w-40 h-1 bg-gradient-to-r from-transparent via-[#9c4dff] to-transparent"></div>
+  </div>
+
+  <div className="flex flex-col items-center px-4">
+    <div 
+      className="p-12 sm:p-16 rounded-[2rem] w-full max-w-6xl mx-auto overflow-hidden relative"
+      style={{
+        background: 'linear-gradient(145deg, rgba(15,15,20,0.98) 0%, rgba(10,10,15,0.99) 100%)',
+        backdropFilter: 'blur(24px)',
+        border: '1px solid rgba(255,255,255,0.12)',
+        boxShadow: '0 40px 80px rgba(0,0,0,0.45), inset 0 0 0 1px rgba(255,255,255,0.08)'
+      }}
+    >
+      {/* Logo enorme e dominante */}
+      <div className="flex justify-center mb-12">
+        <img 
+          src="/pcbway.png" 
+          alt="PCBWay" 
+          className="w-[90vw] max-w-[500px] md:w-[600px] h-auto mx-auto"
+          style={{
+            filter: 'drop-shadow(0 0 50px rgba(140, 42, 255, 0.6))'
+          }}
+        />
+      </div>
+      
+      {/* Conteúdo com texto maior */}
+      <div className="text-center max-w-3xl mx-auto">
+        <h3 className="text-4xl md:text-5xl font-normal text-white mb-7 tracking-tight">
+          FABRICAÇÃO DE <span className="font-bold text-[#c08fff]">PCB</span> PROFISSIONAL
+        </h3>
+        
+        <p className="text-gray-300 mb-10 text-xl md:text-2xl font-light leading-relaxed tracking-wide">
+          Parceiro oficial para prototipagem e fabricação de alta qualidade de placas de circuito impresso
+        </p>
+        
+        <div className="flex justify-center">
+          <a
+            href="https://www.pcbway.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-4 bg-transparent text-white hover:text-[#e6d5ff] px-10 py-5 rounded-xl transition-all group border-2 border-white/20 hover:border-[#8C2AFF]"
+            style={{
+              background: 'linear-gradient(90deg, rgba(140,42,255,0.2) 0%, rgba(140,42,255,0.1) 100%)',
+              boxShadow: '0 0 30px rgba(140, 42, 255, 0.3)'
+            }}
+          >
+            <span className="font-bold tracking-wider text-xl">SOLICITAR ORÇAMENTO</span>
+            <svg 
+              xmlns="http://www.w3.org/2000/svg" 
+              width="24" 
+              height="24" 
+              viewBox="0 0 24 24" 
+              fill="none" 
+              stroke="currentColor" 
+              strokeWidth="2" 
+              strokeLinecap="round" 
+              strokeLinejoin="round"
+              className="transition-transform group-hover:translate-x-3"
+            >
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+      
+      {/* Efeitos de luz ampliados */}
+      <div 
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100vw] h-[100vh] bg-[#8C2AFF] opacity-[0.03] blur-[150px] pointer-events-none"
+        style={{ zIndex: -1 }}
+      />
+      <div 
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vh] bg-[#5e17eb] opacity-[0.05] blur-[120px] pointer-events-none"
+        style={{ zIndex: -1 }}
+      />
+    </div>
+  </div>
+</motion.div>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

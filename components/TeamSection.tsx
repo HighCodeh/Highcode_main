@@ -13,8 +13,6 @@ const team = [
     social: {
       instagram: "https://www.instagram.com/vinipinheirobit/",
       email: "vpedicao@gmail.com",
-      github: "https://github.com/vinicius",
-      linkedin: "https://linkedin.com/in/vinicius",
     },
   },
   {
@@ -25,8 +23,7 @@ const team = [
     social: {
       instagram: "https://www.instagram.com/anarchyysm/",
       email: "emanuel.mag.jr@gmail.com",
-      github: "https://github.com/emanuel",
-      linkedin: "https://linkedin.com/in/emanuel",
+
     },
   },
   {
@@ -37,8 +34,7 @@ const team = [
     social: {
       instagram: "https://www.instagram.com/lthiagovs/",
       email: "luisthiago.dev@gmail.com",
-      github: "https://github.com/luizthiago",
-      linkedin: "https://linkedin.com/in/luizthiago",
+
     },
   },
   {
@@ -49,8 +45,7 @@ const team = [
     social: {
       instagram: "https://www.instagram.com/pietro_o1iveira/",
       email: "williampietro@gmail.com",
-      github: "https://github.com/pietro",
-      linkedin: "https://linkedin.com/in/pietro",
+
     },
   },
 ]

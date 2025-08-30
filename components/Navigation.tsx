@@ -12,43 +12,41 @@ interface NavigationProps {
 
 export default function Navigation({ isOpen, onOpenChange }: NavigationProps) {
   const navItems = [
-    { id: "features", label: "Recursos", icon: <Zap className="w-4 h-4" /> },
-    { id: "team", label: "Equipe", icon: <Users className="w-4 h-4" /> },
-    { id: "roadmap", label: "Roadmap", icon: <Map className="w-4 h-4" /> },
-    { id: "high", label: "High Boy", icon: <Code className="w-4 h-4" /> },
-    { id: "apoio", label: "Apoiadores", icon: <Heart className="w-4 h-4" /> },
-    { 
-      href: "https://highcode-blog.vercel.app/", 
-      label: "Blog", 
-      icon: <BookOpen className="w-4 h-4" /> 
-    },
+    { id: "features", label: "Features", icon: <Zap className="w-4 h-4" /> },
+    { id: "team", label: "Team", icon: <Users className="w-4 h-4" /> },
     
+    { id: "product", label: "High Boy", icon: <Code className="w-4 h-4" /> },
+    { id: "supporters", label: "Supporters", icon: <Heart className="w-4 h-4" /> },
+    {
+      href: "https://highcode-blog.vercel.app/",
+      label: "Blog",
+      icon: <BookOpen className="w-4 h-4" />,
+    },
   ]
 
   return (
     <>
-      {/* Desktop Navigation Premium */}
+      {/* Desktop Navigation */}
       <nav className="fixed w-full z-50 top-0 py-4">
         <div className="container mx-auto px-4">
-          <motion.div 
+          <motion.div
             className="nav-glass rounded-2xl px-6 py-3 flex items-center justify-between backdrop-blur-xl border border-white/10 shadow-xl"
             initial={{ y: -100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5 }}
           >
-            {/* Logo com efeito premium */}
-<Link 
-  href="/" 
-  className="text-xl font-bold tracking-tight whitespace-nowrap bg-gradient-to-r from-white to-[#a15cff] text-transparent bg-clip-text flex items-center gap-2"
->
-  <div className="w-8 h-8 rounded-full bg-gradient-to-r from-[#8C2AFF] to-[#4a1e99] flex items-center justify-center overflow-hidden">
-    <img src="/logo.png" alt="Logo" className="w-5 h-5 object-contain" />
-  </div>
-  High Code
-</Link>
+            {/* Logo */}
+            <Link
+              href="/"
+              className="text-xl font-bold tracking-tight whitespace-nowrap bg-gradient-to-r from-white to-[#a15cff] text-transparent bg-clip-text flex items-center gap-2"
+            >
+              <div className="w-8 h-8 rounded-full bg-gradient-to-r from-[#8C2AFF] to-[#4a1e99] flex items-center justify-center overflow-hidden">
+                <img src="/logo.png" alt="Logo" className="w-5 h-5 object-contain" />
+              </div>
+              High Code
+            </Link>
 
-
-            {/* Itens de navegação centralizados */}
+            {/* Centered Navigation Items */}
             <div className="hidden md:flex items-center gap-1 flex-1 justify-center">
               {navItems.map((item, index) => (
                 <motion.div
@@ -58,8 +56,8 @@ export default function Navigation({ isOpen, onOpenChange }: NavigationProps) {
                   transition={{ delay: 0.1 * index }}
                 >
                   {item.id ? (
-                    <Link 
-                      href={`#${item.id}`} 
+                    <Link
+                      href={`#${item.id}`}
                       className="text-sm font-medium hover:bg-white/5 transition-all px-4 py-2 rounded-xl flex items-center gap-2 group"
                     >
                       {item.icon}
@@ -68,8 +66,8 @@ export default function Navigation({ isOpen, onOpenChange }: NavigationProps) {
                       </span>
                     </Link>
                   ) : (
-                    <Link 
-                      href={item.href!} 
+                    <Link
+                      href={item.href!}
                       target="_blank"
                       className="text-sm font-medium hover:bg-white/5 transition-all px-4 py-2 rounded-xl flex items-center gap-2 group"
                     >
@@ -83,14 +81,14 @@ export default function Navigation({ isOpen, onOpenChange }: NavigationProps) {
               ))}
             </div>
 
-            {/* Botão GitHub */}
+            {/* GitHub Button */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.6 }}
             >
-              <Link 
-                href="https://github.com/HighCodeh" 
+              <Link
+                href="https://github.com/HighCodeh"
                 target="_blank"
                 className="hidden md:flex items-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl px-4 py-2 transition-all group"
               >
@@ -99,8 +97,8 @@ export default function Navigation({ isOpen, onOpenChange }: NavigationProps) {
               </Link>
             </motion.div>
 
-            {/* Botão Mobile */}
-            <motion.button 
+            {/* Mobile Toggle */}
+            <motion.button
               className="md:hidden text-white bg-white/5 border border-white/10 rounded-xl p-2"
               whileTap={{ scale: 0.95 }}
               onClick={() => onOpenChange(!isOpen)}
@@ -111,11 +109,11 @@ export default function Navigation({ isOpen, onOpenChange }: NavigationProps) {
         </div>
       </nav>
 
-      {/* Mobile Navigation Premium */}
+      {/* Mobile Navigation */}
       <AnimatePresence>
         {isOpen && (
           <>
-            {/* Overlay com efeito de vidro */}
+            {/* Overlay */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -124,7 +122,7 @@ export default function Navigation({ isOpen, onOpenChange }: NavigationProps) {
               onClick={() => onOpenChange(false)}
             />
 
-            {/* Menu lateral premium */}
+            {/* Sidebar */}
             <motion.div
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
@@ -133,14 +131,14 @@ export default function Navigation({ isOpen, onOpenChange }: NavigationProps) {
               className="fixed right-0 top-0 bottom-0 w-[300px] bg-gradient-to-b from-[#0a0615] to-[#1a0d30] z-50 border-l border-white/10 shadow-2xl"
             >
               <div className="p-6 h-full flex flex-col">
-                {/* Cabeçalho do menu */}
+                {/* Header */}
                 <div className="flex justify-between items-center mb-10">
                   <div className="text-xl font-bold bg-gradient-to-r from-white to-[#a15cff] text-transparent bg-clip-text">
                     High Code
                   </div>
-                  <Button 
-                    variant="ghost" 
-                    size="icon" 
+                  <Button
+                    variant="ghost"
+                    size="icon"
                     className="rounded-xl border border-white/10 hover:bg-white/5"
                     onClick={() => onOpenChange(false)}
                   >
@@ -148,7 +146,7 @@ export default function Navigation({ isOpen, onOpenChange }: NavigationProps) {
                   </Button>
                 </div>
 
-                {/* Itens de navegação */}
+                {/* Nav Items */}
                 <div className="flex flex-col gap-3 flex-1">
                   {navItems.map((item) => (
                     <motion.div
@@ -185,15 +183,15 @@ export default function Navigation({ isOpen, onOpenChange }: NavigationProps) {
                   ))}
                 </div>
 
-                {/* Rodapé com GitHub */}
+                {/* Footer GitHub */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4 }}
                   className="mt-auto pt-6 border-t border-white/10"
                 >
-                  <Link 
-                    href="https://github.com/HighCodeh" 
+                  <Link
+                    href="https://github.com/HighCodeh"
                     target="_blank"
                     className="flex items-center gap-3 p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-all group"
                   >

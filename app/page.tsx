@@ -26,7 +26,6 @@ export default function Home() {
         <Features />
         <TeamSection />
         <TechnicalSpecs/>
-        <Roadmap />
         <SupportersSection />
         <Social />
       </main>

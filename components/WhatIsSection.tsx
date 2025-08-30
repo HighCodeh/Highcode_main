@@ -2,146 +2,112 @@
 
 import { motion } from "framer-motion"
 import Image from "next/image"
+import { Cpu, Zap, Wifi, Battery, Usb, Rss } from "lucide-react"
 
 export default function WhatIsSection() {
   return (
-    <section className="py-24 relative overflow-hidden bg-black" id="high">
-      {/* Fundo totalmente preto */}
-      <div className="absolute inset-0 z-0 bg-black"></div>
-      
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* Texto */}
+    <section
+      className="py-16 md:py-28 relative overflow-hidden bg-gradient-to-b from-black via-[#0a0018] to-black"
+      id="high"
+    >
+      {/* Ambient glow */}
+      <div className="absolute top-1/3 left-1/4 w-[400px] h-[400px] bg-[#8C2AFF]/10 rounded-full blur-[180px] animate-pulse-slow" />
+      <div className="absolute bottom-1/4 right-1/4 w-[300px] h-[300px] bg-[#4a1e99]/10 rounded-full blur-[140px] animate-pulse-slower" />
+
+      <div className="container mx-auto px-6 lg:px-12 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          {/* Text content */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true }}
-            className="space-y-8"
+            className="space-y-10"
           >
             <div className="space-y-6">
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
-                O que é o <span className="text-[#8C2AFF]">High Boy</span>?
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
+                What is <span className="text-[#8C2AFF]">High Boy</span>?
               </h2>
-              
-              <p className="text-xl text-gray-300 leading-relaxed max-w-2xl">
-                O High Boy é uma ferramenta de hardware hacking que combina potência, versatilidade e
-                portabilidade em um único dispositivo. Projetado para profissionais de segurança e entusiastas, ele
-                oferece um conjunto completo de ferramentas para análise RF, NFC, Wifi, Ble e testes de segurança IoT.
+
+              <p className="text-lg md:text-xl text-gray-300 leading-relaxed max-w-2xl">
+                High Boy is a next-gen hardware hacking device that merges power,
+                versatility, and portability into one compact tool. Designed for
+                pentesters and security enthusiasts, it brings full-spectrum
+                capabilities for RF, NFC, Wi-Fi, BLE, and IoT security testing.
               </p>
-              
-              <ul className="space-y-5">
+
+              {/* Feature list */}
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
                 {[
-                  "Processador ESP32-S3 dual-core com Wi-Fi e Bluetooth integrados",
-                  "Suporte a múltiplas frequências (300-928 MHz) para análise RF completa",
-                  "Interface capacitiva com display LCD de alta resolução",
-                  "Sistema operacional customizável e open-source",
-                  "Bateria de longa duração com carregamento rápido",
-                  "Conectividade USB-C e expansão via GPIO"
-                ].map((item, index) => (
-                  <motion.li 
-                    key={index}
+                  { icon: <Cpu className="w-5 h-5 text-[#a15cff]" />, text: "ESP32-S3 dual-core processor" },
+                  { icon: <Rss className="w-5 h-5 text-[#a15cff]" />, text: "Multi-band RF analysis (300-928 MHz)" },
+                  { icon: <Zap className="w-5 h-5 text-[#a15cff]" />, text: "Capacitive LCD high-res display" },
+                  { icon: <Wifi className="w-5 h-5 text-[#a15cff]" />, text: "Open-source customizable OS" },
+                  { icon: <Battery className="w-5 h-5 text-[#a15cff]" />, text: "Long-lasting fast-charging battery" },
+                  { icon: <Usb className="w-5 h-5 text-[#a15cff]" />, text: "USB-C + GPIO expansion" },
+                ].map((f, i) => (
+                  <motion.li
+                    key={i}
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.1 * index }}
+                    transition={{ delay: 0.1 * i }}
                     viewport={{ once: true }}
-                    className="flex items-start gap-4 text-gray-300 text-lg"
+                    className="flex items-center gap-3 bg-white/5 backdrop-blur-md border border-white/10 rounded-xl px-5 py-3 text-gray-300 hover:border-[#8C2AFF]/40 hover:bg-white/10 transition-all"
                   >
-                    <div className="flex-shrink-0 mt-1.5">
-                      <div className="size-3 rounded-full bg-[#8C2AFF] flex items-center justify-center">
-                        <div className="size-1.5 rounded-full bg-white animate-pulse"></div>
-                      </div>
-                    </div>
-                    <span>{item}</span>
+                    {f.icon}
+                    <span className="text-md font-medium">{f.text}</span>
                   </motion.li>
                 ))}
               </ul>
             </div>
-            
-            {/* Badge de destaque */}
+
+            {/* Highlight badge */}
             <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ delay: 0.8 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.7 }}
               viewport={{ once: true }}
-              className="inline-flex items-center gap-4 bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 max-w-xl"
+              className="inline-flex items-center gap-4 bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 max-w-xl shadow-lg"
             >
               <div className="bg-[#8C2AFF]/10 p-3 rounded-xl">
                 <div className="size-10 bg-gradient-to-br from-[#8C2AFF] to-[#4a1e99] rounded-lg flex items-center justify-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-cpu text-white">
-                    <rect width="16" height="16" x="4" y="4" rx="2"/>
-                    <path d="M9 9h6v6H9z"/>
-                    <path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"/>
-                  </svg>
+                  <Cpu className="w-6 h-6 text-white" />
                 </div>
               </div>
               <div>
-                <h3 className="font-bold text-lg">Open Source & Customizável</h3>
-                <p className="text-gray-400 mt-1">Totalmente programável com suporte à comunidade</p>
+                <h3 className="font-bold text-lg">Open Source & Customizable</h3>
+                <p className="text-gray-400 mt-1">
+                  Fully programmable with community-driven support
+                </p>
               </div>
             </motion.div>
           </motion.div>
 
-          {/* Galeria de imagens */}
+          {/* Main Image */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
+            initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
-            className="grid grid-cols-2 gap-5 md:gap-7"
+            className="flex items-center justify-center relative"
           >
-            {/* Imagem 1 - Destaque */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
               viewport={{ once: true }}
-              className="aspect-square relative rounded-3xl overflow-hidden col-span-2"
+              // agora a imagem é bem maior no mobile
+              className="relative w-[100vw] h-[45vh] sm:w-[100vw] sm:h-[75vh] md:w-[100vw] md:h-[70vh] lg:w-[90vw] lg:h-[90vh] xl:w-[120vw] xl:h-[120vh] max-h-[800px]"
             >
-              <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-transparent z-10"></div>
-              <div className="absolute inset-0 border border-white/10 rounded-3xl z-10 pointer-events-none"></div>
-              <div className="absolute bottom-4 left-4 text-white font-medium z-10">High Boy - Vista Frontal</div>
+              {/* Glow effect */}
+              <div className="absolute -inset-40 bg-gradient-radial from-[#8C2AFF]/50 via-transparent to-transparent blur-[250px] animate-pulse z-0" />
+
               <Image
-                src="/hb3.png"
-                alt="High Boy - Vista Frontal"
+                src="/mao1.png" // substitua pelo caminho certo do seu PNG
+                alt="High Boy in Hand"
                 fill
-                className="object-cover"
-              />
-            </motion.div>
-            
-            {/* Imagem 2 */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 }}
-              viewport={{ once: true }}
-              className="aspect-square relative rounded-2xl overflow-hidden"
-            >
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10"></div>
-              <div className="absolute inset-0 border border-white/10 rounded-2xl z-10 pointer-events-none"></div>
-              <Image
-                src="/ft1.jpeg"
-                alt="High Boy - Interface"
-                fill
-                className="object-cover"
-              />
-            </motion.div>
-            
-            {/* Imagem 3 */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5 }}
-              viewport={{ once: true }}
-              className="aspect-square relative rounded-2xl overflow-hidden"
-            >
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10"></div>
-              <div className="absolute inset-0 border border-white/10 rounded-2xl z-10 pointer-events-none"></div>
-              <Image
-                src="/ft2.jpeg"
-                alt="High Boy - Detalhes"
-                fill
-                className="object-cover"
+                priority
+                className="object-contain relative z-10 drop-shadow-2xl"
               />
             </motion.div>
           </motion.div>

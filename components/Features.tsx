@@ -1,65 +1,65 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Shield, Cpu, Radio, Wifi, Code, Briefcase, Zap, GitBranch, Cctv, WifiOff, Smartphone } from "lucide-react"
+import { Shield, Cpu, Radio, Wifi, Briefcase, Zap, GitBranch, Cctv, WifiOff, Smartphone } from "lucide-react"
 
 const features = [
   {
     icon: <GitBranch className="size-6" />,
-    title: "Open source",
-    description: "Código totalmente aberto, personalize e analise como quiser.",
+    title: "Open Source",
+    description: "Fully open-source codebase. Customize, audit, and build your own features.",
   },
   {
     icon: <Cpu className="size-6" />,
     title: "Open Hardware",
-    description: "Hardware open source baseado em ESP32-S3 com arquitetura extensível.",
+    description: "ESP32-S3 based architecture with full hardware documentation and extensibility.",
   },
   {
     icon: <Radio className="size-6" />,
     title: "RF Analysis",
-    description: "Análise completa de RF com suporte a múltiplos protocolos e frequências.",
+    description: "Full-spectrum RF analysis with multi-protocol and multi-band support.",
   },
   {
     icon: <Shield className="size-6" />,
-    title: "Teste de segurança",
-    description: "Suite completo de ferramentas para testes em RF, NFC e dispositivos IoT.",
+    title: "Security Testing",
+    description: "All-in-one toolkit for RF, NFC, Wi-Fi, BLE, and IoT security research.",
   },
   {
     icon: <Wifi className="size-6" />,
     title: "Wireless Hacking",
-    description: "Ferramentas para análise e teste de redes sem fio.",
+    description: "Advanced modules for auditing and pentesting wireless networks.",
   },
   {
     icon: <Briefcase className="size-6" />,
-    title: "Portátil",
-    description: "Compacto, leve e fácil de levar para qualquer lugar.",
+    title: "Portable Design",
+    description: "Lightweight, compact, and easy to carry anywhere you go.",
   },
   {
     icon: <Zap className="size-6" />,
-    title: "Bateria de Longa Duração",
-    description: "2500mAh com carregamento rápido via USB-C.",
+    title: "Long Battery Life",
+    description: "2500mAh rechargeable battery with fast USB-C charging.",
   },
   {
     icon: <Cctv className="size-6" />,
-    title: "Monitoramento",
-    description: "Capacidade de monitorar redes e dispositivos em tempo real.",
+    title: "Real-Time Monitoring",
+    description: "Track, monitor, and log network activity in real time.",
   },
   {
     icon: <WifiOff className="size-6" />,
-    title: "Análise Offline",
-    description: "Funciona mesmo sem conexão com a internet.",
+    title: "Offline Capabilities",
+    description: "Works even without an internet connection — anytime, anywhere.",
   },
-{
-  icon: <Smartphone className="size-6" />,
-  title: "Infravermelho (IR)",
-  description: "Controle dispositivos como TVs e ar-condicionados com IR integrado.",
-}
+  {
+    icon: <Smartphone className="size-6" />,
+    title: "Infrared (IR) Control",
+    description: "Control TVs, AC units, and IR-enabled devices seamlessly.",
+  },
 ]
 
 export default function Features() {
   return (
     <section className="py-24 md:py-32 relative overflow-hidden bg-black" id="features">
-      {/* Fundo totalmente preto */}
+      {/* Background */}
       <div className="absolute inset-0 z-0 bg-black"></div>
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -76,7 +76,7 @@ export default function Features() {
             className="inline-flex items-center gap-2 bg-white/5 backdrop-blur-xl border border-white/10 rounded-full px-6 py-3 mb-6"
           >
             <span className="size-2.5 rounded-full bg-[#8C2AFF] animate-pulse" />
-            <span className="text-lg font-medium">Made in Brasil</span>
+            <span className="text-lg font-medium">Built in Brazil</span>
           </motion.div>
           
           <motion.h2 
@@ -86,7 +86,7 @@ export default function Features() {
             transition={{ duration: 0.5, delay: 0.1 }}
             viewport={{ once: true }}
           >
-            Desenvolvido 100% por <span className="text-[#8C2AFF]">Brasileiros</span>
+            Designed & Engineered by <span className="text-[#8C2AFF]">Brazilians</span>
           </motion.h2>
           
           <motion.p 
@@ -96,10 +96,11 @@ export default function Features() {
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            100% open source e open hardware com tecnologia de ponta
+            100% open source & open hardware — merging innovation, performance, and freedom.
           </motion.p>
         </motion.div>
 
+        {/* Feature grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
           {features.map((feature, index) => (
             <motion.div
@@ -132,7 +133,7 @@ export default function Features() {
           ))}
         </div>
 
-        {/* Banner de destaque */}
+        {/* Highlight Banner */}
         <motion.div 
           className="mt-16 md:mt-24 bg-gradient-to-r from-[#8C2AFF]/10 to-[#4a1e99]/10 border border-white/10 rounded-2xl p-8 md:p-12 backdrop-blur-xl"
           initial={{ opacity: 0, y: 30 }}
@@ -143,18 +144,13 @@ export default function Features() {
           <div className="flex flex-col md:flex-row items-center gap-8">
             <div className="flex-1">
               <h3 className="text-2xl md:text-3xl font-bold mb-4">
-                Mais que uma ferramenta, uma <span className="text-[#a15cff]">plataforma</span>
+                More than a tool — it’s a <span className="text-[#a15cff]">platform</span>
               </h3>
               <p className="text-gray-300 mb-6">
-                O High Boy evolui constantemente com novas funcionalidades através de atualizações de firmware.
-                Junte-se à nossa comunidade de desenvolvedores e contribua para o futuro do dispositivo.
+                High Boy evolves constantly with new features delivered via firmware updates.  
+                Join our global developer community and help shape the future of this device.
               </p>
-              <div className="flex flex-wrap gap-4">
-
-              </div>
             </div>
-            
-           
           </div>
         </motion.div>
       </div>

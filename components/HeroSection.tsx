@@ -16,7 +16,7 @@ export default function HeroSection() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-black via-[#0a0018] to-black pt-28">
-      {/* Space-like background glow */}
+      {/* Background effects */}
       <div className="absolute inset-0">
         <div className="absolute top-1/3 left-1/4 w-[700px] h-[700px] bg-[#8C2AFF]/20 rounded-full blur-[250px] animate-pulse-slow"></div>
         <div className="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] bg-[#4a1e99]/20 rounded-full blur-[200px] animate-pulse-slower"></div>
@@ -51,6 +51,27 @@ export default function HeroSection() {
             The ultimate multi-tool for pentesters and tech enthusiasts.
           </p>
 
+          {/* Kickstarter badge */}
+<motion.div
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: 0.8 }}
+  className="flex justify-center lg:justify-start pt-4"
+>
+  <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 bg-white/5 border border-white/10 px-4 sm:px-6 py-3 sm:py-4 rounded-2xl shadow-md backdrop-blur-md w-full sm:w-auto">
+    <p className="text-gray-200 text-base sm:text-lg font-medium text-center sm:text-left">
+      Coming soon on
+    </p>
+    <Image
+      src="/Kickstarter_logo_2019.svg.png"
+      alt="Kickstarter Logo"
+      width={160}
+      height={50}
+      className="h-8 sm:h-10 w-auto object-contain"
+    />
+  </div>
+</motion.div>
+
           {/* Tech features */}
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-5 pt-6 max-w-lg mx-auto lg:mx-0">
             {[
@@ -65,7 +86,7 @@ export default function HeroSection() {
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.6 + index * 0.1 }}
+                transition={{ delay: 1 + index * 0.1 }}
                 className="flex items-center gap-3 bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-4 hover:bg-white/10 hover:border-[#8C2AFF]/40 transition-all duration-300"
               >
                 <div className="text-[#a15cff]">{tech.icon}</div>
@@ -102,17 +123,12 @@ export default function HeroSection() {
           initial={{ opacity: 0, scale: 0.9, y: 40 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
-          whileHover={{ scale: 1.05, rotate: 0 }}
+          whileHover={{ scale: 1.05 }}
           className="relative flex justify-center items-center"
         >
           <div className="relative max-w-[550px] w-full">
-            {/* Aura glow */}
             <div className="absolute -inset-28 bg-gradient-radial from-[#8C2AFF]/30 via-[#3d1b7e]/20 to-transparent rounded-full blur-[180px] z-0 animate-pulse-slow" />
-
-            {/* Flame-like bottom glow */}
             <div className="absolute -bottom-16 left-1/2 transform -translate-x-1/2 w-3/4 h-14 bg-[#8C2AFF]/50 blur-[90px] rounded-full" />
-
-            {/* Device */}
             <div className="relative z-20 p-4">
               <Image
                 src="/hg.png"

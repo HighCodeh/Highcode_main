@@ -7,62 +7,55 @@ import { Analytics } from "@vercel/analytics/react"
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 
 export const metadata: Metadata = {
-  title: "High Boy",
+  title: "High Boy - The ultimate multi-tool for pentesters and tech enthusiasts",
   description:
-    "High Boy - A ferramenta definitiva para hardware hacking, pentest e pesquisa em segurança. Equipamento profissional para análise RF, NFC e segurança IoT.",
+    "High Boy is the ultimate tool for hardware hacking, pentesting, and security research. Professional-grade equipment for RF, NFC, BLE, and IoT security analysis.",
   keywords: [
     "High Boy",
     "High Code",
     "Hardware Hacking",
     "Pentest",
-    "Teste de Invasão",
-    "Pesquisa em Segurança",
-    "Análise RF",
-    "Hacking NFC",
-    "Segurança IoT",
-    "Hacking Ético",
-    "Testes de Segurança",
-    "Segurança de Hardware",
-    "Segurança Sem Fio",
-    "Radiofrequência",
-    "Ferramentas de Segurança",
-    "Teste de Penetração",
-    "Avaliação de Segurança",
-    "Ferramentas Hacker",
-    "Segurança Profissional",
-    "Plataforma de Segurança",
+    "Penetration Testing",
+    "IoT Security",
+    "NFC",
+    "Sub-GHz",
     "ESP32",
-    "Segurança Bluetooth",
+    "Security Research",
+    "Bluetooth Hacking",
+    "Wireless Security",
+    "Ethical Hacking",
   ],
-  authors: [{ name: "Equipe High Code" }],
+  authors: [{ name: "High Code Team" }],
   creator: "High Code",
   publisher: "High Code",
   robots: "index, follow",
+  metadataBase: new URL("https://highboy.com.br"),
   openGraph: {
     type: "website",
-    locale: "pt_BR",
+    locale: "en_US",
     url: "https://highboy.com.br",
-    siteName: "High Code",
-    title: "High Code",
+    siteName: "High Boy",
+    title: "High Boy - The ultimate multi-tool for pentesters and tech enthusiasts",
     description:
-      "Ferramenta para hardware hacking e pesquisa em segurança. Equipamento avançado para análise RF, NFC e segurança IoT.",
+      "A portable device for pentesters and security researchers. RF, NFC, and IoT hacking in one single tool.",
     images: [
       {
-        url: "https://highcode.com/og-image.jpg",
+        url: "https://highboy.com.br/og-image.jpg", // replace with your official image
         width: 1200,
         height: 630,
-        alt: "Plataforma High Code",
+        alt: "High Boy Device",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "High Code - Plataforma Avançada de Hardware Hacking",
-    description: "Plataforma profissional para hardware hacking e pesquisa em segurança.",
-    images: ["https://highcode.com/twitter-image.jpg"],
+    title: "High Boy - Advanced Hardware Hacking Tool",
+    description:
+      "The ultimate device for pentesters and security enthusiasts. RF, NFC, BLE, and IoT analysis in one platform.",
+    images: ["https://highboy.com.br/twitter-image.jpg"], // replace with your official image
     creator: "@highcode",
   },
-  generator: 'High code'
+  generator: "High Code",
 }
 
 export default function RootLayout({
@@ -71,29 +64,25 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="pt-BR" className={inter.variable}>
+    <html lang="en" className={inter.variable}>
       <head>
-        {/* Adicionando o favicon */}
-        <link
-          rel="icon"
-          href="/favicon.ico"
-          type="image/x-icon"
-          sizes="any"
+        {/* Basic SEO */}
+        <meta charSet="utf-8" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=5"
         />
-        <link
-          rel="icon"
-          href="/icon.svg"
-          type="image/svg+xml"
-        />
-        <link
-          rel="apple-touch-icon"
-          href="/apple-touch-icon.png"
-        />
-        <link
-          rel="manifest"
-          href="/site.webmanifest"
-        />
+        <meta name="theme-color" content="#0a0018" />
+        <link rel="canonical" href="https://highboy.com.br" />
+        <meta name="author" content="High Code Team" />
 
+        {/* Favicons */}
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="manifest" href="/site.webmanifest" />
+
+        {/* Structured Data - JSON-LD */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -101,22 +90,29 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Product",
               name: "High Boy",
-              description: "Plataforma avançada para hardware hacking e pesquisa em segurança",
+              description:
+                "An advanced platform for hardware hacking and security research.",
               brand: {
                 "@type": "Brand",
                 name: "High Code",
+                logo: "https://highboy.com.br/logo.png", // replace with your official logo
               },
-              category: "Hardware de Segurança",
-              keywords: "hardware hacking, pentest, pesquisa em segurança, análise RF, hacking NFC",
-              manufacturer: "High Code",
-              releaseDate: "2024",
-              url: "https://highcode.com.br",
-              image: "https://highcode.com/product-image.jpg",
+              sku: "HB-001",
+              mpn: "HB2024",
+              category: "Electronics",
+              manufacturer: {
+                "@type": "Organization",
+                name: "High Code",
+                url: "https://highcode.com.br",
+              },
+              releaseDate: "2025",
+              image: "https://highboy.com.br/product-image.jpg", // replace with your official product image
               offers: {
                 "@type": "Offer",
-                availability: "https://schema.org/InStock",
+                availability: "https://schema.org/PreOrder",
                 price: "2499.00",
                 priceCurrency: "BRL",
+                url: "https://highboy.com.br/pre-order",
               },
             }),
           }}

@@ -9,7 +9,7 @@ const team = [
     name: "Vinícius Pinheiro",
     role: "Hardware & Firmware Lead",
     bio: "Passionate about embedded systems and open hardware development.",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/vini-SDmjGrdqTfH39Hz7fTxIMq2GWuzn7Q.webp",
+    image: "/vini.jpeg",
     social: {
       instagram: "https://www.instagram.com/vinipinheirobit/",
       email: "vpedicao@gmail.com",
@@ -19,7 +19,7 @@ const team = [
     name: "Emanuel Magalhães",
     role: "Firmware Architect",
     bio: "Focused on scalable firmware and IoT security.",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/emanuel.jpg-yqPGCdHxZbbPRrXsGZkZKoaS7Wg5fK.jpeg",
+    image: "/teste.jpeg",
     social: {
       instagram: "https://www.instagram.com/anarchyysm/",
       email: "emanuel.mag.jr@gmail.com",
@@ -30,7 +30,7 @@ const team = [
     name: "Luiz Thiago",
     role: "Software Engineer",
     bio: "Bringing ideas to life through clean and efficient code.",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/gabriel.jpg-5lpbIvzey3gPQ82Yq9rvUt8AxSHtIZ.jpeg",
+    image: "/luis.jpeg",
     social: {
       instagram: "https://www.instagram.com/lthiagovs/",
       email: "luisthiago.dev@gmail.com",
@@ -41,7 +41,7 @@ const team = [
     name: "Pietro Oliveira",
     role: "Community & Marketing",
     bio: "Connecting people, ideas and technology worldwide.",
-    image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Pietro.png-NHaSzX1V9EFNWNR8c3j1gmOzgnz8ji.jpeg",
+    image: "/pietro.jpg",
     social: {
       instagram: "https://www.instagram.com/pietro_o1iveira/",
       email: "williampietro@gmail.com",

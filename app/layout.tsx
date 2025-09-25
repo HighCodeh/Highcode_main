@@ -91,7 +91,7 @@ export default function RootLayout({
               "@type": "Product",
               name: "High Boy",
               description:
-                "An advanced platform for hardware hacking and security research.",
+                "The ultimate multi-tool for pentesters and tech enthusiasts.",
               brand: {
                 "@type": "Brand",
                 name: "High Code",
@@ -107,13 +107,7 @@ export default function RootLayout({
               },
               releaseDate: "2025",
               image: "https://highboy.com.br/product-image.jpg", // replace with your official product image
-              offers: {
-                "@type": "Offer",
-                availability: "https://schema.org/PreOrder",
-                price: "2499.00",
-                priceCurrency: "BRL",
-                url: "https://highboy.com.br/pre-order",
-              },
+             
             }),
           }}
         />

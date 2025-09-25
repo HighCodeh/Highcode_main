@@ -89,7 +89,8 @@ export default function Footer() {
                 </div>
                 <div>
                   <p className="text-gray-400 text-sm mb-1">Location</p>
-                  <p className="text-gray-300 text-lg">São Paulo, Brazil</p>
+                  <p className="text-gray-300 text-lg">1716 W BABCOCK ST
+BOZEMAN, MT</p>
                 </div>
               </li>
               <li className="flex items-start gap-4">
@@ -98,7 +99,7 @@ export default function Footer() {
                 </div>
                 <div>
                   <p className="text-gray-400 text-sm mb-1">Phone</p>
-                  <p className="text-gray-300 text-lg">+55 (11) 98975-7202</p>
+                  <p className="text-gray-300 text-lg">+1(406) 404-3692</p>
                 </div>
               </li>
             </ul>

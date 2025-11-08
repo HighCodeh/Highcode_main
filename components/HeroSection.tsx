@@ -2,7 +2,16 @@
 
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Github, Wifi, Bluetooth, Radio, Zap, Nfc, Rss } from "lucide-react";
+import {
+  ArrowRight,
+  Github,
+  Wifi,
+  Bluetooth,
+  Radio,
+  Zap,
+  Nfc,
+  Rss,
+} from "lucide-react";
 import Image from "next/image";
 
 export default function HeroSection() {
@@ -12,6 +21,10 @@ export default function HeroSection() {
 
   const handleGitClick = () => {
     window.open("https://github.com/HighCodeh", "_blank");
+  };
+
+  const handleKickstarterClick = () => {
+    window.open("https://www.kickstarter.com/projects/highboy/high-boy", "_blank");
   };
 
   return (
@@ -39,7 +52,9 @@ export default function HeroSection() {
             className="inline-flex items-center gap-2 bg-white/5 backdrop-blur-lg border border-white/10 rounded-full px-8 py-3 shadow-lg"
           >
             <span className="size-3 rounded-full bg-[#8C2AFF] animate-pulse" />
-            <span className="text-lg font-medium tracking-wide">Beyond a hacking tool</span>
+            <span className="text-lg font-medium tracking-wide">
+              Beyond a hacking tool
+            </span>
           </motion.div>
 
           {/* Title */}
@@ -48,32 +63,46 @@ export default function HeroSection() {
           </h1>
 
           <p className="text-lg sm:text-xl md:text-2xl text-gray-300 max-w-xl mx-auto lg:mx-0 leading-relaxed font-light">
-            The ultimate multi-tool for pentesters and tech enthusiasts.
+            The ultimate multi-tool for pentesters and tech explorers.  
+            Wireless, powerful, and ready to push boundaries.
           </p>
 
-          {/* Kickstarter badge */}
-<motion.div
-  initial={{ opacity: 0, y: 20 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ delay: 0.8 }}
-  className="flex justify-center lg:justify-start pt-4"
->
-  <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 bg-white/5 border border-white/10 px-4 sm:px-6 py-3 sm:py-4 rounded-2xl shadow-md backdrop-blur-md w-full sm:w-auto">
-    <p className="text-gray-200 text-base sm:text-lg font-medium text-center sm:text-left">
-      Coming soon on
-    </p>
-    <Image
-      src="/Kickstarter_logo_2019.svg.png"
-      alt="Kickstarter Logo"
-      width={160}
-      height={50}
-      className="h-8 sm:h-10 w-auto object-contain"
-    />
-  </div>
-</motion.div>
+          {/* Kickstarter badge refined */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8 }}
+            className="flex justify-center lg:justify-start pt-6"
+          >
+            <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 bg-white/5 border border-white/10 px-8 py-6 rounded-2xl shadow-lg backdrop-blur-xl w-full sm:w-auto hover:border-[#05ce78]/40 transition-all duration-300">
+              <div className="flex items-center gap-3">
+                <Image
+                  src="/Kickstarter_logo_2019.svg.png"
+                  alt="Kickstarter Logo"
+                  width={150}
+                  height={50}
+                  className="h-9 sm:h-10 w-auto object-contain"
+                />
+              </div>
+
+              <div className="flex flex-col items-center sm:items-start text-center sm:text-left">
+                <p className="text-gray-200 text-base sm:text-lg font-medium mb-2">
+                  Coming soon on Kickstarter
+                </p>
+                <Button
+                  onClick={handleKickstarterClick}
+                  size="lg"
+                  className="bg-[#05ce78] text-black font-semibold hover:bg-[#04b96a] rounded-xl px-8 py-6 text-lg flex items-center gap-2 transition-all hover:scale-105 shadow-[0_0_25px_rgba(5,206,120,0.4)]"
+                >
+                  Notify me on launch
+                  <ArrowRight className="h-5 w-5" />
+                </Button>
+              </div>
+            </div>
+          </motion.div>
 
           {/* Tech features */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-5 pt-6 max-w-lg mx-auto lg:mx-0">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-5 pt-8 max-w-lg mx-auto lg:mx-0">
             {[
               { icon: <Wifi className="h-6 w-6" />, label: "WiFi" },
               { icon: <Bluetooth className="h-6 w-6" />, label: "BLE" },
@@ -96,7 +125,7 @@ export default function HeroSection() {
           </div>
 
           {/* Buttons */}
-          <div className="flex flex-wrap justify-center lg:justify-start gap-6 pt-10">
+          <div className="flex flex-wrap justify-center lg:justify-start gap-6 pt-12">
             <Button
               size="xl"
               className="bg-gradient-to-r from-[#8C2AFF] to-[#6a11ff] text-white hover:opacity-95 h-16 px-10 text-xl rounded-2xl shadow-[0_0_40px_rgba(140,42,255,0.6)] transition-all hover:scale-105"

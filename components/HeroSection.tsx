@@ -24,7 +24,7 @@ export default function HeroSection() {
   };
 
   const handleKickstarterClick = () => {
-    window.open("https://www.kickstarter.com/projects/highboy/high-boy", "_blank");
+    window.open("https://www.kickstarter.com/projects/1502651892/high-boy-for-hackers-makers-and-the-curious", "_blank");
   };
 
   return (

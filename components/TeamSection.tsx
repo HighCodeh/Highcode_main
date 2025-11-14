@@ -7,7 +7,7 @@ import Image from "next/image"
 const team = [
   {
     name: "Vinícius Pinheiro",
-    role: "Hardware & Firmware Lead",
+    role: "Hardware & Firmware & Manager",
     bio: "Passionate about embedded systems and open hardware development.",
     image: "/vini.jpeg",
     social: {
@@ -38,13 +38,13 @@ const team = [
     },
   },
   {
-    name: "Pietro Oliveira",
-    role: "Community & Marketing",
+    name: "Joje Mendes",
+    role: "App devoler & Manager",
     bio: "Connecting people, ideas and technology worldwide.",
-    image: "/pietro.jpg",
+    image: "/joje.png",
     social: {
-      instagram: "https://www.instagram.com/pietro_o1iveira/",
-      email: "williampietro@gmail.com",
+      instagram: "https://www.instagram.com/null__jo/",
+      email: "jojemendes@icloud.com",
 
     },
   },

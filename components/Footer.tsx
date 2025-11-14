@@ -80,7 +80,7 @@ export default function Footer() {
                 </div>
                 <div>
                   <p className="text-gray-400 text-sm mb-1">Email</p>
-                  <p className="text-gray-300 text-lg">highcodeh@gmail.com</p>
+                  <p className="text-gray-300 text-lg">support@high-code.com</p>
                 </div>
               </li>
               <li className="flex items-start gap-4">

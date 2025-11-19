@@ -24,7 +24,10 @@ export default function HeroSection() {
   };
 
   const handleKickstarterClick = () => {
-    window.open("https://www.kickstarter.com/projects/1502651892/high-boy-for-hackers-makers-and-the-curious", "_blank");
+    window.open(
+      "https://www.kickstarter.com/projects/1502651892/high-boy-for-hackers-makers-and-the-curious",
+      "_blank"
+    );
   };
 
   return (
@@ -44,17 +47,15 @@ export default function HeroSection() {
           transition={{ duration: 0.9, ease: "easeOut" }}
           className="space-y-10 text-center lg:text-left"
         >
-          {/* Label */}
+          {/* LIVE BADGE */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
-            className="inline-flex items-center gap-2 bg-white/5 backdrop-blur-lg border border-white/10 rounded-full px-8 py-3 shadow-lg"
+            className="inline-flex items-center gap-3 bg-[#05ce78]/20 border border-[#05ce78]/40 text-[#05ce78] font-semibold backdrop-blur-lg rounded-full px-8 py-3 shadow-[0_0_20px_rgba(5,206,120,0.4)] hover:shadow-[0_0_30px_rgba(5,206,120,0.6)] transition-all duration-300"
           >
-            <span className="size-3 rounded-full bg-[#8C2AFF] animate-pulse" />
-            <span className="text-lg font-medium tracking-wide">
-              Beyond a hacking tool
-            </span>
+            <span className="size-3 rounded-full bg-[#05ce78] animate-pulse"></span>
+            <span className="text-lg tracking-wide">LIVE NOW ON KICKSTARTER</span>
           </motion.div>
 
           {/* Title */}
@@ -63,11 +64,10 @@ export default function HeroSection() {
           </h1>
 
           <p className="text-lg sm:text-xl md:text-2xl text-gray-300 max-w-xl mx-auto lg:mx-0 leading-relaxed font-light">
-            The ultimate multi-tool for pentesters and tech explorers.  
-            Wireless, powerful, and ready to push boundaries.
+            The ultimate multi-tool for pentesters and tech explorers. Wireless, powerful, and ready to push boundaries.
           </p>
 
-          {/* Kickstarter badge refined */}
+          {/* Kickstarter block replaced with LIVE version */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -86,15 +86,15 @@ export default function HeroSection() {
               </div>
 
               <div className="flex flex-col items-center sm:items-start text-center sm:text-left">
-                <p className="text-gray-200 text-base sm:text-lg font-medium mb-2">
-                  Coming soon on Kickstarter
+                <p className="text-[#05ce78] text-base sm:text-lg font-semibold mb-2 tracking-wide">
+                  LIVE RIGHT NOW
                 </p>
                 <Button
                   onClick={handleKickstarterClick}
                   size="lg"
                   className="bg-[#05ce78] text-black font-semibold hover:bg-[#04b96a] rounded-xl px-8 py-6 text-lg flex items-center gap-2 transition-all hover:scale-105 shadow-[0_0_25px_rgba(5,206,120,0.4)]"
                 >
-                  Notify me on launch
+                  Back this project
                   <ArrowRight className="h-5 w-5" />
                 </Button>
               </div>

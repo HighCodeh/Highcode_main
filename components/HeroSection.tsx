@@ -13,8 +13,38 @@ import {
   Rss,
 } from "lucide-react";
 import Image from "next/image";
+import { useState, useEffect } from "react";
 
 export default function HeroSection() {
+  const [timeLeft, setTimeLeft] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  });
+
+  useEffect(() => {
+    const calculateTimeLeft = () => {
+      const endDate = new Date("2026-01-01T12:30:00").getTime();
+      const now = new Date().getTime();
+      const difference = endDate - now;
+
+      if (difference > 0) {
+        setTimeLeft({
+          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+          hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+          minutes: Math.floor((difference / 1000 / 60) % 60),
+          seconds: Math.floor((difference / 1000) % 60),
+        });
+      }
+    };
+
+    calculateTimeLeft();
+    const timer = setInterval(calculateTimeLeft, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
   const handleSupportClick = () => {
     window.open("https://pixgg.com/high_code", "_blank");
   };
@@ -97,6 +127,43 @@ export default function HeroSection() {
                   Back this project
                   <ArrowRight className="h-5 w-5" />
                 </Button>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Countdown Timer */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.9 }}
+            className="flex justify-center lg:justify-start"
+          >
+            <div className="bg-gradient-to-br from-[#8C2AFF]/10 to-[#4a1e99]/5 border border-[#8C2AFF]/30 backdrop-blur-xl rounded-2xl p-6 shadow-[0_0_40px_rgba(140,42,255,0.2)] w-full max-w-2xl">
+              <p className="text-center text-[#a15cff] font-semibold text-sm tracking-widest mb-4 uppercase">
+                Campaign Ends In
+              </p>
+              <div className="grid grid-cols-4 gap-3 sm:gap-6">
+                {[
+                  { value: timeLeft.days, label: "Days" },
+                  { value: timeLeft.hours, label: "Hours" },
+                  { value: timeLeft.minutes, label: "Minutes" },
+                  { value: timeLeft.seconds, label: "Seconds" },
+                ].map((item, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ scale: 0.8, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    transition={{ delay: 1 + index * 0.1 }}
+                    className="flex flex-col items-center bg-black/40 border border-[#8C2AFF]/20 rounded-xl p-3 sm:p-4 hover:border-[#8C2AFF]/50 hover:shadow-[0_0_20px_rgba(140,42,255,0.3)] transition-all duration-300"
+                  >
+                    <span className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-b from-white to-[#a15cff] text-transparent bg-clip-text tabular-nums">
+                      {String(item.value).padStart(2, "0")}
+                    </span>
+                    <span className="text-xs sm:text-sm text-gray-400 mt-1 font-medium uppercase tracking-wide">
+                      {item.label}
+                    </span>
+                  </motion.div>
+                ))}
               </div>
             </div>
           </motion.div>

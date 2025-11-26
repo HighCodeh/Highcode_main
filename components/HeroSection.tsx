@@ -11,6 +11,8 @@ import {
   Zap,
   Nfc,
   Rss,
+  Sparkles,
+  Cpu,
 } from "lucide-react";
 import Image from "next/image";
 import { useState, useEffect } from "react";
@@ -96,6 +98,69 @@ export default function HeroSection() {
           <p className="text-lg sm:text-xl md:text-2xl text-gray-300 max-w-xl mx-auto lg:mx-0 leading-relaxed font-light">
             The ultimate multi-tool for pentesters and tech explorers. Wireless, powerful, and ready to push boundaries.
           </p>
+
+          {/* NEW: WiFi 5G Feature Announcement - Positioned after description */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6, duration: 0.8 }}
+            className="relative overflow-hidden bg-gradient-to-br from-[#8C2AFF]/10 to-[#6a11ff]/5 border border-[#8C2AFF]/40 backdrop-blur-xl rounded-2xl p-6 shadow-[0_0_40px_rgba(140,42,255,0.25)] hover:shadow-[0_0_60px_rgba(140,42,255,0.4)] hover:border-[#8C2AFF]/60 transition-all duration-500 group"
+          >
+            {/* Animated gradient overlay on hover */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#8C2AFF]/5 via-[#a15cff]/5 to-[#8C2AFF]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            
+            {/* Sparkle icon */}
+            <motion.div
+              animate={{ 
+                rotate: [0, 10, -10, 0],
+                scale: [1, 1.1, 1]
+              }}
+              transition={{ 
+                duration: 3, 
+                repeat: Infinity, 
+                ease: "easeInOut" 
+              }}
+              className="absolute -top-2 -right-2 bg-[#8C2AFF]/20 rounded-full p-2"
+            >
+              <Sparkles className="h-5 w-5 text-[#a15cff]" />
+            </motion.div>
+
+            <div className="relative z-10 space-y-4">
+              {/* Badge */}
+              <div className="inline-flex items-center gap-2 bg-[#8C2AFF]/20 border border-[#8C2AFF]/40 rounded-full px-4 py-1.5">
+                <Sparkles className="h-3.5 w-3.5 text-[#a15cff]" />
+                <span className="text-xs font-bold text-[#a15cff] tracking-wider uppercase">
+                  Community Requested
+                </span>
+              </div>
+
+              {/* Main announcement */}
+              <div className="space-y-2">
+                <h3 className="text-2xl sm:text-3xl font-bold text-white leading-tight">
+                  WiFi 5GHz Implementation
+                </h3>
+                <p className="text-gray-300 text-base leading-relaxed">
+                  You asked, we listened! Due to high community demand, we're implementing <span className="text-[#a15cff] font-semibold">WiFi 5GHz</span> with the powerful <span className="text-white font-semibold">ESP32-C5</span> chip, featuring a <span className="text-[#8C2AFF] font-semibold">Dual-MCU architecture</span> for enhanced performance.
+                </p>
+              </div>
+
+              {/* Tech specs chips */}
+              <div className="flex flex-wrap gap-2 pt-1">
+                <div className="flex items-center gap-2 bg-black/30 border border-[#8C2AFF]/30 rounded-lg px-3 py-1.5 hover:border-[#a15cff]/50 transition-all">
+                  <Wifi className="h-4 w-4 text-[#a15cff]" />
+                  <span className="text-sm font-semibold text-white">WiFi 5GHz</span>
+                </div>
+                <div className="flex items-center gap-2 bg-black/30 border border-[#8C2AFF]/30 rounded-lg px-3 py-1.5 hover:border-[#a15cff]/50 transition-all">
+                  <Cpu className="h-4 w-4 text-[#a15cff]" />
+                  <span className="text-sm font-semibold text-white">ESP32-C5</span>
+                </div>
+                <div className="flex items-center gap-2 bg-black/30 border border-[#8C2AFF]/30 rounded-lg px-3 py-1.5 hover:border-[#a15cff]/50 transition-all">
+                  <Zap className="h-4 w-4 text-[#a15cff]" />
+                  <span className="text-sm font-semibold text-white">Dual-MCU</span>
+                </div>
+              </div>
+            </div>
+          </motion.div>
 
           {/* Kickstarter block replaced with LIVE version */}
           <motion.div

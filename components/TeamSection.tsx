@@ -39,7 +39,7 @@ const team = [
   },
   {
     name: "Joje Mendes",
-    role: "App devoler & Manager",
+    role: "App developer & Manager",
     bio: "Connecting people, ideas and technology worldwide.",
     image: "/joje.png",
     social: {

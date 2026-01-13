@@ -133,7 +133,7 @@ export default function Features() {
           ))}
         </div>
 
-        {/* Highlight Banner */}
+        {/* Highlight Banner*/}
         <motion.div 
           className="mt-16 md:mt-24 bg-gradient-to-r from-[#8C2AFF]/10 to-[#4a1e99]/10 border border-white/10 rounded-2xl p-8 md:p-12 backdrop-blur-xl"
           initial={{ opacity: 0, y: 30 }}

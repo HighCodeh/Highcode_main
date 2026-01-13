@@ -12,22 +12,22 @@ const features = [
   {
     icon: <Cpu className="size-6" />,
     title: "Open Hardware",
-    description: "ESP32-S3 based architecture with full hardware documentation and extensibility.",
+    description: "Dual-MCU architecture: ESP32-C5 + ESP32-P4 with full hardware documentation and extensibility.",
   },
   {
     icon: <Radio className="size-6" />,
     title: "RF Analysis",
-    description: "Full-spectrum RF analysis with multi-protocol and multi-band support.",
+    description: "Full-spectrum RF analysis with Sub-GHz, LoRa, and multi-protocol support.",
   },
   {
     icon: <Shield className="size-6" />,
     title: "Security Testing",
-    description: "All-in-one toolkit for RF, NFC, Wi-Fi, BLE, and IoT security research.",
+    description: "All-in-one toolkit for RF, NFC, Wi-Fi, BLE, LoRa, and IoT security research.",
   },
   {
     icon: <Wifi className="size-6" />,
-    title: "Wireless Hacking",
-    description: "Advanced modules for auditing and pentesting wireless networks.",
+    title: "Dual-Band WiFi",
+    description: "Advanced dual-band WiFi (2.4GHz + 5GHz) for auditing and pentesting wireless networks.",
   },
   {
     icon: <Briefcase className="size-6" />,
@@ -96,7 +96,7 @@ export default function Features() {
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            100% open source & open hardware — merging innovation, performance, and freedom.
+            100% open source & open hardware — merging innovation, performance, and freedom. Powered by Dual-MCU ESP32-C5 + ESP32-P4 with dual-band WiFi and LoRa.
           </motion.p>
         </motion.div>
 
@@ -144,7 +144,7 @@ export default function Features() {
           <div className="flex flex-col md:flex-row items-center gap-8">
             <div className="flex-1">
               <h3 className="text-2xl md:text-3xl font-bold mb-4">
-                More than a tool — it’s a <span className="text-[#a15cff]">platform</span>
+                More than a tool — it's a <span className="text-[#a15cff]">platform</span>
               </h3>
               <p className="text-gray-300 mb-6">
                 High Boy evolves constantly with new features delivered via firmware updates.  

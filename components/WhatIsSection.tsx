@@ -39,7 +39,7 @@ export default function WhatIsSection() {
               {/* Feature list */}
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
                 {[
-                  { icon: <Cpu className="w-5 h-5 text-[#a15cff]" />, text: "ESP32-S3 dual-core processor" },
+                  { icon: <Cpu className="w-5 h-5 text-[#a15cff]" />, text: "Dual-MCU Architecture Setup" },
                   { icon: <Rss className="w-5 h-5 text-[#a15cff]" />, text: "Multi-band RF analysis (300-928 MHz)" },
                   { icon: <Zap className="w-5 h-5 text-[#a15cff]" />, text: "Capacitive LCD high-res display" },
                   { icon: <Wifi className="w-5 h-5 text-[#a15cff]" />, text: "Open-source customizable OS" },

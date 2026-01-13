@@ -27,7 +27,7 @@ const team = [
     },
   },
   {
-    name: "Luiz Thiago",
+    name: "Luis Thiago",
     role: "Software Engineer",
     bio: "Bringing ideas to life through clean and efficient code.",
     image: "/luis.jpeg",
@@ -39,7 +39,7 @@ const team = [
   },
   {
     name: "Joje Mendes",
-    role: "App developer & Manager",
+    role: "Manager & App Developer",
     bio: "Connecting people, ideas and technology worldwide.",
     image: "/joje.png",
     social: {

@@ -14,8 +14,8 @@ const specs = [
   {
     icon: Cpu,
     title: "Processor",
-    value: "ESP32-S3",
-    details: "Dual-core 240MHz, Wi-Fi + BLE",
+    value: "Dual-MCU",
+    details: "ESP32-C5 + ESP32-P4, Wi-Fi Dual-Band + BLE",
   },
   {
     icon: Memory,
@@ -26,13 +26,13 @@ const specs = [
   {
     icon: Radio,
     title: "RF",
-    value: "CC1101",
+    value: "CC1101 + LoRa",
     details: "300-928 MHz, Multi-modulation",
   },
   {
     icon: Nfc,
     title: "NFC",
-    value: "PN7150",
+    value: "ST25R3916",
     details: "NFC-A/B/F/V, P2P",
   },
   {

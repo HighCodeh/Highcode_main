@@ -20,7 +20,7 @@ const specs = [
   {
     icon: Memory,
     title: "Memory",
-    value: "8MB PSRAM",
+    value: "16MB PSRAM",
     details: "16MB Flash",
   },
   {

@@ -312,7 +312,7 @@ export default function SupportersSection() {
             transition={{ delay: 0.1 }}
           >
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#9c4dff] to-[#7c3aed]">
-              They Made It Happen
+              They Made It Happen!
             </span>
           </motion.h2>
 
@@ -325,7 +325,7 @@ export default function SupportersSection() {
             <div className="flex items-center space-x-2">
               <div className="h-2.5 w-2.5 rounded-full bg-[#8A2BE2]" />
               <p className={`text-gray-300 ${subtitleSize} font-light`}>
-                Over 4000 people helped bring the HighBoy project to reality
+                Over 4000 people helped bring the High Boy project to reality
               </p>
             </div>
           </motion.div>
@@ -439,7 +439,7 @@ export default function SupportersSection() {
           transition={{ delay: 0.5 }}
         >
           <p className={`text-gray-400 ${subtitleSize} mb-6`}>
-            These people helped bring the project to life. Get yours now!
+              Built by experts, powered by you. Get your hands on it!
           </p>
           <a
             href="https://www.kickstarter.com/projects/1502651892/high-boy-for-hackers-makers-and-the-curious"
@@ -447,7 +447,7 @@ export default function SupportersSection() {
             rel="noopener noreferrer"
             className="inline-block bg-gradient-to-r from-[#8C2AFF] to-[#6a11ff] text-white hover:opacity-90 px-8 py-3.5 rounded-xl transition-all hover:shadow-[0_0_30px_rgba(140,42,255,0.3)] font-medium"
           >
-            Get Yours Now
+            Get Yours Now!
           </a>
         </motion.div>
       </div>

@@ -147,7 +147,7 @@ export default function Features() {
                 More than a tool — it's a <span className="text-[#a15cff]">platform</span>
               </h3>
               <p className="text-gray-300 mb-6">
-                High Boy evolves constantly with new features delivered via firmware updates.  
+                High Boy evolves constantly with new features delivered via firmware updates and apps.  
                 Join our global developer community and help shape the future of this device.
               </p>
             </div>

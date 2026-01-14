@@ -33,7 +33,7 @@ export default function WhatIsSection() {
                 High Boy is a next-gen hardware hacking device that merges power,
                 versatility, and portability into one compact tool. Designed for
                 pentesters and security enthusiasts, it brings full-spectrum
-                capabilities for RF, NFC, Wi-Fi, BLE, and IoT security testing.
+                capabilities for RF, NFC, Lora, Wi-Fi, BLE, and IoT security testing.
               </p>
 
               {/* Feature list */}

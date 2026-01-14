@@ -77,9 +77,9 @@ export default function HeroSection() {
             HIGH BOY
           </h1>
 
-          <p className="text-lg sm:text-xl md:text-2xl text-gray-300 max-w-xl mx-auto lg:mx-0 leading-relaxed font-light">
-            The ultimate multi-tool for pentesters and tech explorers. Powered by <span className="text-[#a15cff] font-semibold">Dual-MCU ESP32-C5 + ESP32-P4</span>. Wireless, powerful, and ready to push boundaries.
-          </p>
+          <p className="text-lg sm:text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-light">
+  The ultimate multi-tool for pentesters and tech explorers. Powered by <span className="text-[#a15cff] font-semibold">Dual-MCU ESP32-C5 + ESP32-P4</span>. Wireless, powerful, and ready to push boundaries.
+</p>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}

@@ -17,7 +17,7 @@ const roadmapItems = [
     date: "Q3 2024",
     title: "Gênesis",
     status: "completed",
-    description: "O ponto de partida da jornada HighBoy",
+    description: "O ponto de partida da jornada High Boy",
     icon: Rocket,
     features: ["Início", "Idealização", "Estudos", "Planejamento"],
     highlight: "Visualização completa do conceito",
@@ -89,7 +89,7 @@ export default function Roadmap() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            Acompanhe nossa evolução rumo ao lançamento do HighBoy
+            Acompanhe nossa evolução rumo ao lançamento do High Boy
           </motion.p>
         </motion.div>
 

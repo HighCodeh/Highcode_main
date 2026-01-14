@@ -90,14 +90,14 @@ export default function Features() {
           </motion.h2>
           
           <motion.p 
-            className="text-xl text-gray-300 max-w-2xl mx-auto"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
-            100% open source & open hardware — merging innovation, performance, and freedom. Powered by Dual-MCU ESP32-C5 + ESP32-P4 with dual-band WiFi and LoRa.
-          </motion.p>
+  className="text-xl text-gray-300 max-w-4xl mx-auto" // mudou de max-w-2xl para max-w-4xl
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.5, delay: 0.2 }}
+  viewport={{ once: true }}
+>
+  100% open source & open hardware — merging innovation, performance, and freedom. Powered by <span className="whitespace-nowrap">Dual-MCU ESP32-C5 + ESP32-P4</span> with dual-band WiFi and LoRa.
+</motion.p>
         </motion.div>
 
         {/* Feature grid */}

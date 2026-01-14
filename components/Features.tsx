@@ -59,7 +59,7 @@ const features = [
 export default function Features() {
   return (
     <section className="py-24 md:py-32 relative overflow-hidden bg-black" id="features">
-      {/* Background */}
+      {/* Background*/}
       <div className="absolute inset-0 z-0 bg-black"></div>
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

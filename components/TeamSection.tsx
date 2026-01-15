@@ -1,10 +1,11 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Instagram, Mail, Github, Linkedin } from "lucide-react"
+import { Instagram, Mail, Github, Linkedin, ChevronLeft, ChevronRight } from "lucide-react"
 import Image from "next/image"
+import { useState, useEffect } from "react"
 
-const team = [
+const teamData = [
   {
     name: "Vinícius Pinheiro",
     role: "Hardware & Firmware & Manager",
@@ -23,7 +24,6 @@ const team = [
     social: {
       instagram: "https://www.instagram.com/anarchyysm/",
       email: "emanuel.mag.jr@gmail.com",
-
     },
   },
   {
@@ -34,7 +34,6 @@ const team = [
     social: {
       instagram: "https://www.instagram.com/lthiagovs/",
       email: "luisthiago.dev@gmail.com",
-
     },
   },
   {
@@ -45,22 +44,98 @@ const team = [
     social: {
       instagram: "https://www.instagram.com/null__jo/",
       email: "jojemendes@icloud.com",
-
+    },
+  },
+  {
+    name: "Rafael Teivfik",
+    role: "Manager & App Developer",
+    bio: "Turning complex challenges into elegant mobile solutions.",
+    image: "/rafa.jpg",
+    social: {
+      email: "rafael@example.com",
+    },
+  },
+  {
+    name: "Pedro Henrique",
+    role: "Marketing",
+    bio: "Strategizing growth and building brand presence.",
+    image: "/pedro.jpg",
+    social: {
+      email: "pedro@example.com",
+    },
+  },
+  {
+    name: "Eduardo Chaves",
+    role: "Marketing",
+    bio: "Crafting compelling stories and engaging audiences.",
+    image: "/chaves.jpg",
+    social: {
+      email: "eduardo@example.com",
     },
   },
 ]
 
 export default function TeamSection() {
+  const [team, setTeam] = useState([])
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const cardsPerView = 3
+
+  useEffect(() => {
+    const shuffled = [...teamData].sort(() => Math.random() - 0.5)
+    setTeam(shuffled)
+  }, [])
+
+  useEffect(() => {
+    if (team.length === 0) return
+
+    const timer = setInterval(() => {
+      setCurrentIndex((prev) => {
+        const next = prev + 1
+        if (next >= team.length) {
+          return 0
+        }
+        return next
+      })
+    }, 4000)
+
+    return () => clearInterval(timer)
+  }, [team])
+
+  const nextSlide = () => {
+    setCurrentIndex((prev) => {
+      const next = prev + 1
+      if (next >= team.length) {
+        return 0
+      }
+      return next
+    })
+  }
+
+  const prevSlide = () => {
+    setCurrentIndex((prev) => {
+      const next = prev - 1
+      if (next < 0) {
+        return team.length - 1
+      }
+      return next
+    })
+  }
+
+  if (team.length === 0) {
+    return null
+  }
+
+  const cardWidth = 100 / cardsPerView
+  const gap = 1.5
+
   return (
     <section className="py-24 relative overflow-hidden bg-black" id="team">
-      {/* Subtle animated blobs */}
       <div className="absolute inset-0 z-0">
         <div className="absolute top-1/3 left-1/4 w-[450px] h-[450px] bg-[#8C2AFF]/10 rounded-full blur-[150px] animate-pulse"></div>
         <div className="absolute bottom-1/3 right-1/4 w-[400px] h-[400px] bg-[#4a1e99]/10 rounded-full blur-[120px] animate-pulse delay-300"></div>
       </div>
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Section header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -87,62 +162,101 @@ export default function TeamSection() {
           </motion.p>
         </motion.div>
 
-        {/* Team grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {team.map((member, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group perspective"
+        <div className="relative max-w-[1600px] mx-auto">
+          <button
+            onClick={prevSlide}
+            className="absolute -left-32 top-1/2 z-20 -translate-y-1/2 rounded-full bg-[#8C2AFF]/20 p-4 text-white backdrop-blur-sm transition-all hover:bg-[#8C2AFF]/40 hover:scale-110"
+            aria-label="Previous slide"
+          >
+            <ChevronLeft className="h-8 w-8" />
+          </button>
+
+          <button
+            onClick={nextSlide}
+            className="absolute -right-32 top-1/2 z-20 -translate-y-1/2 rounded-full bg-[#8C2AFF]/20 p-4 text-white backdrop-blur-sm transition-all hover:bg-[#8C2AFF]/40 hover:scale-110"
+            aria-label="Next slide"
+          >
+            <ChevronRight className="h-8 w-8" />
+          </button>
+
+          <div className="overflow-hidden px-8">
+            <motion.div 
+              className="flex"
+              style={{ gap: `${gap}%` }}
+              animate={{
+                x: `-${currentIndex * (cardWidth + gap)}%`
+              }}
+              transition={{
+                duration: 0.8,
+                ease: [0.32, 0.72, 0, 1]
+              }}
             >
-              <div className="relative h-[420px] overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-b from-white/5 to-transparent backdrop-blur-md transition-all duration-500 group-hover:border-[#8C2AFF]/40 group-hover:scale-[1.02] group-hover:shadow-[0_0_40px_rgba(140,42,255,0.3)]">
-                {/* Image */}
-                <div className="absolute inset-0 overflow-hidden">
-                  <Image
-                    src={member.image}
-                    alt={member.name}
-                    fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/70 to-black" />
-                </div>
-                
-                {/* Info */}
-                <div className="absolute bottom-0 left-0 right-0 p-6 z-10">
-                  <h3 className="text-xl font-bold text-white mb-1">{member.name}</h3>
-                  <p className="text-[#a15cff] font-medium mb-3">{member.role}</p>
-                  <p className="text-gray-300 text-sm mb-4">{member.bio || "Enthusiast about technology and open-source."}</p>
-                  
-                  {/* Socials */}
-                  <div className="flex items-center gap-3">
-                    {member.social.instagram && (
-                      <a href={member.social.instagram} target="_blank" className="p-2 rounded-full bg-white/10 hover:bg-[#8C2AFF]/30 transition-colors">
-                        <Instagram className="size-4 text-white" />
-                      </a>
-                    )}
-                    {member.social.github && (
-                      <a href={member.social.github} target="_blank" className="p-2 rounded-full bg-white/10 hover:bg-[#8C2AFF]/30 transition-colors">
-                        <Github className="size-4 text-white" />
-                      </a>
-                    )}
-                    {member.social.linkedin && (
-                      <a href={member.social.linkedin} target="_blank" className="p-2 rounded-full bg-white/10 hover:bg-[#8C2AFF]/30 transition-colors">
-                        <Linkedin className="size-4 text-white" />
-                      </a>
-                    )}
-                    <a href={`mailto:${member.social.email}`} className="p-2 rounded-full bg-white/10 hover:bg-[#8C2AFF]/30 transition-colors">
-                      <Mail className="size-4 text-white" />
-                    </a>
+              {team.concat(team).map((member, index) => (
+                <div
+                  key={`${member.name}-${index}`}
+                  style={{ minWidth: `${cardWidth}%` }}
+                  className="flex-shrink-0 group perspective pr-2"
+                >
+                  <div className="relative h-[420px] overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-b from-white/5 to-transparent backdrop-blur-md transition-all duration-500 group-hover:border-[#8C2AFF]/40 group-hover:scale-[1.02] group-hover:shadow-[0_0_40px_rgba(140,42,255,0.3)]">
+                    <div className="absolute inset-0 overflow-hidden">
+                      <Image
+                        src={member.image}
+                        alt={member.name}
+                        fill
+                        className="object-cover transition-transform duration-700 group-hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/70 to-black" />
+                    </div>
+                    
+                    <div className="absolute bottom-0 left-0 right-0 p-6 z-10">
+                      <h3 className="text-xl font-bold text-white mb-1">{member.name}</h3>
+                      <p className="text-[#a15cff] font-medium mb-3">{member.role}</p>
+                      <p className="text-gray-300 text-sm mb-4">{member.bio}</p>
+                      
+                      <div className="flex items-center gap-3">
+                        {member.social.instagram && (
+                          <a href={member.social.instagram} target="_blank" className="p-2 rounded-full bg-white/10 hover:bg-[#8C2AFF]/30 transition-colors">
+                            <Instagram className="size-4 text-white" />
+                          </a>
+                        )}
+                        {member.social.github && (
+                          <a href={member.social.github} target="_blank" className="p-2 rounded-full bg-white/10 hover:bg-[#8C2AFF]/30 transition-colors">
+                            <Github className="size-4 text-white" />
+                          </a>
+                        )}
+                        {member.social.linkedin && (
+                          <a href={member.social.linkedin} target="_blank" className="p-2 rounded-full bg-white/10 hover:bg-[#8C2AFF]/30 transition-colors">
+                            <Linkedin className="size-4 text-white" />
+                          </a>
+                        )}
+                        <a href={`mailto:${member.social.email}`} className="p-2 rounded-full bg-white/10 hover:bg-[#8C2AFF]/30 transition-colors">
+                          <Mail className="size-4 text-white" />
+                        </a>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
+              ))}
             </motion.div>
-          ))}
+          </div>
+
+          <div className="flex justify-center gap-2 mt-8">
+            {team.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => {
+                  setCurrentIndex(index)
+                }}
+                className={`h-2 rounded-full transition-all duration-300 ${
+                  index === currentIndex 
+                    ? 'w-8 bg-[#8C2AFF]' 
+                    : 'w-2 bg-white/30 hover:bg-white/50'
+                }`}
+              />
+            ))}
+          </div>
         </div>
 
-        {/* Call-to-action */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -153,11 +267,11 @@ export default function TeamSection() {
             Want to join our team?
           </h3>
           <p className="text-gray-300 max-w-2xl mx-auto mb-8">
-            We’re always looking for passionate people who love technology, hardware and security.
+            We're always looking for passionate people who love technology, hardware and security.
           </p>
           <a 
             href="mailto:highcodeh@gmail.com" 
-            className="bg-gradient-to-r from-[#8C2AFF] to-[#6a11ff] text-white hover:opacity-90 px-8 py-3.5 rounded-xl transition-all duration-500 hover:shadow-[0_0_35px_rgba(140,42,255,0.6)] font-medium"
+            className="bg-gradient-to-r from-[#8C2AFF] to-[#6a11ff] text-white hover:opacity-90 px-8 py-3.5 rounded-xl transition-all duration-500 hover:shadow-[0_0_35px_rgba(140,42,255,0.6)] font-medium inline-block"
           >
             Join the team
           </a>

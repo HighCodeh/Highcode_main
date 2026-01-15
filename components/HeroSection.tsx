@@ -13,6 +13,7 @@ import {
   Rss,
   Sparkles,
   Cpu,
+  Users,
 } from "lucide-react";
 import Image from "next/image";
 import { useState, useEffect } from "react";
@@ -58,6 +59,10 @@ export default function HeroSection() {
     window.open("https://github.com/HighCodeh", "_blank");
   };
 
+  const handleDiscordClick = () => {
+    window.open("https://discord.com/servers/high-code-1282001564441247815", "_blank");
+  };
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-black via-[#0a0018] to-black pt-28">
       <div className="absolute inset-0">
@@ -78,8 +83,8 @@ export default function HeroSection() {
           </h1>
 
           <p className="text-lg sm:text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-light">
-  The ultimate multi-tool for pentesters and tech explorers. Powered by <span className="text-[#a15cff] font-semibold">Dual-MCU ESP32-C5 + ESP32-P4</span>. Wireless, powerful, and ready to push boundaries.
-</p>
+            The ultimate multi-tool for pentesters and tech explorers. Powered by <span className="text-[#a15cff] font-semibold">Dual-MCU ESP32-C5 + ESP32-P4</span>. Wireless, powerful, and ready to push boundaries.
+          </p>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -99,7 +104,7 @@ export default function HeroSection() {
                 repeat: Infinity, 
                 ease: "easeInOut" 
               }}
-              className="absolute -top-2 -right-2 bg-[#8C2AFF]/20 rounded-full p-2"
+              className="absolute -top-0 -right-0 bg-[#8C2AFF]/20 rounded-full p-2"
             >
               <Sparkles className="h-5 w-5 text-[#a15cff]" />
             </motion.div>
@@ -139,6 +144,64 @@ export default function HeroSection() {
                   <span className="text-sm font-semibold text-white">Dual-MCU</span>
                 </div>
               </div>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.7, duration: 0.8 }}
+            className="relative overflow-visible bg-gradient-to-br from-[#5865F2]/10 to-[#5865F2]/5 border border-[#5865F2]/40 backdrop-blur-xl rounded-2xl p-6 shadow-[0_0_40px_rgba(88,101,242,0.25)] hover:shadow-[0_0_60px_rgba(88,101,242,0.4)] hover:border-[#5865F2]/60 transition-all duration-500 group"
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-[#5865F2]/5 via-[#7289DA]/5 to-[#5865F2]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
+            
+            <motion.div
+              animate={{ 
+                y: [0, -5, 0],
+              }}
+              transition={{ 
+                duration: 2, 
+                repeat: Infinity, 
+                ease: "easeInOut" 
+              }}
+              className="absolute -top-0 -right-0 bg-[#5865F2]/20 rounded-full p-2"
+            >
+              <Users className="h-5 w-5 text-[#5865F2]" />
+            </motion.div>
+
+            <div className="relative z-10 space-y-4">
+              <div className="inline-flex items-center gap-2 bg-[#5865F2]/20 border border-[#5865F2]/40 rounded-full px-4 py-1.5">
+                <svg className="h-3.5 w-3.5 text-[#5865F2]" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028a14.09 14.09 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-1.872-.892a.077.077 0 0 1-.008-.128a10.2 10.2 0 0 0 .372-.292a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127a12.299 12.299 0 0 1-1.873.892a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028a19.839 19.839 0 0 0 6.002-3.03a.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.956-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.955-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.946 2.418-2.157 2.418z"/>
+                </svg>
+                <span className="text-xs font-bold text-[#5865F2] tracking-wider uppercase">
+                  Active Community
+                </span>
+              </div>
+
+              <div className="space-y-2">
+                <h3 className="text-2xl sm:text-3xl font-bold text-white leading-tight">
+                  Join Our Discord
+                </h3>
+                <p className="text-gray-300 text-base leading-relaxed">
+                  Our Discord is where the magic happens! Connect with hackers, makers, and enthusiasts. Share ideas, get support, and help shape High Boy's development. The community drives our innovation.
+                </p>
+              </div>
+
+              <div className="flex items-center gap-2 pt-1">
+                <div className="h-2 w-2 bg-green-400 rounded-full animate-pulse" />
+                <span className="text-sm text-gray-400">Community online now</span>
+              </div>
+
+              <button
+                onClick={handleDiscordClick}
+                className="w-full mt-4 bg-[#5865F2] hover:bg-[#4752C4] text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_rgba(88,101,242,0.5)] flex items-center justify-center gap-2"
+              >
+                <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028a14.09 14.09 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-1.872-.892a.077.077 0 0 1-.008-.128a10.2 10.2 0 0 0 .372-.292a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127a12.299 12.299 0 0 1-1.873.892a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028a19.839 19.839 0 0 0 6.002-3.03a.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.956-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.955-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.946 2.418-2.157 2.418z"/>
+                </svg>
+                Join Discord Server
+              </button>
             </div>
           </motion.div>
 

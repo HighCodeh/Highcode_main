@@ -90,14 +90,14 @@ export default function Features() {
           </motion.h2>
           
           <motion.p 
-  className="text-xl text-gray-300 max-w-7xl mx-auto"
-  initial={{ opacity: 0, y: 20 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.5, delay: 0.2 }}
-  viewport={{ once: true }}
->
-  100% open source & open hardware — merging innovation, performance, and freedom. Powered by <span className="whitespace-nowrap">Dual-MCU ESP32-C5 + ESP32-P4</span> with <span className="whitespace-nowrap">dual-band WiFi and LoRa</span>.
-</motion.p>
+            className="text-xl text-gray-300 max-w-7xl mx-auto"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            100% open source & open hardware — merging innovation, performance, and freedom. Powered by <span className="whitespace-nowrap">Dual-MCU ESP32-C5 + ESP32-P4</span> with <span className="whitespace-nowrap">dual-band WiFi and LoRa</span>.
+          </motion.p>
         </motion.div>
 
         {/* Feature grid */}
@@ -109,10 +109,11 @@ export default function Features() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
+              className="h-full"
             >
-              <div className="bg-gradient-to-b from-white/5 to-transparent border border-white/10 rounded-2xl overflow-hidden backdrop-blur-xl hover:border-[#8C2AFF]/30 transition-all duration-500 group h-full">
-                <div className="p-6 md:p-7">
-                  <div className="bg-[#8C2AFF]/10 p-3 rounded-xl inline-flex mb-5 group-hover:bg-[#8C2AFF]/20 transition-colors">
+              <div className="bg-gradient-to-b from-white/5 to-transparent border border-white/10 rounded-2xl overflow-hidden backdrop-blur-xl hover:border-[#8C2AFF]/30 transition-all duration-500 group h-full flex flex-col">
+                <div className="p-6 md:p-7 flex-1 flex flex-col">
+                  <div className="bg-[#8C2AFF]/10 p-3 rounded-xl inline-flex mb-5 group-hover:bg-[#8C2AFF]/20 transition-colors w-fit">
                     <div className="bg-gradient-to-br from-[#8C2AFF] to-[#4a1e99] rounded-lg flex items-center justify-center size-12">
                       {feature.icon}
                     </div>
@@ -122,7 +123,7 @@ export default function Features() {
                     {feature.title}
                   </h3>
                   
-                  <p className="text-gray-400">
+                  <p className="text-gray-400 flex-1">
                     {feature.description}
                   </p>
                 </div>

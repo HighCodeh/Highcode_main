@@ -78,7 +78,7 @@ const teamData = [
 export default function TeamSection() {
   const [team, setTeam] = useState([])
   const [currentIndex, setCurrentIndex] = useState(0)
-  const cardsPerView = 3
+  const [cardsPerView, setCardsPerView] = useState(3)
 
   useEffect(() => {
     const shuffled = [...teamData].sort(() => Math.random() - 0.5)
@@ -86,47 +86,36 @@ export default function TeamSection() {
   }, [])
 
   useEffect(() => {
-    if (team.length === 0) return
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setCardsPerView(1)
+      } else if (window.innerWidth < 1150) {
+        setCardsPerView(2)
+      } else {
+        setCardsPerView(3)
+      }
+    }
 
-    const timer = setInterval(() => {
-      setCurrentIndex((prev) => {
-        const next = prev + 1
-        if (next >= team.length) {
-          return 0
-        }
-        return next
-      })
-    }, 4000)
-
-    return () => clearInterval(timer)
-  }, [team])
+    handleResize()
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
 
   const nextSlide = () => {
     setCurrentIndex((prev) => {
-      const next = prev + 1
-      if (next >= team.length) {
-        return 0
-      }
-      return next
+      const maxIndex = team.length - cardsPerView
+      return prev >= maxIndex ? 0 : prev + 1
     })
   }
 
   const prevSlide = () => {
     setCurrentIndex((prev) => {
-      const next = prev - 1
-      if (next < 0) {
-        return team.length - 1
-      }
-      return next
+      const maxIndex = team.length - cardsPerView
+      return prev <= 0 ? maxIndex : prev - 1
     })
   }
 
-  if (team.length === 0) {
-    return null
-  }
-
-  const cardWidth = 100 / cardsPerView
-  const gap = 1.5
+  if (team.length === 0) return null
 
   return (
     <section className="py-24 relative overflow-hidden bg-black" id="team">
@@ -135,102 +124,89 @@ export default function TeamSection() {
         <div className="absolute bottom-1/3 right-1/4 w-[400px] h-[400px] bg-[#4a1e99]/10 rounded-full blur-[120px] animate-pulse delay-300"></div>
       </div>
       
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="container mx-auto px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 1 }}
           className="text-center mb-16 max-w-3xl mx-auto"
         >
-          <motion.div
-            className="inline-flex items-center gap-2 bg-white/5 backdrop-blur-xl border border-white/10 rounded-full px-6 py-3 mb-6"
-          >
+          <div className="inline-flex items-center gap-2 bg-white/5 backdrop-blur-xl border border-white/10 rounded-full px-6 py-3 mb-6">
             <span className="size-2.5 rounded-full bg-[#8C2AFF] animate-ping" />
-            <span className="text-lg font-medium">Brazilian Team</span>
-          </motion.div>
+            <span className="text-lg font-medium text-white">Brazilian Team</span>
+          </div>
           
-          <motion.h2 
-            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
-          >
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white">
             Meet the <span className="text-[#8C2AFF]">Team</span>
-          </motion.h2>
-          
-          <motion.p 
-            className="text-xl text-gray-300"
-          >
-            The creators and visionaries behind <span className="text-white font-semibold">High Boy</span>.
-          </motion.p>
+          </h2>
         </motion.div>
 
-        <div className="relative max-w-[1600px] mx-auto">
-          <button
-            onClick={prevSlide}
-            className="absolute -left-32 top-1/2 z-20 -translate-y-1/2 rounded-full bg-[#8C2AFF]/20 p-4 text-white backdrop-blur-sm transition-all hover:bg-[#8C2AFF]/40 hover:scale-110"
-            aria-label="Previous slide"
-          >
-            <ChevronLeft className="h-8 w-8" />
-          </button>
+        <div className="relative max-w-[1280px] mx-auto group">
+          <div className="absolute top-1/2 -left-4 md:-left-16 z-30 -translate-y-1/2">
+            <button
+              onClick={prevSlide}
+              className="p-4 rounded-full bg-white/5 border border-white/10 text-white backdrop-blur-md transition-all hover:bg-[#8C2AFF] hover:border-[#8C2AFF] hover:scale-110 active:scale-95 shadow-2xl"
+            >
+              <ChevronLeft className="h-6 w-6" />
+            </button>
+          </div>
 
-          <button
-            onClick={nextSlide}
-            className="absolute -right-32 top-1/2 z-20 -translate-y-1/2 rounded-full bg-[#8C2AFF]/20 p-4 text-white backdrop-blur-sm transition-all hover:bg-[#8C2AFF]/40 hover:scale-110"
-            aria-label="Next slide"
-          >
-            <ChevronRight className="h-8 w-8" />
-          </button>
+          <div className="absolute top-1/2 -right-4 md:-right-16 z-30 -translate-y-1/2">
+            <button
+              onClick={nextSlide}
+              className="p-4 rounded-full bg-white/5 border border-white/10 text-white backdrop-blur-md transition-all hover:bg-[#8C2AFF] hover:border-[#8C2AFF] hover:scale-110 active:scale-95 shadow-2xl"
+            >
+              <ChevronRight className="h-6 w-6" />
+            </button>
+          </div>
 
-          <div className="overflow-hidden px-8">
+          <div className="overflow-hidden rounded-xl">
             <motion.div 
               className="flex"
-              style={{ gap: `${gap}%` }}
-              animate={{
-                x: `-${currentIndex * (cardWidth + gap)}%`
-              }}
-              transition={{
-                duration: 0.8,
-                ease: [0.32, 0.72, 0, 1]
+              animate={{ x: `-${currentIndex * (100 / cardsPerView)}%` }}
+              transition={{ 
+                duration: 0.8, 
+                ease: [0.25, 1, 0.5, 1] 
               }}
             >
-              {team.concat(team).map((member, index) => (
+              {team.map((member, index) => (
                 <div
-                  key={`${member.name}-${index}`}
-                  style={{ minWidth: `${cardWidth}%` }}
-                  className="flex-shrink-0 group perspective pr-2"
+                  key={index}
+                  style={{ minWidth: `${100 / cardsPerView}%` }}
+                  className="px-4"
                 >
-                  <div className="relative h-[420px] overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-b from-white/5 to-transparent backdrop-blur-md transition-all duration-500 group-hover:border-[#8C2AFF]/40 group-hover:scale-[1.02] group-hover:shadow-[0_0_40px_rgba(140,42,255,0.3)]">
-                    <div className="absolute inset-0 overflow-hidden">
-                      <Image
-                        src={member.image}
-                        alt={member.name}
-                        fill
-                        className="object-cover transition-transform duration-700 group-hover:scale-110"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/70 to-black" />
-                    </div>
+                  <div className="relative h-[520px] flex flex-col justify-end overflow-hidden rounded-3xl border border-white/10 bg-white/5 group/card transition-all duration-700 hover:border-[#8C2AFF]/40">
+                    <Image
+                      src={member.image}
+                      alt={member.name}
+                      fill
+                      className="object-cover transition-transform duration-1000 group-hover/card:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
                     
-                    <div className="absolute bottom-0 left-0 right-0 p-6 z-10">
-                      <h3 className="text-xl font-bold text-white mb-1">{member.name}</h3>
-                      <p className="text-[#a15cff] font-medium mb-3">{member.role}</p>
-                      <p className="text-gray-300 text-sm mb-4">{member.bio}</p>
+                    <div className="relative p-8 w-full z-10">
+                      <div className="min-h-[40px] flex items-end">
+                        <h3 className="text-2xl font-bold text-white mb-1 leading-tight">{member.name}</h3>
+                      </div>
                       
-                      <div className="flex items-center gap-3">
+                      <div className="min-h-[32px] flex items-start">
+                        <p className="text-[#a15cff] font-medium mb-3 tracking-wide text-sm sm:text-base">{member.role}</p>
+                      </div>
+                      
+                      <div className="min-h-[60px]">
+                        <p className="text-gray-300 text-sm mb-6 line-clamp-3 leading-relaxed transition-colors group-hover/card:text-white">
+                          {member.bio}
+                        </p>
+                      </div>
+                      
+                      <div className="flex gap-3">
                         {member.social.instagram && (
-                          <a href={member.social.instagram} target="_blank" className="p-2 rounded-full bg-white/10 hover:bg-[#8C2AFF]/30 transition-colors">
-                            <Instagram className="size-4 text-white" />
+                          <a href={member.social.instagram} target="_blank" className="p-2.5 rounded-xl bg-white/10 border border-white/10 hover:bg-[#8C2AFF] hover:border-transparent transition-all">
+                            <Instagram className="size-5 text-white" />
                           </a>
                         )}
-                        {member.social.github && (
-                          <a href={member.social.github} target="_blank" className="p-2 rounded-full bg-white/10 hover:bg-[#8C2AFF]/30 transition-colors">
-                            <Github className="size-4 text-white" />
-                          </a>
-                        )}
-                        {member.social.linkedin && (
-                          <a href={member.social.linkedin} target="_blank" className="p-2 rounded-full bg-white/10 hover:bg-[#8C2AFF]/30 transition-colors">
-                            <Linkedin className="size-4 text-white" />
-                          </a>
-                        )}
-                        <a href={`mailto:${member.social.email}`} className="p-2 rounded-full bg-white/10 hover:bg-[#8C2AFF]/30 transition-colors">
-                          <Mail className="size-4 text-white" />
+                        <a href={`mailto:${member.social.email}`} className="p-2.5 rounded-xl bg-white/10 border border-white/10 hover:bg-[#8C2AFF] hover:border-transparent transition-all">
+                          <Mail className="size-5 text-white" />
                         </a>
                       </div>
                     </div>
@@ -240,42 +216,20 @@ export default function TeamSection() {
             </motion.div>
           </div>
 
-          <div className="flex justify-center gap-2 mt-8">
-            {team.map((_, index) => (
+          <div className="flex justify-center gap-3 mt-12">
+            {Array.from({ length: Math.max(0, team.length - cardsPerView + 1) }).map((_, index) => (
               <button
                 key={index}
-                onClick={() => {
-                  setCurrentIndex(index)
-                }}
-                className={`h-2 rounded-full transition-all duration-300 ${
+                onClick={() => setCurrentIndex(index)}
+                className={`h-1.5 rounded-full transition-all duration-700 ${
                   index === currentIndex 
-                    ? 'w-8 bg-[#8C2AFF]' 
-                    : 'w-2 bg-white/30 hover:bg-white/50'
+                  ? 'w-12 bg-[#8C2AFF] shadow-[0_0_15px_rgba(140,42,255,0.5)]' 
+                  : 'w-3 bg-white/20 hover:bg-white/40'
                 }`}
               />
             ))}
           </div>
         </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8 }}
-          className="mt-20 text-center"
-        >
-          <h3 className="text-2xl md:text-3xl font-bold mb-6 text-white">
-            Want to join our team?
-          </h3>
-          <p className="text-gray-300 max-w-2xl mx-auto mb-8">
-            We're always looking for passionate people who love technology, hardware and security.
-          </p>
-          <a 
-            href="mailto:highcodeh@gmail.com" 
-            className="bg-gradient-to-r from-[#8C2AFF] to-[#6a11ff] text-white hover:opacity-90 px-8 py-3.5 rounded-xl transition-all duration-500 hover:shadow-[0_0_35px_rgba(140,42,255,0.6)] font-medium inline-block"
-          >
-            Join the team
-          </a>
-        </motion.div>
       </div>
     </section>
   )

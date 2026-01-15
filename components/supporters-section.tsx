@@ -146,8 +146,7 @@ const SmoothMarquee = ({
       className="relative overflow-hidden py-4"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
-      onTouchStart={() => setIsPaused(true)}
-      onTouchEnd={() => setIsPaused(false)}
+      onHoverEnd={() => setIsPaused(false)}
     >
       <div className="absolute -left-4 top-0 w-20 sm:w-24 md:w-32 h-full bg-gradient-to-r from-black to-transparent z-10" />
       <div className="absolute -right-4 top-0 w-20 sm:w-24 md:w-32 h-full bg-gradient-to-l from-black to-transparent z-10" />
@@ -214,7 +213,8 @@ export default function SupportersSection() {
   const containerPadding = isMobile ? "py-5 px-4" : isTablet ? "py-7 px-6" : "py-10 px-8";
 
   return (
-    <section className={`${sectionPadding} px-4 sm:px-6 md:px-8 bg-black`} id="support">
+    // ID CORRIGIDO AQUI PARA "supporters"
+    <section className={`${sectionPadding} px-4 sm:px-6 md:px-8 bg-black`} id="supporters">
       <div className="max-w-6xl mx-auto">
 
         <motion.div
@@ -222,6 +222,7 @@ export default function SupportersSection() {
           initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
+          viewport={{ once: true }}
         >
           <div className="flex flex-col items-center text-center mb-16">
             <span className="text-base uppercase tracking-[0.4em] text-gray-300 font-light mb-4">
@@ -303,6 +304,7 @@ export default function SupportersSection() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
           className="text-center mb-12 md:mb-20"
         >
           <motion.h2
@@ -336,6 +338,7 @@ export default function SupportersSection() {
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
+          viewport={{ once: true }}
         >
           <div className="relative">
             <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
@@ -377,6 +380,7 @@ export default function SupportersSection() {
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.4 }}
+          viewport={{ once: true }}
         >
           <div
             className={`${containerPadding} rounded-2xl min-h-[300px] flex items-center`}
@@ -437,6 +441,7 @@ export default function SupportersSection() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
+          viewport={{ once: true }}
         >
           <p className={`text-gray-400 ${subtitleSize} mb-6`}>
               Built by experts, powered by you. Get your hands on it!

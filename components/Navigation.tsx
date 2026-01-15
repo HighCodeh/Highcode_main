@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion"
 import { Button } from "@/components/ui/button"
-import { Github, Menu, X, Home, Code, Users, Map, Zap, Heart, BookOpen } from "lucide-react"
+import { Github, Menu, X, Code, Users, Zap, Heart, BookOpen } from "lucide-react"
 import Link from "next/link"
 
 interface NavigationProps {
@@ -14,7 +14,6 @@ export default function Navigation({ isOpen, onOpenChange }: NavigationProps) {
   const navItems = [
     { id: "features", label: "Features", icon: <Zap className="w-4 h-4" /> },
     { id: "team", label: "Team", icon: <Users className="w-4 h-4" /> },
-    
     { id: "product", label: "High Boy", icon: <Code className="w-4 h-4" /> },
     { id: "supporters", label: "Supporters", icon: <Heart className="w-4 h-4" /> },
     {

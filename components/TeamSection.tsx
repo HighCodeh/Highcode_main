@@ -59,7 +59,7 @@ const teamData = [
     name: "Pedro Henrique",
     role: "Marketing",
     bio: "Strategizing growth and building brand presence.",
-    image: "/pedro.jpg",
+    image: "/pedro.png",
     social: {
       email: "pedro@example.com",
     },

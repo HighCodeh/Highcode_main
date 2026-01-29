@@ -2,7 +2,60 @@
 
 import { motion } from "framer-motion"
 import Image from "next/image"
-import { Cpu, Zap, Wifi, Battery, Usb, Rss } from "lucide-react"
+import { Cpu, Zap, Wifi, Battery, Usb, Rss, GitBranch, Radio, Shield, Briefcase, Cctv, WifiOff, Smartphone } from "lucide-react"
+
+const features = [
+  {
+    icon: <GitBranch className="size-6" />,
+    title: "Open Source",
+    description: "Fully open-source codebase. Customize, audit, and build your own features.",
+  },
+  {
+    icon: <Cpu className="size-6" />,
+    title: "Open Hardware",
+    description: "Dual-MCU architecture: ESP32-C5 + ESP32-P4 with full hardware documentation and extensibility.",
+  },
+  {
+    icon: <Radio className="size-6" />,
+    title: "RF Analysis",
+    description: "Full-spectrum RF analysis with Sub-GHz, LoRa, and multi-protocol support.",
+  },
+  {
+    icon: <Shield className="size-6" />,
+    title: "Security Testing",
+    description: "All-in-one toolkit for RF, NFC, Wi-Fi, BLE, LoRa, and IoT security research.",
+  },
+  {
+    icon: <Wifi className="size-6" />,
+    title: "Dual-Band WiFi",
+    description: "Advanced dual-band WiFi (2.4GHz + 5GHz) for auditing and pentesting wireless networks.",
+  },
+  {
+    icon: <Briefcase className="size-6" />,
+    title: "Portable Design",
+    description: "Lightweight, compact, and easy to carry anywhere you go.",
+  },
+  {
+    icon: <Zap className="size-6" />,
+    title: "Long Battery Life",
+    description: "2500mAh rechargeable battery with fast USB-C charging.",
+  },
+  {
+    icon: <Cctv className="size-6" />,
+    title: "Real-Time Monitoring",
+    description: "Track, monitor, and log network activity in real time.",
+  },
+  {
+    icon: <WifiOff className="size-6" />,
+    title: "Offline Capabilities",
+    description: "Works even without an internet connection — anytime, anywhere.",
+  },
+  {
+    icon: <Smartphone className="size-6" />,
+    title: "Infrared (IR) Control",
+    description: "Control TVs, AC units, and IR-enabled devices seamlessly.",
+  },
+]
 
 export default function WhatIsSection() {
   return (
@@ -15,7 +68,7 @@ export default function WhatIsSection() {
       <div className="absolute bottom-1/4 right-1/4 w-[300px] h-[300px] bg-[#4a1e99]/10 rounded-full blur-[140px] animate-pulse-slower" />
 
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="items-center">
           {/* Text content */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -24,92 +77,49 @@ export default function WhatIsSection() {
             viewport={{ once: true }}
             className="space-y-10"
           >
-            <div className="space-y-6">
+            <div className="space-y-10 text-center">
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
                 What is <span className="text-[#8C2AFF]">High Boy</span>?
               </h2>
 
-              <p className="text-lg md:text-xl text-gray-300 leading-relaxed max-w-2xl">
-                High Boy is a next-gen hardware hacking device that merges power,
-                versatility, and portability into one compact tool. Designed for
-                pentesters and security enthusiasts, it brings full-spectrum
-                capabilities for RF, NFC, Lora, Wi-Fi, BLE, and IoT security testing.
+              <p className="text-lg md:text-xl text-gray-300 leading-relaxed max-w-4xl mx-auto text-left">
+                High Boy is a next-gen hardware hacking device that merges power, versatility, and portability into one compact tool. Designed for pentesters and security enthusiasts, it brings full-spectrum capabilities for RF, NFC, Lora, Wi-Fi, BLE, and IoT security testing.
               </p>
 
-              {/* Feature list */}
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
-                {[
-                  { icon: <Cpu className="w-5 h-5 text-[#a15cff]" />, text: "Dual-MCU Architecture Setup" },
-                  { icon: <Rss className="w-5 h-5 text-[#a15cff]" />, text: "Multi-band RF analysis (300-928 MHz)" },
-                  { icon: <Zap className="w-5 h-5 text-[#a15cff]" />, text: "Capacitive LCD high-res display" },
-                  { icon: <Wifi className="w-5 h-5 text-[#a15cff]" />, text: "Open-source customizable OS" },
-                  { icon: <Battery className="w-5 h-5 text-[#a15cff]" />, text: "Long-lasting fast-charging battery" },
-                  { icon: <Usb className="w-5 h-5 text-[#a15cff]" />, text: "USB-C + GPIO expansion" },
-                ].map((f, i) => (
-                  <motion.li
-                    key={i}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.1 * i }}
+              {/* Feature grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 text-left">
+                {features.map((feature, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
                     viewport={{ once: true }}
-                    className="flex items-center gap-3 bg-white/5 backdrop-blur-md border border-white/10 rounded-xl px-5 py-3 text-gray-300 hover:border-[#8C2AFF]/40 hover:bg-white/10 transition-all"
+                    className="h-full"
                   >
-                    {f.icon}
-                    <span className="text-md font-medium">{f.text}</span>
-                  </motion.li>
+                    <div className="bg-gradient-to-b from-white/5 to-transparent border border-white/10 rounded-2xl overflow-hidden backdrop-blur-xl hover:border-[#8C2AFF]/30 transition-all duration-500 group h-full flex flex-col">
+                      <div className="p-6 md:p-7 flex-1 flex flex-col">
+                        <div className="bg-[#8C2AFF]/10 p-3 rounded-xl inline-flex mb-5 group-hover:bg-[#8C2AFF]/20 transition-colors w-fit">
+                          <div className="bg-gradient-to-br from-[#8C2AFF] to-[#4a1e99] rounded-lg flex items-center justify-center size-12">
+                            {feature.icon}
+                          </div>
+                        </div>
+                        
+                        <h3 className="text-xl font-bold mb-3 group-hover:text-[#a15cff] transition-colors">
+                          {feature.title}
+                        </h3>
+                        
+                        <p className="text-gray-400 flex-1">
+                          {feature.description}
+                        </p>
+                      </div>
+                      
+                      <div className="h-1 bg-gradient-to-r from-[#8C2AFF] to-[#4a1e99] opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    </div>
+                  </motion.div>
                 ))}
-              </ul>
+              </div>
             </div>
-
-            {/* Highlight badge */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.7 }}
-              viewport={{ once: true }}
-              className="inline-flex items-center gap-4 bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 max-w-xl shadow-lg"
-            >
-              <div className="bg-[#8C2AFF]/10 p-3 rounded-xl">
-                <div className="size-10 bg-gradient-to-br from-[#8C2AFF] to-[#4a1e99] rounded-lg flex items-center justify-center">
-                  <Cpu className="w-6 h-6 text-white" />
-                </div>
-              </div>
-              <div>
-                <h3 className="font-bold text-lg">Open Source & Customizable</h3>
-                <p className="text-gray-400 mt-1">
-                  Fully programmable with community-driven support
-                </p>
-              </div>
-            </motion.div>
-          </motion.div>
-
-          {/* Main Image */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="flex items-center justify-center relative"
-          >
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-              viewport={{ once: true }}
-              // agora a imagem é bem maior no mobile
-              className="relative w-[100vw] h-[45vh] sm:w-[100vw] sm:h-[75vh] md:w-[100vw] md:h-[70vh] lg:w-[90vw] lg:h-[90vh] xl:w-[120vw] xl:h-[120vh] max-h-[800px]"
-            >
-              {/* Glow effect */}
-              <div className="absolute -inset-40 bg-gradient-radial from-[#8C2AFF]/50 via-transparent to-transparent blur-[250px] animate-pulse z-0" />
-
-              <Image
-                src="/mao1.png" // substitua pelo caminho certo do seu PNG
-                alt="High Boy in Hand"
-                fill
-                priority
-                className="object-contain relative z-10 drop-shadow-2xl"
-              />
-            </motion.div>
           </motion.div>
         </div>
       </div>

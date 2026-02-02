@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Instagram, Mail, Github, Linkedin, ChevronLeft, ChevronRight } from "lucide-react"
+import { Instagram, Mail, Github, Linkedin, ChevronLeft, ChevronRight, Link } from "lucide-react"
 import Image from "next/image"
 import { useState, useEffect } from "react"
 
@@ -47,12 +47,14 @@ const teamData = [
     },
   },
   {
-    name: "Rafael Teivfik",
+    name: "Rafa Teivfik",
     role: "Manager & App Developer",
     bio: "Turning complex challenges into elegant mobile solutions.",
     image: "/rafa.jpg",
     social: {
-      email: "rafael@example.com",
+      instagram: "https://www.instagram.com/ruffles_teiv/",
+      email: "teivik@gmail.com",
+      link: "https://rafateivfik.carrd.co/"
     },
   },
   {
@@ -61,7 +63,7 @@ const teamData = [
     bio: "Strategizing growth and building brand presence.",
     image: "/pedro.png",
     social: {
-      email: "pedro@example.com",
+      email: "anaydasydy@gmail.com",
     },
   },
   {
@@ -70,7 +72,7 @@ const teamData = [
     bio: "Crafting compelling stories and engaging audiences.",
     image: "/chaves.jpg",
     social: {
-      email: "eduardo@example.com",
+      email: "eduardo9chaves@gmail.com",
     },
   },
 ]
@@ -208,6 +210,11 @@ export default function TeamSection() {
                         <a href={`mailto:${member.social.email}`} className="p-2.5 rounded-xl bg-white/10 border border-white/10 hover:bg-[#8C2AFF] hover:border-transparent transition-all">
                           <Mail className="size-5 text-white" />
                         </a>
+                        {member.social.link && (
+                          <a href={member.social.link} target="_blank" className="p-2.5 rounded-xl bg-white/10 border border-white/10 hover:bg-[#8C2AFF] hover:border-transparent transition-all">
+                            <Link className="size-5 text-white" />
+                          </a>
+                        )}
                       </div>
                     </div>
                   </div>

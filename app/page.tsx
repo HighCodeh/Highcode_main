@@ -3,6 +3,7 @@
 import { useState } from "react"
 import Navigation from "@/components/Navigation"
 import HeroSection from "@/components/HeroSection"
+import JoinDiscord from "@/components/JoinDiscord"
 import WhatIsSection from "@/components/WhatIsSection"
 import Features from "@/components/Features"
 import Social from "@/components/Social"
@@ -22,6 +23,7 @@ export default function Home() {
 
       <main>
         <HeroSection />
+        <JoinDiscord />
         <WhatIsSection />
         <Features />
         <TeamSection />

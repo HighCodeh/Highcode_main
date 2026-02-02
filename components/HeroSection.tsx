@@ -13,7 +13,6 @@ import {
   Rss,
   Sparkles,
   Cpu,
-  Users,
 } from "lucide-react";
 import Image from "next/image";
 import { useState, useEffect } from "react";
@@ -57,10 +56,6 @@ export default function HeroSection() {
 
   const handleGitClick = () => {
     window.open("https://github.com/HighCodeh", "_blank");
-  };
-
-  const handleDiscordClick = () => {
-    window.open("https://discord.com/servers/high-code-1282001564441247815", "_blank");
   };
 
   return (
@@ -142,59 +137,6 @@ export default function HeroSection() {
             </div>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.7, duration: 0.8 }}
-            className="relative overflow-hidden bg-gradient-to-br from-[#5865F2]/10 to-[#5865F2]/5 border border-[#5865F2]/40 backdrop-blur-xl rounded-2xl p-6 shadow-[0_0_40px_rgba(88,101,242,0.25)] hover:shadow-[0_0_60px_rgba(88,101,242,0.4)] hover:border-[#5865F2]/60 transition-all duration-500 group"
-          >
-            <div className="absolute inset-0 bg-gradient-to-r from-[#5865F2]/5 via-[#7289DA]/5 to-[#5865F2]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            
-            <motion.div
-              animate={{ 
-                y: [0, -5, 0],
-              }}
-              transition={{ 
-                duration: 2, 
-                repeat: Infinity, 
-                ease: "easeInOut" 
-              }}
-              className="absolute top-4 right-4 bg-[#5865F2]/20 rounded-full p-2"
-            >
-              <Users className="h-5 w-5 text-[#5865F2]" />
-            </motion.div>
-
-            <div className="relative z-10 space-y-4 text-left">
-              <div className="inline-flex items-center gap-2 bg-[#5865F2]/20 border border-[#5865F2]/40 rounded-full px-4 py-1.5">
-                <Users className="h-3.5 w-3.5 text-[#5865F2]" />
-                <span className="text-xs font-bold text-[#5865F2] tracking-wider uppercase">
-                  Active Community
-                </span>
-              </div>
-
-              <div className="space-y-2">
-                <h3 className="text-2xl sm:text-3xl font-bold text-white leading-tight">
-                  Join Our Discord
-                </h3>
-                <p className="text-gray-300 text-base leading-relaxed">
-                  Our Discord is where the magic happens! Connect with hackers, makers, and enthusiasts. Share ideas, get support, and help shape High Boy's development. The community drives our innovation.
-                </p>
-              </div>
-
-              <div className="flex items-center gap-2 pt-1">
-                <div className="h-2 w-2 bg-green-400 rounded-full animate-pulse" />
-                <span className="text-sm text-gray-400 font-medium text-white">Community online now</span>
-              </div>
-
-              <button
-                onClick={handleDiscordClick}
-                className="w-full mt-4 bg-[#5865F2] hover:bg-[#4752C4] text-white font-bold py-3.5 px-6 rounded-xl transition-all duration-300 hover:scale-[1.02] shadow-lg flex items-center justify-center gap-2"
-              >
-                Join Discord Server
-              </button>
-            </div>
-          </motion.div>
-
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-8 max-w-2xl mx-auto lg:mx-0">
             {[
               { icon: <Wifi />, label: "WiFi 5" },
@@ -220,7 +162,7 @@ export default function HeroSection() {
 
           <div className="flex flex-wrap justify-center lg:justify-start gap-6 pt-8">
             <Button
-              size="xl"
+              size="lg"
               className="bg-gradient-to-r from-[#8C2AFF] to-[#6a11ff] text-white hover:opacity-95 h-16 px-10 text-xl rounded-2xl shadow-[0_0_40px_rgba(140,42,255,0.6)] transition-all hover:scale-105 font-bold"
               onClick={handleSupportClick}
             >
@@ -229,7 +171,7 @@ export default function HeroSection() {
             </Button>
 
             <Button
-              size="xl"
+              size="lg"
               variant="outline"
               className="border-white/30 bg-transparent hover:bg-white/10 text-white h-16 px-10 text-xl rounded-2xl transition-all hover:scale-105 font-bold"
               onClick={handleGitClick}

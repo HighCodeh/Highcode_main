@@ -146,7 +146,7 @@ const SmoothMarquee = ({
       className="relative overflow-hidden py-4"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
-      onHoverEnd={() => setIsPaused(false)}
+      // onHoverEnd={() => setIsPaused(false)}
     >
       <div className="absolute -left-4 top-0 w-20 sm:w-24 md:w-32 h-full bg-gradient-to-r from-black to-transparent z-10" />
       <div className="absolute -right-4 top-0 w-20 sm:w-24 md:w-32 h-full bg-gradient-to-l from-black to-transparent z-10" />

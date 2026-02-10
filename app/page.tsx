@@ -12,6 +12,7 @@ import TeamSection from "@/components/TeamSection"
 import Footer from "@/components/Footer"
 import TechnicalSpecs from "@/components/TechnicalSpecs"
 import SupportersSection from "@/components/supporters-section"
+import FaqSection from "@/components/FaqSection"
 
 // Verificando se todos os componentes estão sendo exportados corretamente
 export default function Home() {
@@ -29,6 +30,7 @@ export default function Home() {
         <TeamSection />
         <TechnicalSpecs/>
         <SupportersSection />
+        <FaqSection />
         <Social />
       </main>
 

@@ -109,9 +109,9 @@ export default function SocialSection() {
                     transition={{ duration: 0.3 }}
                   >
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10 opacity-0 hover:opacity-100 transition-opacity flex items-end p-3">
-                      <span className="text-white text-sm font-medium">
+                      {/* <span className="text-white text-sm font-medium">
                         Post #{postIndex + 1}
-                      </span>
+                      </span> */}
                     </div>
                     <div
                       className="w-full h-full bg-gray-800"

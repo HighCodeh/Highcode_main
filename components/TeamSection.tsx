@@ -1,19 +1,29 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Instagram, Mail, Github, Linkedin, ChevronLeft, ChevronRight } from "lucide-react"
+import { Instagram, Mail, Github, Linkedin, ChevronLeft, ChevronRight, Link } from "lucide-react"
 import Image from "next/image"
 import { useState, useEffect } from "react"
 
 const teamData = [
   {
     name: "Vinícius Pinheiro",
-    role: "Hardware & Firmware & Manager",
+    role: "CTO - Hardware & Firmware & Manager",
     bio: "Passionate about embedded systems and open hardware development.",
     image: "/vini.jpeg",
     social: {
       instagram: "https://www.instagram.com/vinipinheirobit/",
       email: "vpedicao@gmail.com",
+    },
+  },
+  {
+    name: "Joje Mendes",
+    role: "CEO - Manager & App Developer",
+    bio: "Connecting people, ideas and technology worldwide.",
+    image: "/joje.png",
+    social: {
+      instagram: "https://www.instagram.com/null__jo/",
+      email: "jojemendes@icloud.com",
     },
   },
   {
@@ -37,53 +47,49 @@ const teamData = [
     },
   },
   {
-    name: "Joje Mendes",
-    role: "Manager & App Developer",
-    bio: "Connecting people, ideas and technology worldwide.",
-    image: "/joje.png",
-    social: {
-      instagram: "https://www.instagram.com/null__jo/",
-      email: "jojemendes@icloud.com",
-    },
-  },
-  {
-    name: "Rafael Teivfik",
+    name: "Rafa Teivfik",
     role: "Manager & App Developer",
     bio: "Turning complex challenges into elegant mobile solutions.",
     image: "/rafa.jpg",
     social: {
-      email: "rafael@example.com",
+      instagram: "https://www.instagram.com/ruffles_teiv/",
+      email: "teivik@gmail.com",
+      link: "https://rafateivfik.carrd.co/"
     },
   },
   {
     name: "Pedro Henrique",
-    role: "Marketing",
+    role: "UI/UX Designer",
     bio: "Strategizing growth and building brand presence.",
     image: "/pedro.png",
     social: {
-      email: "pedro@example.com",
+      email: "anaydasydy@gmail.com",
     },
   },
   {
     name: "Eduardo Chaves",
-    role: "Marketing",
+    role: "Marketing Specialist",
     bio: "Crafting compelling stories and engaging audiences.",
     image: "/chaves.jpg",
     social: {
-      email: "eduardo@example.com",
+      email: "eduardo9chaves@gmail.com",
+    },
+  },
+  {
+    name: "Gabriel Topfer",
+    role: "Operational Manager",
+    bio: "Crafting compelling stories and engaging audiences.",
+    image: "/gabriel-topfer.webp",
+    social: {
+      instagram: "https://www.instagram.com/gtopfer",
+      link: "https://br.linkedin.com/in/gtopfer"
     },
   },
 ]
 
 export default function TeamSection() {
-  const [team, setTeam] = useState([])
   const [currentIndex, setCurrentIndex] = useState(0)
   const [cardsPerView, setCardsPerView] = useState(3)
-
-  useEffect(() => {
-    const shuffled = [...teamData].sort(() => Math.random() - 0.5)
-    setTeam(shuffled)
-  }, [])
 
   useEffect(() => {
     const handleResize = () => {
@@ -103,19 +109,19 @@ export default function TeamSection() {
 
   const nextSlide = () => {
     setCurrentIndex((prev) => {
-      const maxIndex = team.length - cardsPerView
+      const maxIndex = teamData.length - cardsPerView
       return prev >= maxIndex ? 0 : prev + 1
     })
   }
 
   const prevSlide = () => {
     setCurrentIndex((prev) => {
-      const maxIndex = team.length - cardsPerView
+      const maxIndex = teamData.length - cardsPerView
       return prev <= 0 ? maxIndex : prev - 1
     })
   }
 
-  if (team.length === 0) return null
+  if (teamData.length === 0) return null
 
   return (
     <section className="py-24 relative overflow-hidden bg-black" id="team">
@@ -169,7 +175,7 @@ export default function TeamSection() {
                 ease: [0.25, 1, 0.5, 1] 
               }}
             >
-              {team.map((member, index) => (
+              {teamData.map((member, index) => (
                 <div
                   key={index}
                   style={{ minWidth: `${100 / cardsPerView}%` }}
@@ -205,9 +211,14 @@ export default function TeamSection() {
                             <Instagram className="size-5 text-white" />
                           </a>
                         )}
-                        <a href={`mailto:${member.social.email}`} className="p-2.5 rounded-xl bg-white/10 border border-white/10 hover:bg-[#8C2AFF] hover:border-transparent transition-all">
+                        {member.social.email && (<a href={`mailto:${member.social.email}`} className="p-2.5 rounded-xl bg-white/10 border border-white/10 hover:bg-[#8C2AFF] hover:border-transparent transition-all">
                           <Mail className="size-5 text-white" />
-                        </a>
+                        </a>)}
+                        {member.social.link && (
+                          <a href={member.social.link} target="_blank" className="p-2.5 rounded-xl bg-white/10 border border-white/10 hover:bg-[#8C2AFF] hover:border-transparent transition-all">
+                            <Link className="size-5 text-white" />
+                          </a>
+                        )}
                       </div>
                     </div>
                   </div>
@@ -217,7 +228,7 @@ export default function TeamSection() {
           </div>
 
           <div className="flex justify-center gap-3 mt-12">
-            {Array.from({ length: Math.max(0, team.length - cardsPerView + 1) }).map((_, index) => (
+            {Array.from({ length: Math.max(0, teamData.length - cardsPerView + 1) }).map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}

@@ -224,80 +224,12 @@ export default function SupportersSection() {
           transition={{ duration: 0.6, delay: 0.1 }}
           viewport={{ once: true }}
         >
-          <div className="flex flex-col items-center text-center mb-16">
+          {/* <div className="flex flex-col items-center text-center mb-16">
             <span className="text-base uppercase tracking-[0.4em] text-gray-300 font-light mb-4">
               Official Sponsor
             </span>
             <div className="w-40 h-1 bg-gradient-to-r from-transparent via-[#9c4dff] to-transparent"></div>
-          </div>
-
-          <div className="flex flex-col items-center px-4">
-            <div
-              className="p-12 sm:p-16 rounded-[2rem] w-full max-w-6xl mx-auto overflow-hidden relative"
-              style={{
-                background:
-                  "linear-gradient(145deg, rgba(15,15,20,0.98) 0%, rgba(10,10,15,0.99) 100%)",
-                backdropFilter: "blur(24px)",
-                border: "1px solid rgba(255,255,255,0.12)",
-                boxShadow:
-                  "0 40px 80px rgba(0,0,0,0.45), inset 0 0 0 1px rgba(255,255,255,0.08)",
-              }}
-            >
-              <div className="flex justify-center mb-12">
-                <img
-                  src="/pcbway.png"
-                  alt="PCBWay"
-                  className="w-[90vw] max-w-[500px] md:w-[600px] h-auto mx-auto"
-                  style={{
-                    filter: "drop-shadow(0 0 50px rgba(140, 42, 255, 0.6))",
-                  }}
-                />
-              </div>
-
-              <div className="text-center max-w-3xl mx-auto">
-                <h3 className="text-4xl md:text-5xl font-semibold text-white mb-7 tracking-tight">
-                  Professional <span className="text-[#c08fff]">PCB</span> Fabrication
-                </h3>
-
-                <p className="text-gray-300 mb-10 text-xl md:text-2xl font-light leading-relaxed tracking-wide">
-                  Your trusted partner for high-quality prototyping and PCB manufacturing
-                </p>
-
-                <div className="flex justify-center">
-                  <a
-                    href="https://www.pcbway.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-4 bg-transparent text-white hover:text-[#e6d5ff] px-10 py-5 rounded-xl transition-all group border-2 border-white/20 hover:border-[#8C2AFF]"
-                    style={{
-                      background:
-                        "linear-gradient(90deg, rgba(140,42,255,0.2) 0%, rgba(140,42,255,0.1) 100%)",
-                      boxShadow: "0 0 30px rgba(140, 42, 255, 0.3)",
-                    }}
-                  >
-                    <span className="font-bold tracking-wider text-xl">
-                      Get a Quote
-                    </span>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="transition-transform group-hover:translate-x-3"
-                    >
-                      <line x1="5" y1="12" x2="19" y2="12"></line>
-                      <polyline points="12 5 19 12 12 19"></polyline>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
+          </div> */}
         </motion.div>
 
         <motion.div
@@ -436,7 +368,37 @@ export default function SupportersSection() {
           </div>
         </motion.div>
 
-        <motion.div
+        <div className="flex flex-col items-center px-4 mt-16">
+          <div
+            className="p-6 sm:p-8 rounded-[2rem] w-full max-w-lg mx-auto overflow-hidden relative"
+            style={{
+              background:
+                // "linear-gradient(145deg, rgba(15,15,20,0.98) 0%, rgba(10,10,15,0.99) 100%)",
+                "radial-gradient(circle at center, rgba(56,2,114,0.5) 0%, rgba(30,30,30,0.5) 100%)",
+              backdropFilter: "blur(15px)",
+              border: "1px solid rgba(56,2,114,1.0)",
+              boxShadow:
+                "0 40px 80px rgba(0,0,0,0.45), inset 0 0 0 1px rgba(255,255,255,0.08)",
+            }}
+          >
+            <div className="text-center max-w-3xl mx-auto">
+              <h3 className="text-4xl md:text-3xl font-semibold text-white mb-7 tracking-tight">
+                Official Sponsor
+              </h3>
+            </div>
+            <div className="flex justify-center">
+              <a href="https://www.pcbway.com">
+                <img
+                  src="/pcbway.png"
+                  alt="PCBWay"
+                  className="w-[45vw] max-w-[350px] md:w-[600px] h-auto mx-auto"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* <motion.div
           className="mt-14 text-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -454,7 +416,7 @@ export default function SupportersSection() {
           >
             Get Yours Now!
           </a>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );

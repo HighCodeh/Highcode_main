@@ -77,7 +77,7 @@ const teamData = [
   },
   {
     name: "Gabriel Topfer",
-    role: "Operational Management",
+    role: "Operational Manager",
     bio: "Crafting compelling stories and engaging audiences.",
     image: "/gabriel-topfer.webp",
     social: {
@@ -211,9 +211,9 @@ export default function TeamSection() {
                             <Instagram className="size-5 text-white" />
                           </a>
                         )}
-                        <a href={`mailto:${member.social.email}`} className="p-2.5 rounded-xl bg-white/10 border border-white/10 hover:bg-[#8C2AFF] hover:border-transparent transition-all">
+                        {member.social.email && (<a href={`mailto:${member.social.email}`} className="p-2.5 rounded-xl bg-white/10 border border-white/10 hover:bg-[#8C2AFF] hover:border-transparent transition-all">
                           <Mail className="size-5 text-white" />
-                        </a>
+                        </a>)}
                         {member.social.link && (
                           <a href={member.social.link} target="_blank" className="p-2.5 rounded-xl bg-white/10 border border-white/10 hover:bg-[#8C2AFF] hover:border-transparent transition-all">
                             <Link className="size-5 text-white" />

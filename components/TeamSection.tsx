@@ -8,7 +8,7 @@ import { useState, useEffect } from "react"
 const teamData = [
   {
     name: "Vinícius Pinheiro",
-    role: "CTO - Hardware & Firmware & Manager",
+    role: "CTO & Original Founder",
     bio: "Passionate about embedded systems and open hardware development.",
     image: "/vini.jpeg",
     social: {
@@ -18,7 +18,7 @@ const teamData = [
   },
   {
     name: "Joje Mendes",
-    role: "CEO - Manager & App Developer",
+    role: "CEO",
     bio: "Connecting people, ideas and technology worldwide.",
     image: "/joje.png",
     social: {
@@ -48,8 +48,8 @@ const teamData = [
   },
   {
     name: "Rafa Teivfik",
-    role: "Manager & App Developer",
-    bio: "Turning complex challenges into elegant mobile solutions.",
+    role: "Head of Interface Systems",
+    bio: "Turning complex challenges into elegant solutions.",
     image: "/rafa.jpg",
     social: {
       instagram: "https://www.instagram.com/ruffles_teiv/",
@@ -77,8 +77,8 @@ const teamData = [
   },
   {
     name: "Gabriel Topfer",
-    role: "Operational Manager",
-    bio: "Crafting compelling stories and engaging audiences.",
+    role: "Head of Strategy and Execution",
+    bio: "Scaling the human factor through systems thinking, OrgDesign and innovation.",
     image: "/gabriel-topfer.webp",
     social: {
       instagram: "https://www.instagram.com/gtopfer",

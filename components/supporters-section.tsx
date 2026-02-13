@@ -368,7 +368,7 @@ export default function SupportersSection() {
           </div>
         </motion.div>
 
-        <div className="flex flex-col items-center px-4">
+        <div className="flex flex-col items-center px-4 mt-16">
           <div
             className="p-6 sm:p-8 rounded-[2rem] w-full max-w-lg mx-auto overflow-hidden relative"
             style={{

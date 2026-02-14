@@ -8,7 +8,7 @@ import { useState, useEffect } from "react"
 const teamData = [
   {
     name: "Vinícius Pinheiro",
-    role: "CTO & Original Founder",
+    role: "CEO/CTO",
     bio: "Passionate about embedded systems and open hardware development.",
     image: "/vini.jpeg",
     social: {
@@ -18,7 +18,7 @@ const teamData = [
   },
   {
     name: "Joje Mendes",
-    role: "CEO",
+    role: "COO",
     bio: "Connecting people, ideas and technology worldwide.",
     image: "/joje.png",
     social: {

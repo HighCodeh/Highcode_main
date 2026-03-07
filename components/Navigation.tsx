@@ -17,7 +17,7 @@ export default function Navigation({ isOpen, onOpenChange }: NavigationProps) {
     { id: "product", label: "High Boy", icon: <Code className="w-4 h-4" /> },
     { id: "supporters", label: "Supporters", icon: <Heart className="w-4 h-4" /> },
     {
-      href: "https://highcode-blog.vercel.app/",
+      href: "https://highboy.blog",
       label: "Blog",
       icon: <BookOpen className="w-4 h-4" />,
     },

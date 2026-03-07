@@ -8,22 +8,22 @@ import { useState, useEffect } from "react"
 const teamData = [
   {
     name: "Vinícius Pinheiro",
-    role: "CEO/CTO",
-    bio: "Passionate about embedded systems and open hardware development.",
+    role: "Father of High Boy",
+    bio: "High boy is more than a tool.",
     image: "/vini.jpeg",
     social: {
       instagram: "https://www.instagram.com/vinipinheirobit/",
-      email: "vpedicao@gmail.com",
+      email: "vinicius.pinheiro@high-code.com",
     },
   },
   {
     name: "Joje Mendes",
-    role: "COO",
+    role: "Mete Head of Ecosystem",
     bio: "Connecting people, ideas and technology worldwide.",
     image: "/joje.png",
     social: {
       instagram: "https://www.instagram.com/null__jo/",
-      email: "jojemendes@icloud.com",
+      email: "jojemendes@high-code.com",
     },
   },
   {
@@ -33,7 +33,7 @@ const teamData = [
     image: "/teste.jpeg",
     social: {
       instagram: "https://www.instagram.com/anarchyysm/",
-      email: "emanuel.mag.jr@gmail.com",
+      email: "bin@high-code.com",
     },
   },
   {
@@ -43,7 +43,7 @@ const teamData = [
     image: "/luis.jpeg",
     social: {
       instagram: "https://www.instagram.com/lthiagovs/",
-      email: "luisthiago.dev@gmail.com",
+      email: "lthiagofarias@high-code.com",
     },
   },
   {
@@ -53,7 +53,7 @@ const teamData = [
     image: "/rafa.jpg",
     social: {
       instagram: "https://www.instagram.com/ruffles_teiv/",
-      email: "teivik@gmail.com",
+      email: "rafateivfik@high-code.com",
       link: "https://rafateivfik.carrd.co/"
     },
   },
@@ -63,7 +63,7 @@ const teamData = [
     bio: "Strategizing growth and building brand presence.",
     image: "/pedro.png",
     social: {
-      email: "anaydasydy@gmail.com",
+      email: "pedroguinsk@high-code.com",
     },
   },
   {
@@ -72,7 +72,7 @@ const teamData = [
     bio: "Crafting compelling stories and engaging audiences.",
     image: "/chaves.jpg",
     social: {
-      email: "eduardo9chaves@gmail.com",
+      email: "eduardo.chaves@high-code.com",
     },
   },
   {
@@ -82,7 +82,7 @@ const teamData = [
     image: "/gabriel-topfer.webp",
     social: {
       instagram: "https://www.instagram.com/gtopfer",
-      link: "https://br.linkedin.com/in/gtopfer"
+      email: "gtopfer@high-code.com"
     },
   },
 ]

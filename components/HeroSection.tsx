@@ -13,6 +13,8 @@ import {
   Rss,
   Sparkles,
   Cpu,
+  Code2,
+  Terminal,
 } from "lucide-react";
 import Image from "next/image";
 import { useState, useEffect } from "react";
@@ -60,12 +62,6 @@ export default function HeroSection() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-black via-[#0a0018] to-black pt-28">
-      {/* <div className="absolute inset-0">
-        <div className="absolute top-1/3 left-1/4 w-[700px] h-[700px] bg-[#8C2AFF]/20 rounded-full blur-[250px] animate-pulse-slow"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-[600px] h-[600px] bg-[#4a1e99]/20 rounded-full blur-[200px] animate-pulse-slower"></div>
-        <div className="absolute inset-0 bg-[url('/stars.png')] opacity-10 bg-cover bg-center"></div>
-      </div> */}
-
       <div className="container relative z-10 px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -81,71 +77,66 @@ export default function HeroSection() {
             The ultimate multi-tool for pentesters and tech explorers. Powered by <span className="text-[#a15cff] font-semibold text-white">Dual-MCU ESP32-C5 + ESP32-P4</span>. Wireless, powerful, and ready to push boundaries.
           </p>
 
+          {/* DEVELOPER PROGRAM SECTION */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.8 }}
-            className="relative overflow-hidden bg-gradient-to-br from-[#8C2AFF]/10 to-[#6a11ff]/5 border border-[#8C2AFF]/40 backdrop-blur-xl rounded-2xl p-6 shadow-[0_0_40px_rgba(140,42,255,0.25)] hover:shadow-[0_0_60px_rgba(140,42,255,0.4)] hover:border-[#8C2AFF]/60 transition-all duration-500 group"
+            className="relative overflow-hidden bg-gradient-to-br from-[#22c55e]/10 to-[#16a34a]/5 border-2 border-[#22c55e]/50 backdrop-blur-xl rounded-2xl p-6 shadow-[0_0_40px_rgba(34,197,94,0.25)] hover:shadow-[0_0_60px_rgba(34,197,94,0.4)] hover:border-[#4ade80]/80 transition-all duration-500 group"
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-[#8C2AFF]/5 via-[#a15cff]/5 to-[#8C2AFF]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#22c55e]/5 via-[#4ade80]/5 to-[#22c55e]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             
             <motion.div
               animate={{ 
-                rotate: [0, 10, -10, 0],
-                scale: [1, 1.1, 1]
+                rotate: [0, 5, -5, 0],
+                scale: [1, 1.05, 1]
               }}
               transition={{ 
-                duration: 3, 
+                duration: 4, 
                 repeat: Infinity, 
                 ease: "easeInOut" 
               }}
-              className="absolute top-4 right-4 bg-[#8C2AFF]/20 rounded-full p-2"
+              className="absolute top-4 right-4 bg-[#22c55e]/20 rounded-full p-2"
             >
-              <Sparkles className="h-5 w-5 text-[#a15cff]" />
+              <Code2 className="h-5 w-5 text-[#4ade80]" />
             </motion.div>
 
-            <div className="relative z-10 space-y-4 text-left">
-              <div className="inline-flex items-center gap-2 bg-[#8C2AFF]/20 border border-[#8C2AFF]/40 rounded-full px-4 py-1.5">
-                <Sparkles className="h-3.5 w-3.5 text-[#a15cff]" />
-                <span className="text-xs font-bold text-[#a15cff] tracking-wider uppercase">
-                  Community Requested
+            <div className="relative z-10 space-y-5 text-left">
+              <div className="inline-flex items-center gap-2 bg-[#22c55e]/20 border border-[#22c55e]/50 rounded-full px-4 py-1.5">
+                <Terminal className="h-3.5 w-3.5 text-[#4ade80]" />
+                <span className="text-xs font-bold text-[#4ade80] tracking-wider uppercase">
+                  Contribute to the Project
                 </span>
               </div>
 
               <div className="space-y-2">
                 <h3 className="text-2xl sm:text-3xl font-bold text-white leading-tight">
-                  Dual-MCU Architecture
+                  Developer Program
                 </h3>
                 <p className="text-gray-300 text-base leading-relaxed">
-                  You asked, we listened! Due to high community demand, we're implementing <span className="text-[#a15cff] font-semibold text-white">WiFi 5GHz</span> with a powerful <span className="text-[#8C2AFF] font-semibold text-white">Dual-MCU setup: ESP32-C5 + ESP32-P4</span>.
+                  Want to help build High Boy? Join our developer community and help shape the future of hardware hacking, whether in software or hardware.
                 </p>
               </div>
 
-              <div className="flex flex-wrap gap-2 pt-1">
-                {[
-                  { icon: <Wifi className="h-4 w-4" />, label: "WiFi 5GHz" },
-                  { icon: <Cpu className="h-4 w-4" />, label: "ESP32-C5" },
-                  { icon: <Cpu className="h-4 w-4" />, label: "ESP32-P4" },
-                  { icon: <Zap className="h-4 w-4" />, label: "Dual-MCU" },
-                ].map((item, i) => (
-                  <div key={i} className="flex items-center gap-2 bg-black/30 border border-[#8C2AFF]/30 rounded-lg px-3 py-1.5 hover:border-[#a15cff]/50 transition-all">
-                    <div className="text-[#a15cff]">{item.icon}</div>
-                    <span className="text-sm font-semibold text-white">{item.label}</span>
-                  </div>
-                ))}
-              </div>
+              {/* NOVO BOTÃO AQUI */}
+              <Button 
+                size="lg"
+                className="mt-2 w-full sm:w-auto bg-[#4ade80] hover:bg-[#22c55e] text-black font-extrabold text-lg px-8 py-6 rounded-xl shadow-[0_0_20px_rgba(34,197,94,0.3)] hover:shadow-[0_0_40px_rgba(34,197,94,0.6)] transition-all duration-300 hover:-translate-y-1 flex items-center justify-center gap-3 group/btn"
+              >
+                Apply now to contribute
+                <ArrowRight className="h-5 w-5 group-hover/btn:translate-x-1 transition-transform" />
+              </Button>
             </div>
           </motion.div>
 
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-8 max-w-2xl mx-auto lg:mx-0">
             {[
-              { icon: <Wifi />, label: "WiFi 5" },
+              { icon: <Wifi />, label: "Dual-band WiFi" },
               { icon: <Bluetooth />, label: "BLE" },
               { icon: <Radio />, label: "IR" },
               { icon: <Nfc />, label: "NFC" },
               { icon: <Rss />, label: "Sub-GHz" },
               { icon: <Rss />, label: "LoRa" },
-              { icon: <Zap />, label: "USB-C" },
             ].map((tech, index) => (
               <motion.div
                 key={index}

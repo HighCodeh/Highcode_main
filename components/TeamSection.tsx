@@ -18,9 +18,9 @@ const teamData = [
   },
   {
     name: "Joje Mendes",
-    role: "Mete Head of Ecosystem",
+    role: "Head of Ecosystem",
     bio: "Connecting people, ideas and technology worldwide.",
-    image: "/joje.png",
+    image: "/joje.jpeg",
     social: {
       instagram: "https://www.instagram.com/null__jo/",
       email: "jojemendes@high-code.com",

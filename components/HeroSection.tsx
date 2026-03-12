@@ -60,6 +60,14 @@ export default function HeroSection() {
     window.open("https://github.com/HighCodeh", "_blank");
   };
 
+  // Função para o link do formulário de desenvolvedor
+  const handleApplyClick = () => {
+    window.open(
+      "https://docs.google.com/forms/d/e/1FAIpQLScIv101BmteP95zLqDJfjUzNfHW9fPvbzu0-OiXiVykHiNQQg/viewform",
+      "_blank"
+    );
+  };
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-black via-[#0a0018] to-black pt-28">
       <div className="container relative z-10 px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
@@ -118,9 +126,9 @@ export default function HeroSection() {
                 </p>
               </div>
 
-              {/* NOVO BOTÃO AQUI */}
               <Button 
                 size="lg"
+                onClick={handleApplyClick}
                 className="mt-2 w-full sm:w-auto bg-[#4ade80] hover:bg-[#22c55e] text-black font-extrabold text-lg px-8 py-6 rounded-xl shadow-[0_0_20px_rgba(34,197,94,0.3)] hover:shadow-[0_0_40px_rgba(34,197,94,0.6)] transition-all duration-300 hover:-translate-y-1 flex items-center justify-center gap-3 group/btn"
               >
                 Apply now to contribute

@@ -12,7 +12,7 @@ type Outlet = {
 
 const REPORT_URL = "https://research.highboy.com.br"
 
-// Logos vão ser enviados depois — por ora usamos wordmarks estilizados
+// Logos vão ser enviados depois. Por ora usamos wordmarks estilizados
 // como placeholder textual em escala de cinza. Cada item já é clicável.
 const outlets: Outlet[] = [
   { name: "CoinDesk", url: "#" },
@@ -116,7 +116,7 @@ export default function FeaturedIn() {
                   Counterfeit Ledger Nano S Plus with ESP32 Implant
                 </div>
                 <div className="text-gray-400 text-sm mt-0.5">
-                  Full forensic analysis — $9.5M+ losses across 50+ victims.
+                  Full forensic analysis. $9.5M+ losses across 50+ victims.
                 </div>
               </div>
             </div>

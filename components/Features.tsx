@@ -44,7 +44,7 @@ export default function Features() {
             transition={{ duration: 0.5, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            100% open source & open hardware — merging innovation, performance, and freedom. Powered by <span className="whitespace-nowrap">Dual-MCU ESP32-C5 + ESP32-P4</span> with <span className="whitespace-nowrap">dual-band WiFi and LoRa</span>.
+            100% open source and open hardware, merging innovation, performance, and freedom. Powered by <span className="whitespace-nowrap">Dual-MCU ESP32-C5 + ESP32-P4</span> with <span className="whitespace-nowrap">dual-band WiFi and LoRa</span>.
           </motion.p>
         </motion.div>
 
@@ -59,7 +59,7 @@ export default function Features() {
           <div className="flex flex-col md:flex-row items-center gap-8">
             <div className="flex-1">
               <h3 className="text-2xl md:text-3xl font-bold mb-4">
-                More than a tool — it's a <span className="text-[#a15cff]">platform</span>
+                More than a tool. It's a <span className="text-[#a15cff]">platform</span>
               </h3>
               <p className="text-gray-300 mb-6">
                 High Boy evolves constantly with new features delivered via firmware updates and apps.  

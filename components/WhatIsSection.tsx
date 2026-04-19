@@ -48,7 +48,7 @@ const features = [
   {
     icon: <WifiOff className="size-6" />,
     title: "Offline Capabilities",
-    description: "Works even without an internet connection — anytime, anywhere.",
+    description: "Works even without an internet connection. Anytime, anywhere.",
   },
   {
     icon: <Smartphone className="size-6" />,
@@ -83,7 +83,7 @@ export default function WhatIsSection() {
               </h2>
 
               <p className="text-lg md:text-xl text-gray-300 leading-relaxed max-w-4xl mx-auto text-left">
-                High Boy is a professional hardware security research device engineered by High Code. Built around a dual-MCU architecture (ESP32-P4 + ESP32-C5), it delivers full-spectrum capabilities for RF, Sub-GHz, LoRa, Wi-Fi 6, BLE, NFC, RFID, and IoT security testing — in one open-source, pocket-sized tool for pentesters and security researchers.
+                High Boy is a professional hardware security research device engineered by High Code. Built around a dual-MCU architecture (ESP32-P4 + ESP32-C5), it delivers full-spectrum capabilities for RF, Sub-GHz, LoRa, Wi-Fi 6, BLE, NFC, RFID, and IoT security testing, all in one open-source, pocket-sized tool for pentesters and security researchers.
               </p>
 
               {/* Feature grid */}

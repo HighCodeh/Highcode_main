@@ -47,8 +47,8 @@ export default function AboutHighCode() {
           <div className="space-y-5 text-lg md:text-xl text-gray-300 leading-relaxed max-w-4xl">
             <p>
               The High Boy consolidates the full RF, wireless, and short-range testing
-              stack into a single portable device — Wi-Fi 6 dual-band, Sub-GHz, LoRa,
-              BLE 5.3, NFC, RFID, and IR — running on a dual-MCU ESP32-P4 + ESP32-C5
+              stack into a single portable device, with Wi-Fi 6 dual-band, Sub-GHz, LoRa,
+              BLE 5.3, NFC, RFID, and IR, all running on a dual-MCU ESP32-P4 + ESP32-C5
               architecture with open firmware and open hardware.
             </p>
             <p>

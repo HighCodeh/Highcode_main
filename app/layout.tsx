@@ -9,9 +9,9 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 
 const SITE_URL = "https://highboy.com.br"
 const SITE_TITLE =
-  "High Boy — Hardware security research, in your pocket | High Code"
+  "High Boy | Hardware security research in your pocket | High Code"
 const SITE_DESCRIPTION =
-  "High Boy is the dual-MCU (ESP32-P4 + ESP32-C5) pentesting platform built by High Code — a hardware security research company. Wi-Fi 6, Sub-GHz, LoRa, NFC, RFID and IR in a single open-source device."
+  "High Boy is the dual-MCU (ESP32-P4 + ESP32-C5) pentesting platform built by High Code, a hardware security research company. Wi-Fi 6, Sub-GHz, LoRa, NFC, RFID and IR in a single open-source device."
 
 export const metadata: Metadata = {
   title: {
@@ -76,7 +76,7 @@ export const metadata: Metadata = {
         url: `${SITE_URL}/og-image.jpg`,
         width: 1200,
         height: 630,
-        alt: "High Boy — dual-MCU pentesting device by High Code",
+        alt: "High Boy dual-MCU pentesting device by High Code",
       },
     ],
   },

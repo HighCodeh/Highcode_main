@@ -62,7 +62,7 @@ export default function HeroSection() {
             The dual-MCU pentesting platform built by <span className="text-white font-semibold">High Code</span>. Powered by <span className="text-[#a15cff] font-semibold">ESP32-P4 + ESP32-C5</span>, with Wi-Fi 6, Sub-GHz, LoRa, NFC, RFID and IR in a single open-source, pocket-sized device.
           </p>
 
-          {/* SUPPORT PROJECT — primary CTA card */}
+          {/* Support Project: primary CTA card */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -160,7 +160,7 @@ export default function HeroSection() {
             <div className="relative z-20 p-4">
               <Image
                 src="/highboy-render-new.png"
-                alt="High Boy — dual-MCU pentesting device by High Code"
+                alt="High Boy dual-MCU pentesting device by High Code"
                 width={600}
                 height={600}
                 className="w-full h-auto object-contain drop-shadow-[0_0_70px_rgba(161,92,255,0.45)]"

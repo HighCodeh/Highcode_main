@@ -1,7 +1,8 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Instagram, Github, Twitter, Linkedin, Mail, MapPin, Phone } from "lucide-react"
+import { Instagram, Twitter, Linkedin } from "lucide-react"
+import { useDiscordStats, formatCompact } from "@/hooks/use-discord-stats"
 
 // Custom Discord icon (SVG)
 export const Discord = (props: React.SVGProps<SVGSVGElement>) => (
@@ -15,35 +16,53 @@ export const Discord = (props: React.SVGProps<SVGSVGElement>) => (
   </svg>
 )
 
-// Social media data
-const socialMedia = [
-  {
-    name: "Instagram",
-    icon: <Instagram className="size-5" />,
-    url: "https://www.instagram.com/highcode.br",
-    handle: "@highcode.br",
-    followers: "13.5K followers",
-    posts: ["/i.jpeg", "/i2.jpeg", "/i3.jpeg"],
-  },
-  {
-    name: "Discord",
-    icon: <Discord className="size-5" />,
-    url: "https://discord.gg/rj7B8e4B2f",
-    handle: "@HighCodeh",
-    followers: "441 members",
-    posts: ["/d.jpeg", "/d2.jpeg", "/d3.jpeg"],
-  },
-  {
-    name: "Twitter",
-    icon: <Twitter className="size-5" />,
-    url: "https://x.com/highcode_br",
-    handle: "@highcode_br",
-    followers: "62 followers",
-    posts: ["/x.jpeg", "/x1.jpeg", "/x2.jpeg"],
-  },
-]
+const Reddit = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg {...props} viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm6.67 13.09c.027.187.04.38.04.575 0 2.93-3.42 5.31-7.64 5.31s-7.64-2.38-7.64-5.31c0-.19.01-.377.04-.56-.84-.39-1.42-1.22-1.42-2.19 0-1.34 1.08-2.42 2.42-2.42.65 0 1.24.26 1.68.68 1.63-1.14 3.83-1.87 6.25-1.96l1.25-5.86c.03-.13.16-.22.29-.19l4.08.87c.29-.59.88-1 1.57-1 .97 0 1.75.78 1.75 1.75s-.78 1.76-1.75 1.76c-.94 0-1.7-.74-1.75-1.66l-3.66-.78-1.11 5.24c2.38.11 4.54.84 6.16 1.97.44-.43 1.03-.69 1.69-.69 1.34 0 2.42 1.08 2.42 2.42 0 .98-.59 1.81-1.43 2.2zM8.46 13.56c0 .77-.62 1.4-1.4 1.4s-1.4-.63-1.4-1.4.63-1.4 1.4-1.4 1.4.62 1.4 1.4zm6.48 0c0 .77-.62 1.4-1.4 1.4s-1.4-.63-1.4-1.4.63-1.4 1.4-1.4 1.4.62 1.4 1.4zm-.45 2.69c.15.15.15.39 0 .54-.9.9-2.6.97-3.1.97-.5 0-2.2-.07-3.1-.97-.15-.15-.15-.39 0-.54.15-.15.39-.15.54 0 .57.57 1.78.77 2.56.77.78 0 1.99-.2 2.56-.77.15-.15.39-.15.54 0z" />
+  </svg>
+)
 
 export default function SocialSection() {
+  const { memberCount } = useDiscordStats()
+
+  const socialMedia = [
+    {
+      name: "Instagram",
+      icon: <Instagram className="size-5 text-white" />,
+      url: "https://www.instagram.com/highcode.br",
+      handle: "@highcode.br",
+      followers: "~20K followers",
+    },
+    {
+      name: "Discord",
+      icon: <Discord className="size-5 text-white" />,
+      url: "https://discord.gg/highcode",
+      handle: "discord.gg/highcode",
+      followers: `${memberCount.toLocaleString("en-US")} members`,
+    },
+    {
+      name: "Reddit",
+      icon: <Reddit className="size-5 text-white" />,
+      url: "https://www.reddit.com/r/Highboy/",
+      handle: "r/Highboy",
+      followers: "Join the subreddit",
+    },
+    {
+      name: "LinkedIn",
+      icon: <Linkedin className="size-5 text-white" />,
+      url: "https://www.linkedin.com/company/highcodeh/",
+      handle: "High Code",
+      followers: "Follow our page",
+    },
+    {
+      name: "Twitter",
+      icon: <Twitter className="size-5 text-white" />,
+      url: "https://x.com/highcode_br",
+      handle: "@highcode_br",
+      followers: "Follow on X",
+    },
+  ]
+
   return (
     <section className="py-24 relative bg-black overflow-hidden" id="social">
       {/* Background effects */}
@@ -80,13 +99,13 @@ export default function SocialSection() {
           {socialMedia.map((social, index) => (
             <motion.div
               key={index}
-              className="bg-gradient-to-b from-white/5 to-transparent backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden transition-all duration-300 hover:border-[#8C2AFF]/30"
+              className="bg-gradient-to-b from-white/5 to-transparent backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden transition-all duration-300 hover:border-[#8C2AFF]/30 flex flex-col"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               {/* Header */}
-              <div className="p-6 border-b border-white/10">
+              <div className="p-6 flex-1">
                 <div className="flex items-center gap-4">
                   <div className="bg-[#8C2AFF]/10 p-3 rounded-xl">
                     {social.icon}
@@ -96,33 +115,7 @@ export default function SocialSection() {
                     <p className="text-[#8C2AFF]">{social.handle}</p>
                   </div>
                 </div>
-                <p className="text-gray-400 mt-3">{social.followers}</p>
-              </div>
-
-              {/* Gallery */}
-              <div className="grid grid-cols-3 gap-0.5 p-0.5 bg-white/10">
-                {social.posts.map((post, postIndex) => (
-                  <motion.div
-                    key={postIndex}
-                    className="aspect-square overflow-hidden relative"
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10 opacity-0 hover:opacity-100 transition-opacity flex items-end p-3">
-                      {/* <span className="text-white text-sm font-medium">
-                        Post #{postIndex + 1}
-                      </span> */}
-                    </div>
-                    <div
-                      className="w-full h-full bg-gray-800"
-                      style={{
-                        backgroundImage: `url(${post})`,
-                        backgroundSize: "cover",
-                        backgroundPosition: "center",
-                      }}
-                    />
-                  </motion.div>
-                ))}
+                <p className="text-gray-400 mt-4">{social.followers}</p>
               </div>
 
               {/* Button */}

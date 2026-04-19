@@ -12,6 +12,8 @@ import TeamSection from "@/components/TeamSection"
 import Footer from "@/components/Footer"
 import TechnicalSpecs from "@/components/TechnicalSpecs"
 import SupportersSection from "@/components/supporters-section"
+import FeaturedIn from "@/components/FeaturedIn"
+import AboutHighCode from "@/components/AboutHighCode"
 
 // Verificando se todos os componentes estão sendo exportados corretamente
 export default function Home() {
@@ -23,9 +25,11 @@ export default function Home() {
 
       <main>
         <HeroSection />
+        <FeaturedIn />
         <JoinDiscord />
         <WhatIsSection />
         <Features />
+        <AboutHighCode />
         <TeamSection />
         <TechnicalSpecs/>
         <SupportersSection />

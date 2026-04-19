@@ -19,10 +19,12 @@ export default function Features() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="inline-flex items-center gap-2 bg-white/5 backdrop-blur-xl border border-white/10 rounded-full px-6 py-3 mb-6"
+            className="inline-flex flex-wrap items-center justify-center gap-x-3 gap-y-1 bg-white/5 backdrop-blur-xl border border-white/10 rounded-full px-6 py-3 mb-6"
           >
             <span className="size-2.5 rounded-full bg-[#8C2AFF] animate-pulse" />
-            <span className="text-lg font-medium">Built in Brazil</span>
+            <span className="text-sm md:text-base font-medium">
+              Built in Brazil · Designed in Finland · Manufactured in Shenzhen · Operations in Delaware
+            </span>
           </motion.div>
           
           <motion.h2 

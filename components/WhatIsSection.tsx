@@ -83,7 +83,7 @@ export default function WhatIsSection() {
               </h2>
 
               <p className="text-lg md:text-xl text-gray-300 leading-relaxed max-w-4xl mx-auto text-left">
-                High Boy is a next-gen hardware hacking device that merges power, versatility, and portability into one compact tool. Designed for pentesters and security enthusiasts, it brings full-spectrum capabilities for RF, NFC, Lora, Wi-Fi, BLE, and IoT security testing.
+                High Boy is a professional hardware security research device engineered by High Code. Built around a dual-MCU architecture (ESP32-P4 + ESP32-C5), it delivers full-spectrum capabilities for RF, Sub-GHz, LoRa, Wi-Fi 6, BLE, NFC, RFID, and IoT security testing — in one open-source, pocket-sized tool for pentesters and security researchers.
               </p>
 
               {/* Feature grid */}

@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion"
 import { Button } from "@/components/ui/button"
-import { Github, Menu, X, Code, Users, Zap, Heart, BookOpen } from "lucide-react"
+import { Github, Menu, X, Code, Users, Zap, Heart, BookOpen, ShoppingBasket, LucideIcon } from "lucide-react"
 import Link from "next/link"
 
 interface NavigationProps {
@@ -10,17 +10,53 @@ interface NavigationProps {
   onOpenChange: (open: boolean) => void
 }
 
+type NavItem =
+  | {id: string; href?: never; label: string; icon: LucideIcon} // NavItem with id and without href
+  | {href: string; id?: never; label: string; icon: LucideIcon} // NavItem with href and without id
+type NavigationLinkProps = {
+  item:NavItem,
+  mobile: boolean, 
+  onClick: () => void
+}
+
+function NavigationLink({item,mobile,onClick} : NavigationLinkProps) {
+
+  const getLinkProps = function (item : NavItem) {
+    if (item.id) return { href: `/#${item.id}`} // Section
+    if (item.href!.startsWith("http")) { // External page
+      return { href: item.href!, target: "_blank", rel: "noopener noreferrer"}
+    }
+    return { href: item.href! } // Internal page
+  }
+
+  const getClassNames = function (mobile : boolean) {
+    if (mobile) return "flex items-center gap-3 text-lg p-4 rounded-xl hover:bg-white/5 transition-all group"
+    else return "text-sm font-medium hover:bg-white/5 transition-all px-4 py-2 rounded-xl flex items-center gap-2 group"
+  }
+
+  return (<>
+    <Link
+      {...getLinkProps(item)}
+      className={getClassNames(mobile)}
+      onClick={onClick}
+    >
+      <item.icon className="w-4 h-4"/>
+      <span className="group-hover:text-[#a15cff] transition-colors">
+        {item.label}
+      </span>
+    </Link>
+  </>)
+}
+
 export default function Navigation({ isOpen, onOpenChange }: NavigationProps) {
-  const navItems = [
-    { id: "high", label: "Features", icon: <Zap className="w-4 h-4" /> },
-    { id: "team", label: "Team", icon: <Users className="w-4 h-4" /> },
-    { id: "product", label: "High Boy", icon: <Code className="w-4 h-4" /> },
-    { id: "supporters", label: "Supporters", icon: <Heart className="w-4 h-4" /> },
-    {
-      href: "https://highboy.blog",
-      label: "Blog",
-      icon: <BookOpen className="w-4 h-4" />,
-    },
+  // TODO: Fazer ele voltar pra página inicial caso tenha ido pra outra pagina
+  const navItems : NavItem[] = [
+    { id: "high", label: "Features", icon: Zap },
+    { id: "team", label: "Team", icon: Users },
+    { id: "product", label: "High Boy", icon: Code },
+    { id: "supporters", label: "Supporters", icon: Heart },
+    { href: "https://highboy.blog", label: "Blog", icon: BookOpen },
+    // { href: "/shop", label: "Shop", icon: ShoppingBasket }
   ]
 
   return (
@@ -54,28 +90,7 @@ export default function Navigation({ isOpen, onOpenChange }: NavigationProps) {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.1 * index }}
                 >
-                  {item.id ? (
-                    <Link
-                      href={`#${item.id}`}
-                      className="text-sm font-medium hover:bg-white/5 transition-all px-4 py-2 rounded-xl flex items-center gap-2 group"
-                    >
-                      {item.icon}
-                      <span className="group-hover:text-[#a15cff] transition-colors">
-                        {item.label}
-                      </span>
-                    </Link>
-                  ) : (
-                    <Link
-                      href={item.href!}
-                      target="_blank"
-                      className="text-sm font-medium hover:bg-white/5 transition-all px-4 py-2 rounded-xl flex items-center gap-2 group"
-                    >
-                      {item.icon}
-                      <span className="group-hover:text-[#a15cff] transition-colors">
-                        {item.label}
-                      </span>
-                    </Link>
-                  )}
+                  <NavigationLink item={item} mobile={false} onClick={() => {}}/>
                 </motion.div>
               ))}
             </div>
@@ -154,30 +169,7 @@ export default function Navigation({ isOpen, onOpenChange }: NavigationProps) {
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.3 }}
                     >
-                      {item.id ? (
-                        <Link
-                          href={`#${item.id}`}
-                          className="flex items-center gap-3 text-lg p-4 rounded-xl hover:bg-white/5 transition-all group"
-                          onClick={() => onOpenChange(false)}
-                        >
-                          <div className="text-[#a15cff]">{item.icon}</div>
-                          <span className="group-hover:text-[#a15cff] transition-colors">
-                            {item.label}
-                          </span>
-                        </Link>
-                      ) : (
-                        <Link
-                          href={item.href!}
-                          target="_blank"
-                          className="flex items-center gap-3 text-lg p-4 rounded-xl hover:bg-white/5 transition-all group"
-                          onClick={() => onOpenChange(false)}
-                        >
-                          <div className="text-[#a15cff]">{item.icon}</div>
-                          <span className="group-hover:text-[#a15cff] transition-colors">
-                            {item.label}
-                          </span>
-                        </Link>
-                      )}
+                      <NavigationLink item={item} mobile={true} onClick={() => onOpenChange(false)}/>
                     </motion.div>
                   ))}
                 </div>

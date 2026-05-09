@@ -56,7 +56,7 @@ export default function Navigation({ isOpen, onOpenChange }: NavigationProps) {
     { id: "product", label: "High Boy", icon: Code },
     { id: "supporters", label: "Supporters", icon: Heart },
     { href: "https://highboy.blog", label: "Blog", icon: BookOpen },
-    // { href: "/shop", label: "Shop", icon: ShoppingBasket }
+    { href: "/shop", label: "Shop", icon: ShoppingBasket }
   ]
 
   return (

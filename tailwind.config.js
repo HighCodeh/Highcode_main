@@ -52,8 +52,16 @@ module.exports = {
         sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
-        sans: ["var(--font-inter)"],
+        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
+        inter: ["var(--font-inter)", "system-ui", "sans-serif"],
       },
+      fontSize: {
+        "title":          "11.67rem", // 140p
+        "header":         "6rem",     // 72p
+        "subheader":      "5.33rem",  // 64p
+        "small-header":   "3.2rem",   // 32p
+        "body":           "1.67rem",  // 20p
+      }
     },
   },
   plugins: [require("tailwindcss-animate")],

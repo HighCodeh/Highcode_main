@@ -45,6 +45,10 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        // New colors begin here
+        mainPurple: "#8C2AFF",
+        backgroundPurple: "#04072A",
+        accentGreen: "#33EB01"
       },
       borderRadius: {
         lg: "var(--radius)",
